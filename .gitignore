@@ -1,0 +1,9 @@
+__pycache__/
+*.egg-info
+dist/
+.ruff_cache
+dev_folder
+pandas_dfs
+indexes
+dev_dbs_filtered.json
+tag/out_*/

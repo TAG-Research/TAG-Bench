@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools >= 61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tag"
+version = "0.1.0"
+description = "tag"
+
+[tool.ruff]
+line-length = 120
+indent-width = 4
+target-version = "py39"
+
+[tool.ruff.lint]
+# Select a minimal set of rules
+select = [
+    "F",
+    "E",
+    "I",
+]
+
+ignore = [
+    "E501",  # Line too long
+    "E722", # Bare except
+]
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+[tool.ruff.format]
+docstring-code-format = false
+indent-style = "space"
+line-ending = "auto"
+
+[tool.ruff.lint.per-file-ignores]
+"**/{docs}/*" = ["ALL"]
+"**__init__.py" = ["ALL"]
+"tag/hand_written.py" = ["F841"]
+
+[tool.setuptools]
+packages = ["tag"]
