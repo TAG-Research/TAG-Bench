@@ -4,7 +4,7 @@
 [![GitHub license](https://img.shields.io/badge/License-MIT-blu.svg)][#license-gh-package]
 
 [#license-gh-package]: https://lbesson.mit-license.org/
-[#arxiv-paper-package]: https://arxiv.org/abs/2407.11418
+[#arxiv-paper-package]: https://arxiv.org/abs/2408.14717
 <!--- BADGES: END --->
 
 <p align="center">
