@@ -1,6 +1,6 @@
 # Text2SQL is Not Enough: Unifying AI and Databases with TAG
 <!--- BADGES: START --->
-[![Arxiv](https://img.shields.io/badge/arXiv-2407.11418-B31B1B.svg)][#arxiv-paper-package]
+[![Arxiv](https://img.shields.io/badge/arXiv-2408.14717-B31B1B.svg)][#arxiv-paper-package]
 [![GitHub license](https://img.shields.io/badge/License-MIT-blu.svg)][#license-gh-package]
 
 [#license-gh-package]: https://lbesson.mit-license.org/
