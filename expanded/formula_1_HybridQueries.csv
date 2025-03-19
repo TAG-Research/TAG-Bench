@@ -1,0 +1,436 @@
+formula_1,Please list the year and country during which the race is held on circuits in Shanghai.,Shanghai is a name of location;,"SELECT T2.year, T1.country FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.location = 'Shanghai'",simple,"SELECT T2.year, {{
+    LLMMap(
+        'Provide the country name',
+        'circuits::location'
+    )
+
+}}
+FROM circuits INNER JOIN races AS T2 ON T2.circuitId = circuits.circuitId 
+WHERE circuits.location = 'Shanghai'
+"
+formula_1,Where can the introduction of the races held on Circuit de Barcelona-Catalunya be found?,introduction of races refers to url; Circuit de Barcelona-Catalunya is a name of circuit;,SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Circuit de Barcelona-Catalunya',simple,"WITH temp AS (
+SELECT *, 'Location: '||location||', Name: '||name AS key
+FROM circuits
+)
+SELECT {{
+    LLMMap(
+        'Provide the wiki url.',
+        'temp::key'
+    )
+
+}}
+FROM temp INNER JOIN races AS T2 ON T2.circuitId = temp.circuitId 
+WHERE temp.name = 'Circuit de Barcelona-Catalunya'
+"
+formula_1,Please give the name of the race held on the circuits in Germany.,Germany is a name of country;,SELECT DISTINCT T2.name FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.country = 'Germany',simple,"SELECT DISTINCT T2.name 
+FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitId = T1.circuitId
+WHERE {{
+    LLMMap(
+        'Provide the country name.'
+        'T1::location'
+    )
+}} = 'Germany'
+"
+formula_1,How many races in the year 2010 are held on grand prixs outside Asia and Europe?,,"SELECT COUNT(T3.raceId) FROM circuits AS T1 INNER JOIN races AS T3 ON T3.circuitID = T1.circuitId WHERE T1.country NOT IN ( 'Bahrain', 'China', 'Singapore', 'Japan', 'Korea', 'Turkey', 'UAE', 'Malaysia', 'Spain', 'Monaco', 'Azerbaijan', 'Austria', 'Belgium', 'France', 'Germany', 'Hungary', 'Italy', 'UK' ) AND T3.year = 2010",moderate,"SELECT COUNT(T2.raceId) 
+FROM circuits AS T1 
+INNER JOIN races AS T2 ON T2.circuitId = T1.circuitId 
+WHERE {{
+    LLMMap(
+        'Is the location outside Asia and Europe?',
+        'T1::location'
+    )
+}} = TRUE
+AND T2.year = 2010
+"
+formula_1,Please give the names of the races held on the circuits in Spain.,Spain is a name of country;,SELECT DISTINCT T2.name FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.country = 'Spain',simple,"SELECT DISTINCT T2.name 
+FROM circuits AS T1 
+INNER JOIN races AS T2 ON T2.circuitId = T1.circuitId 
+WHERE {{
+    LLMMap(
+        'Provide the country name.',
+        'T1::location'
+    )
+}} = 'Spain'
+"
+formula_1,What is the location coordinates of the circuits for Australian grand prix?,"coordinates refers to (lat, lng);","SELECT DISTINCT T1.lat, T1.lng FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T2.name = 'Australian Grand Prix'",simple,"WITH location_data AS (
+SELECT *, {{
+    LLMMap(
+        'Provide the latitude based on location (float).',
+        'circuits::location'
+        )
+    }} AS lat, {{
+    LLMMap(
+        'Provide the longitude based on location (float).',
+        'circuits::location'
+    )
+}} AS lng
+FROM circuits
+)
+SELECT DISTINCT location_data.lat, location_data.lng
+FROM location_data INNER JOIN races AS T2 ON T2.circuitId = location_data.circuitId
+WHERE T2.name = 'Australian Grand Prix'
+"
+formula_1,Where can I find the information about the races held on Sepang International Circuit?,information about races refers to url;,SELECT DISTINCT T1.url FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Sepang International Circuit',simple,"SELECT DISTINCT {{
+    LLMMap(
+        'Provide the wiki url.',
+        'circuits::name'
+    )
+}} AS url
+FROM circuits INNER JOIN races AS T2 ON T2.circuitId = circuits.circuitId
+WHERE circuits.name = 'Sepang International Circuit'
+"
+formula_1,Give the coordinate position for Abu Dhabi Grand Prix.,"coordinates refers to (lat, lng); position and location shares the same meaning.","SELECT DISTINCT T1.lat, T1.lng, T1.location FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T2.name = 'Abu Dhabi Grand Prix'",simple,"WITH location_data AS (
+SELECT *, {{
+    LLMMap(
+        'Provide the latitude based on location (float).',
+        'circuits::location'
+        )
+    }} AS lat, {{
+    LLMMap(
+        'Provide the longitude based on location (float).',
+        'circuits::location'
+    )
+}} AS lng
+FROM circuits
+)
+SELECT DISTINCT location_data.lat, location_data.lng
+FROM location_data INNER JOIN races AS T2 ON T2.circuitId = location_data.circuitId
+WHERE T2.name = 'Abu Dhabi Grand Prix'
+"
+formula_1,Which country is the constructor which got 1 point in the race No. 24 from?,race number refers to raceId;,SELECT T2.nationality FROM constructorResults AS T1 INNER JOIN constructors AS T2 ON T2.constructorId = T1.constructorId WHERE T1.raceId = 24 AND T1.points = 1,simple,"SELECT {{
+    LLMMap(
+        'Provide the nationality.',
+        'constructors::name'
+    )
+}} AS nationality
+FROM constructorResults AS T1 INNER JOIN constructors ON constructors.constructorId = T1.constructorId
+WHERE T1.raceId = 24 AND T1.points = 1
+"
+formula_1,"For the driver who had the Q2 time as 0:01:40 in the qualifying race No. 355, what is his nationality?",race number refers to raceId;,SELECT DISTINCT T2.nationality FROM qualifying AS T1 INNER JOIN drivers AS T2 ON T2.driverId = T1.driverId WHERE T1.raceId = 355 AND T1.q2 LIKE '1:40%',simple,"WITH driver_data AS (
+    SELECT DISTINCT T2.forename || ' ' || T2.surname AS key
+    FROM qualifying AS T1 
+    INNER JOIN drivers AS T2 ON T2.driverId = T1.driverId
+    WHERE T1.raceId = 355 AND T1.q2 LIKE '1:40%'
+)
+SELECT DISTINCT {{
+    LLMMap(
+        'Provide the nationality.',
+        'driver_data::key'
+    )
+}} AS nationality
+FROM driver_data
+"
+formula_1,Show me the season page of year when the race No. 901 took place.,race number refers to raceId;,SELECT T2.url FROM races AS T1 INNER JOIN seasons AS T2 ON T2.year = T1.year WHERE T1.raceId = 901,simple,"WITH race_data AS (
+    SELECT DISTINCT T1.name || ' ' || T1.year AS key,
+    FROM races AS T1
+    INNER JOIN seasons AS T2 ON T2.year = T1.year
+    WHERE T1.raceId = 901
+)
+SELECT {{
+    LLMMap(
+        'Provide the wiki season URL.',
+        'race_data::key'
+    )
+}} AS season_url
+FROM race_data
+"
+formula_1,"For all the drivers who finished the game in race No. 592, who is the top 3 oldest?",drivers who finished the race refers to time is not empty; oldest driver refers to oldest dob;,"SELECT T1.forename, T1.surname FROM drivers AS T1 INNER JOIN results AS T2 ON T2.driverId = T1.driverId WHERE T2.raceId = 592 AND T2.time IS NOT NULL AND T1.dob IS NOT NULL ORDER BY T1.dob ASC LIMIT 3",moderate,"WITH driver_data AS (
+    SELECT DISTINCT T1.forename, T1.surname, T1.forename || ' ' || T1.surname AS key
+    FROM drivers AS T1
+    INNER JOIN results AS T2 ON T2.driverId = T1.driverId
+    WHERE T2.raceId = 592 AND T2.time IS NOT NULL
+)
+SELECT driver_data.forename, driver_data.surname 
+FROM driver_data
+ORDER BY {{
+    LLMMap(
+        'Provide the date of birth.',
+        'driver_data::key'
+    )
+}} ASC LIMIT 3
+"
+formula_1,Who was the player that got the lap time of 0:01:27 in the race No. 161? Show his introduction website.,player and driver are synonyms; race number refers to raceId; introduction website of the drivers refers to url;,"SELECT DISTINCT T2.forename, T2.surname, T2.url FROM lapTimes AS T1 INNER JOIN drivers AS T2 ON T2.driverId = T1.driverId WHERE T1.raceId = 161 AND T1.time LIKE '1:27%'",moderate,"WITH driver_data AS (
+    SELECT DISTINCT T2.driverId, T2.forename, T2.surname, T2.forename || ' ' || T2.surname AS key
+    FROM lapTimes AS T1 INNER JOIN drivers AS T2 ON T2.driverId = T1.driverId
+    WHERE T1.raceId = 161 AND T1.time LIKE '1:27%'
+)
+SELECT DISTINCT driver_data.forename, driver_data.surname, {{
+        LLMMap(
+            'Provide the wiki url.',
+            'driver_data::key'
+        )
+    }} AS person_url
+FROM driver_data
+"
+formula_1,"For the top 5 driver who set the fastest lap speed in race No.933, where do they come from?",fastest lap speed refers to MAX(fastestLapSpeed);,SELECT T1.nationality FROM drivers AS T1 INNER JOIN results AS T2 ON T2.driverId = T1.driverId WHERE T2.raceId = 933 AND T2.fastestLapTime IS NOT NULL ORDER BY T2.fastestLapSpeed DESC LIMIT 5,simple,"WITH driver_data AS (
+    SELECT DISTINCT T1.forename || ' ' || T1.surname AS key, fastestLapSpeed
+    FROM drivers AS T1 INNER JOIN results AS T2 ON T2.driverId = T1.driverId
+    WHERE T2.raceId = 933 AND T2.fastestLapTime IS NOT NULL
+)
+SELECT {{
+    LLMMap(
+        'Provide the nationality.',
+        'driver_data::key'
+    )
+}} AS nationality
+FROM driver_data
+ORDER BY driver_data.fastestLapSpeed DESC
+LIMIT 5
+"
+formula_1,"For the driver who had the Q2 time as 0:01:15 in race No. 347, where is he from?",race number refers to raceId;,SELECT DISTINCT T2.nationality FROM qualifying AS T1 INNER JOIN drivers AS T2 ON T2.driverId = T1.driverId WHERE T1.raceId = 347 AND T1.q2 LIKE '1:15%',simple,"{{
+    LLMQA(
+        'Where is he from?',
+        (SELECT DISTINCT T2.forename || ' ' ||T2.surname 
+        FROM qualifying AS T1 INNER JOIN drivers AS T2 ON T2.driverId = T1.driverId 
+        WHERE T1.raceId = 347 AND T1.q2 LIKE '1:15%')
+        )
+}}"
+formula_1,"For all the drivers who finished the game in race No. 872, who are the 5 youngest?",race number refers to raceId; drivers who finished the race refers to time has value; the youngest is a driver where MAX(dob);,"SELECT T1.forename, T1.surname FROM drivers AS T1 INNER JOIN results AS T2 ON T2.driverId = T1.driverId WHERE T2.raceId = 872 AND T2.time IS NOT NULL ORDER BY T1.dob DESC LIMIT 5",moderate,"WITH driver_data AS (
+    SELECT DISTINCT  T1.forename || ' ' || T1.surname AS key, T1.forename, T1.surname
+    FROM drivers AS T1 INNER JOIN results AS T2 ON T2.driverId = T1.driverId
+    WHERE T2.raceId = 872 AND T2.time IS NOT NULL
+)
+
+SELECT 
+    driver_data.forename, 
+    driver_data.surname
+FROM driver_data
+ORDER BY {{
+    LLMMap(
+        'Provide the date of birth.',
+        'driver_data::key'
+    )
+}} DESC LIMIT 5
+"
+formula_1,"For the drivers who took part in the race in 1983/7/16, what's their race completion rate?","DIVIDE(COUNT(driverid where time has value and date = '1983-07-16'), (COUNT(driverid where date = '1983-07-16')) as percentage",SELECT CAST(COUNT(CASE WHEN T2.time IS NOT NULL THEN T2.driverId END) AS REAL) * 100 / COUNT(T2.driverId) FROM races AS T1 INNER JOIN results AS T2 ON T2.raceId = T1.raceId WHERE T1.date = '1983-07-16',moderate,"WITH temp AS (
+    SELECT *, year||' '||name AS key
+    FROM races
+)
+SELECT CAST(COUNT(CASE WHEN T2.time IS NOT NULL THEN T2.driverId END) AS REAL) * 100 / COUNT(T2.driverId)
+FROM temp INNER JOIN results AS T2 ON T2.raceId = temp.raceId
+WHERE temp.year = 1983 AND {{
+    LLMMap(
+        'Was the race on 07-16?',
+        'temp::key'
+    )
+}} = TRUE
+"
+formula_1,Where is Malaysian Grand Prix held? Give the location coordinates.,"coordinates refers to (lat, lng);","SELECT DISTINCT T1.lat, T1.lng FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T2.name = 'Malaysian Grand Prix'",simple,"WITH location_data AS (
+SELECT *, {{
+    LLMMap(
+        'Provide the latitude based on location (float).',
+        'circuits::location'
+        )
+    }} AS lat, {{
+    LLMMap(
+        'Provide the longitude based on location (float).',
+        'circuits::location'
+    )
+}} AS lng
+FROM circuits
+)
+SELECT DISTINCT location_data.lat, location_data.lng
+FROM location_data INNER JOIN races AS T2 ON T2.circuitId = location_data.circuitId
+WHERE T2.name = 'Malaysian Grand Prix'
+"
+formula_1,"For the top 10 constructor which got the highest point in the race No. 9 , what is its introduction website?",race number refers to raceId; introduction website of the constructor refers to url;,SELECT T2.url FROM constructorResults AS T1 INNER JOIN constructors AS T2 ON T2.constructorId = T1.constructorId WHERE T1.raceId = 9 ORDER BY T1.points DESC LIMIT 10,moderate,"SELECT {{
+    LLMMap(
+        'Provide the wiki url.',
+        'constructors::name'
+    )
+}} AS person_url
+FROM constructorResults AS T1 INNER JOIN constructors ON constructors.constructorId = T1.constructorId
+WHERE T1.raceId = 9
+ORDER BY T1.points DESC LIMIT 10
+"
+formula_1,"In the race No. 45, for the driver who had the Q3 time as 0:01:33, what is his abbreviated code?",race number refers to raceId;,SELECT T2.code FROM qualifying AS T1 INNER JOIN drivers AS T2 ON T2.driverId = T1.driverId WHERE T1.raceId = 45 AND T1.q3 LIKE '1:33%',simple,"WITH driver_data AS (
+    SELECT DISTINCT T2.forename || ' ' || T2.surname AS key
+    FROM qualifying AS T1
+    INNER JOIN drivers AS T2 ON T2.driverId = T1.driverId
+    WHERE T1.raceId = 45 AND T1.q3 LIKE '1:33%'
+)
+SELECT {{
+    LLMMap(
+        'Provide the F1 driver abbreviated code.',
+        'driver_data::key'
+    )
+}} AS driver_code
+FROM driver_data
+"
+formula_1,Show me the season page of year when the race No. 901 took place.,race number refers to raceId;,SELECT T2.url FROM races AS T1 INNER JOIN seasons AS T2 ON T2.year = T1.year WHERE T1.raceId = 901,simple,"WITH race_data AS (
+    SELECT DISTINCT T1.year || ' ' || T1.name AS key
+    FROM races AS T1
+    WHERE T1.raceId = 901
+)
+SELECT {{
+    LLMMap(
+        'Provide the wiki season URL.',
+        'race_data::key'
+    )
+}} AS season_url
+FROM race_data
+"
+formula_1,"For the race happened in 2015/11/29, how many drivers finished the game?",,SELECT COUNT(T2.driverId) FROM races AS T1 INNER JOIN results AS T2 ON T2.raceId = T1.raceId WHERE T1.date = '2015-11-29' AND T2.time IS NOT NULL,simple,"WITH race_data AS (
+    SELECT DISTINCT T2.driverId, T1.year || ' ' || T1.name AS key
+    FROM races AS T1 INNER JOIN results AS T2 ON T2.raceId = T1.raceId
+    AND T2.time IS NOT NULL
+)
+SELECT COUNT(driverId)
+FROM race_data
+WHERE {{
+    LLMMap(
+        'Was the race on 2015-11-29?',
+        'race_data::key'
+    )
+}} = TRUE
+"
+formula_1,"For the driver who set the fastest lap speed, what is his nationality?","the fastest lap speed refers to (MAX) fastestLapSpeed
+
+SQL mentions raceId = 348, that is not in the question",SELECT T1.nationality FROM drivers AS T1 INNER JOIN results AS T2 ON T2.driverId = T1.driverId WHERE T2.fastestLapTime IS NOT NULL ORDER BY T2.fastestLapSpeed DESC LIMIT 1,moderate,"WITH race_data AS (
+    SELECT *, T1.year || ' ' || T1.name AS key
+    FROM races AS T1
+    WHERE T1.year = (SELECT DISTINCT MIN(year) FROM races)
+), earliest_month AS (
+    SELECT {{
+        LLMQA(
+            'Earliest month of these races?',
+            'SELECT Name, year FROM races WHERE year = (SELECT MIN(year) FROM races);',
+            options='1;2;3;4;5;6;7;8;9;10;11;12'
+        )
+    
+    }} AS month
+)
+SELECT name
+FROM race_data, earliest_month
+WHERE {{
+    LLMMap(
+        'Provide the month of the race.',
+        'race_data::key',
+        options='1;2;3;4;5;6;7;8;9;10;11;12'
+    )
+}} = earliest_month.month
+"
+formula_1,Name the first race recorded. What are the other races that happened within the same month and year of that race.,the first race refers to year = year(min(date)) and month = month(min(date));,"SELECT name FROM races WHERE STRFTIME('%Y', date) = ( SELECT STRFTIME('%Y', date) FROM races ORDER BY date ASC LIMIT 1 ) AND STRFTIME('%m', date) = ( SELECT STRFTIME('%m', date) FROM races ORDER BY date ASC LIMIT 1 )",moderate,"WITH race_data AS (
+    SELECT T1.year || ' ' || T1.name AS key, T1.name, T1.round
+    FROM races AS T1
+    WHERE T1.year = 1999
+)
+SELECT 
+    race_data.name, 
+    {{
+        LLMMap(
+            'Provide the race date.',
+            'race_data::key'
+        )
+    }} AS date
+FROM race_data
+ORDER BY race_data.round DESC
+LIMIT 5
+"
+formula_1,State the name and date of the last 5 rounds of race in year 1999.,the last round refers to max(round);,"SELECT name, date FROM races WHERE year = 1999 ORDER BY round DESC LIMIT 5",simple,"WITH race_data AS (
+    SELECT T2.year || ' ' || T2.name AS key
+    FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitId = T1.circuitId
+    WHERE T1.name = 'Brands Hatch' AND T2.name = 'British Grand Prix' 
+    ORDER BY T2.year DESC LIMIT 3
+)
+SELECT {{
+        LLMMap(
+            'Provide the race date.',
+            'race_data::key'
+        )
+    }} AS date
+FROM race_data
+"
+formula_1,When was the last three f1 season whereby Brands Hatch hosted the British Grand Prix?,the last refers to max(year);,SELECT T2.date FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.name = 'Brands Hatch' AND T2.name = 'British Grand Prix' ORDER BY T2.year DESC LIMIT 3,simple,"WITH driver_data AS (
+    SELECT T1.driverId, T1.forename, T1.surname, T1.forename || ' ' || T1.surname AS key
+    FROM drivers AS T1
+)
+SELECT  driver_data.forename, driver_data.surname, {{
+        LLMMap(
+            'Provide the nationality based on driver name',
+            'driver_data::key'
+        )
+    }} AS nationality,
+    AVG(T2.points) AS avg_points
+FROM driver_data INNER JOIN driverStandings AS T2 ON T2.driverId = driver_data.driverId
+WHERE T2.wins = 1
+GROUP BY driver_data.forename, driver_data.surname, nationality
+ORDER BY COUNT(T2.wins) DESC
+LIMIT 10
+"
+formula_1,Name the top 10 driver with the most winning. Mention his nationality and what is his average point scores.,the most winning refers to MAX(COUNT(wins)); avg(points);,"SELECT T1.forename, T1.surname, T1.nationality, AVG(T2.points) FROM drivers AS T1 INNER JOIN driverStandings AS T2 ON T2.driverId = T1.driverId WHERE T2.wins = 1 GROUP BY T1.forename, T1.surname, T1.nationality ORDER BY COUNT(T2.wins) DESC LIMIT 10",moderate,"WITH driver_data AS (
+    SELECT T1.driverId, T1.forename, T1.surname, T1.forename || ' ' || T1.surname AS key
+    FROM drivers AS T1
+)
+SELECT  driver_data.forename, driver_data.surname, {{
+        LLMMap(
+            'Provide the nationality.',
+            'driver_data::key'
+        )
+    }} AS nationality,
+    AVG(T2.points) AS avg_points
+FROM driver_data
+INNER JOIN driverStandings AS T2 ON T2.driverId = driver_data.driverId
+WHERE T2.wins = 1
+GROUP BY driver_data.forename, driver_data.surname, nationality
+ORDER BY COUNT(T2.wins) DESC
+LIMIT 10
+"
+formula_1,How old is the youngest 8 Japanese driver? What are their names?,"youngest Japanese driver refers to max(dob); Japanese refers to nationality = 'Japanese'; age = 2022-year(dob)+1
+","SELECT STRFTIME('%Y', CURRENT_TIMESTAMP) - STRFTIME('%Y', dob), forename , surname FROM drivers WHERE nationality = 'Japanese' ORDER BY dob DESC LIMIT 8",simple,"WITH driver_data AS (
+SELECT T1.driverId, T1.forename, T1.surname, T1.forename || ' ' || T1.surname AS key
+FROM drivers AS T1
+), temp AS (
+SELECT *,{{
+    LLMMap(
+    'Provide the date of birth.',
+    'driver_data::key'
+    )
+}} AS dob
+from driver_data
+)
+SELECT STRFTIME('%Y', CURRENT_TIMESTAMP) - STRFTIME('%Y', dob), forename, surname 
+FROM temp
+WHERE {{
+    LLMMap(
+        'Provide the nationality.',
+        'temp::key'
+    )
+}} = 'Japanese'
+ORDER BY dob 
+DESC LIMIT 8
+"
+formula_1,List circuits which host 4 f1 races from year June 1990 to June 2000.,from year 1990 to 2000 refers to year(date) between 1990 and 2000;,"SELECT DISTINCT T1.name 
+FROM circuits AS T1 
+INNER JOIN races AS T2 
+ON T2.circuitID = T1.circuitID 
+WHERE STRFTIME('%Y-%m', T2.date) BETWEEN '1990-06' AND '2000-06' 
+GROUP BY T1.name 
+HAVING COUNT(T2.raceId) = 4;",moderate,"WITH race_data AS (
+    SELECT T2.raceId, T2.name, T2.year, T2.year || ' ' || T2.name AS key, T1.name AS circuit_name
+    FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitId = T1.circuitId
+)
+SELECT DISTINCT race_data.circuit_name
+FROM race_data WHERE STRFTIME('%Y-%m', {{
+    LLMMap(
+        'Provide the race date.',
+        'race_data::key'
+    )
+}}) BETWEEN '1990-06' AND '2000-06' 
+GROUP BY race_data.circuit_name
+HAVING COUNT(race_data.raceId) = 4
+"
+formula_1,List circuits in USA which hosted f1 races in 2006. State the name and location of circuit and the name of the race it hosted.,,"SELECT T1.name, T1.location, T2.name FROM circuits AS T1 INNER JOIN races AS T2 ON T2.circuitID = T1.circuitId WHERE T1.country = 'USA' AND T2.year = 2006",simple,"WITH circuit_data AS (
+    SELECT T1.circuitId, T1.name AS circuit_name, T1.location, T1.location || ' ' || T1.name AS key
+    FROM circuits AS T1
+)
+SELECT  circuit_data.circuit_name,  circuit_data.location, T2.name AS race_name
+FROM circuit_data INNER JOIN races AS T2 ON T2.circuitId = circuit_data.circuitId
+WHERE {{
+    LLMMap(
+        'Was it in USA?',
+        'circuit_data::key'
+    )
+}} = TRUE
+AND T2.year = 2006
+"

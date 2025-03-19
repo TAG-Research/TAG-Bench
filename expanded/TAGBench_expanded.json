@@ -1,0 +1,4101 @@
+[
+  {
+    "db": "cookbook",
+    "question": "How much Vitamin A is in the beef dish named after a type of fortified wine?",
+    "question_type": "Knowledge",
+    "answer": 14083.05
+  },
+  {
+    "db": "retail_complains",
+    "question": "Among all the clients from the city known as the Big Apple, how many have filed a complaint regarding issues with Deposits and withdrawals?",
+    "question_type": "Knowledge",
+    "answer": 461
+  },
+  {
+    "db": "retail_complains",
+    "question": "How many complaints on credit cards during the year of the U.S. presidential election when Trump was elected were filed by male clients?",
+    "question_type": "Knowledge",
+    "answer": 981
+  },
+  {
+    "db": "retail_complains",
+    "question": "What is the average number of complaints on credit cards filed by clients from the city known as the Big Apple during the three consecutive years starting from the year of the release of the movie 'The Force Awakens'?",
+    "question_type": "Knowledge",
+    "answer": 169.33333333333334
+  },
+  {
+    "db": "retail_complains",
+    "question": "List all the states in the region known for its historical ties to the Confederacy during the Civil War.",
+    "question_type": "Knowledge",
+    "answer": [
+      "Alabama",
+      "Arkansas",
+      "District of Columbia",
+      "Delaware",
+      "Florida",
+      "Georgia",
+      "Kentucky",
+      "Louisiana",
+      "Maryland",
+      "Mississippi",
+      "North Carolina",
+      "Oklahoma",
+      "South Carolina",
+      "Tennessee",
+      "Texas",
+      "Virginia"
+    ]
+  },
+  {
+    "db": "retail_complains",
+    "question": "Calculate the average age of clients from the region known for its Great Lakes and cornfields.",
+    "question_type": "Knowledge",
+    "answer": 46.358845671267254
+  },
+  {
+    "db": "retail_complains",
+    "question": "What is the medium through which most complaints are registered in the southeastern U.S. state known for its theme parks and beaches?",
+    "question_type": "Knowledge",
+    "answer": "Phone"
+  },
+  {
+    "db": "retail_complains",
+    "question": "Among the calls from the state known for Silicon Valley, what percentage are priority 1?",
+    "question_type": "Knowledge",
+    "answer": 17.0
+  },
+  {
+    "db": "social_media",
+    "question": "How many female users are there on the platform with the blue bird logo from the U.S. state known for its dairy production?",
+    "question_type": "Knowledge",
+    "answer": 136
+  },
+  {
+    "db": "movie_platform",
+    "question": "Name movie titles released in the year when World War II ended. Sort the listing by descending order of movie popularity.",
+    "question_type": "Knowledge",
+    "answer": "Brief Encounter"
+  },
+  {
+    "db": "movie_platform",
+    "question": "What is the average number of Mubi users who love movies directed by the filmmaker known for '2001: A Space Odyssey' and 'The Shining'?",
+    "question_type": "Knowledge",
+    "answer": 4233.1875
+  },
+  {
+    "db": "movie_platform",
+    "question": "Which year saw the release of the third film by the director known for 'Pulp Fiction'?",
+    "question_type": "Knowledge",
+    "answer": 1994
+  },
+  {
+    "db": "movie_platform",
+    "question": "How many movies directed by the filmmaker of 'The Godfather' have a popularity score exceeding 1,000?",
+    "question_type": "Knowledge",
+    "answer": 59709
+  },
+  {
+    "db": "movie_platform",
+    "question": "What is the average score of the movie about the historical event marking the end of World War II in Europe, reviewed the year before the pandemic started?",
+    "question_type": "Knowledge",
+    "answer": 2
+  },
+  {
+    "db": "movie_platform",
+    "question": "Which film directed by the renowned Iranian filmmaker known for his poetic style has the highest average score?",
+    "question_type": "Knowledge",
+    "answer": "Where Is the Friend's Home?"
+  },
+  {
+    "db": "movie_platform",
+    "question": "Who is the individual who compiled the list named after a David Bowie song? Was this person a subscriber at the time of its creation?",
+    "question_type": "Knowledge",
+    "answer": [
+      8784343,
+      1
+    ]
+  },
+  {
+    "db": "social_media",
+    "question": "How many reshared tweets are there in the state known for its large size and hosting the city of Austin?",
+    "question_type": "Knowledge",
+    "answer": 909
+  },
+  {
+    "db": "social_media",
+    "question": "Show the text of the tweet with the highest klout from the state known for its prestigious Ivy League university beginning with Y.",
+    "question_type": "Knowledge",
+    "answer": "RT @hmltn: .@JeffBezos is 10x cooler today. From the Amazon Web Services terms section 57.10 https://aws.amazon.com/service-terms/ https://t.co/p3IIQnVS"
+  },
+  {
+    "db": "university",
+    "question": "How many universities are there in the country known for having the Ivy League?",
+    "question_type": "Knowledge",
+    "answer": 273
+  },
+  {
+    "db": "university",
+    "question": "In the year when Pokemon Go became a global phenomenon, what is the name of the university in the Land Down Under with the highest score in Citations criteria?",
+    "question_type": "Knowledge",
+    "answer": "University of Melbourne"
+  },
+  {
+    "db": "university",
+    "question": "Compute the average score of the university situated in the largest country in South America.",
+    "question_type": "Knowledge",
+    "answer": 439.12666666666667
+  },
+  {
+    "db": "university",
+    "question": "How many female students were there at the prestigious university in California with a tree mascot during the year when Steve Jobs passed away?",
+    "question_type": "Knowledge",
+    "answer": 6550.32
+  },
+  {
+    "db": "university",
+    "question": "Name the most prestigious university in the country known for its tango and diverse landscapes.",
+    "question_type": "Knowledge",
+    "answer": "National University of Cordoba"
+  },
+  {
+    "db": "talkingdata",
+    "question": "How many events did male users, who were born the year the stock market crashed, participate in on the day known as Star Wars Day in 2016?",
+    "question_type": "Knowledge",
+    "answer": 52
+  },
+  {
+    "db": "talkingdata",
+    "question": "How many events in total have happened on the devices during the year when the Rio Olympics took place?",
+    "question_type": "Knowledge",
+    "answer": 3252950
+  },
+  {
+    "db": "talkingdata",
+    "question": "For the event that occurred late at night on the day after Cinco de Mayo in 2016, how many installed apps were involved?",
+    "question_type": "Knowledge",
+    "answer": 4828165
+  },
+  {
+    "db": "talkingdata",
+    "question": "Among the users who use the smartphone brand founded in 2004 known for its innovative camera technology and based in a country with the largest population in the world, calculate the percentage of those who are under 50 years old.",
+    "question_type": "Knowledge",
+    "answer": 0
+  },
+  {
+    "db": "talkingdata",
+    "question": "Among the users who are no longer teenagers, how many use the device model known for its unique rotating camera?",
+    "question_type": "Knowledge",
+    "answer": 5
+  },
+  {
+    "db": "car_retails",
+    "question": "How many checks were issued by Euro+ Shopping Channel during a year Greece hosted the Summer Olympics?",
+    "question_type": "Knowledge",
+    "answer": 6
+  },
+  {
+    "db": "car_retails",
+    "question": "State the email of those who are staff of the individual with employee ID 1002, residing in the city known for the Golden Gate Bridge.",
+    "question_type": "Knowledge",
+    "answer": [
+      "mpatterso@classicmodelcars.com",
+      "jfirrelli@classicmodelcars.com"
+    ]
+  },
+  {
+    "db": "car_retails",
+    "question": "Determine the codes of employees who are working in the northeastern state known for the city of Boston.",
+    "question_type": "Knowledge",
+    "answer": [
+        1188,
+        1216
+    ]
+  },
+  {
+    "db": "car_retails",
+    "question": "Determine the emails of employees working in the U.S. state known for Hollywood and Silicon Valley.",
+    "question_type": "Knowledge",
+    "answer": [
+        "abow@classicmodelcars.com",
+        "dmurphy@classicmodelcars.com",
+        "jfirrelli@classicmodelcars.com",
+        "ljennings@classicmodelcars.com",
+        "lthompson@classicmodelcars.com",
+        "mpatterso@classicmodelcars.com"
+    ]
+  },
+  {
+    "db": "car_retails",
+    "question": "How many customers located in the country known for fjords and have a credit line below 220,000?",
+    "question_type": "Knowledge",
+    "answer": 1
+  },
+  {
+    "db": "car_retails",
+    "question": "Calculate the total quantity ordered for the antique horse-drawn vehicle from the era of powdered wigs and the average price.",
+    "question_type": "Knowledge",
+    "answer": [
+      907,
+      94.07780595369347
+    ]
+  },
+  {
+    "db": "car_retails",
+    "question": "Which customer purchased the late 1930s model of the Chevrolet known for its sleek design at the highest price?",
+    "question_type": "Knowledge",
+    "answer": "Kelly's Gift Shop"
+  },
+  {
+    "db": "law_episode",
+    "question": "How many awards has the creator of the crime drama series 'Law & Order: Criminal Intent' been nominated for?",
+    "question_type": "Knowledge",
+    "answer": 6
+  },
+  {
+    "db": "law_episode",
+    "question": "How many episodes featured the actor who played the strict prison guard on the show 'Oz'?",
+    "question_type": "Knowledge",
+    "answer": 8
+  },
+  {
+    "db": "law_episode",
+    "question": "How many awards has the actress known for her role in 'Pretty Woman' been nominated for?",
+    "question_type": "Knowledge",
+    "answer": 1
+  },
+  {
+    "db": "law_episode",
+    "question": "How many people, who were born in the country known for its maple syrup, won an award during the year when Prince announced his symbolic name change?",
+    "question_type": "Knowledge",
+    "answer": 2
+  },
+  {
+    "db": "law_episode",
+    "question": "Among the episodes that were aired during the year the Winter Olympics were held in Nagano, how many won an International Monitor Awards?",
+    "question_type": "Knowledge",
+    "answer": 5
+  },
+  {
+    "db": "law_episode",
+    "question": "How many roles did the actress known for 'Pretty Woman' play in the series?",
+    "question_type": "Knowledge",
+    "answer": 1
+  },
+  {
+    "db": "law_episode",
+    "question": "What is the full place of birth of the creator of the TV series 'Law & Order: Criminal Intent'?",
+    "question_type": "Knowledge",
+    "answer": [
+      "Montreal",
+      "Quebec"
+    ]
+  },
+  {
+    "db": "law_episode",
+    "question": "How many actors were born in the country known for Hollywood?",
+    "question_type": "Knowledge",
+    "answer": 330
+  },
+  {
+    "db": "law_episode",
+    "question": "How many episodes feature the actor known for portraying Detective Lennie Briscoe in the long-running crime drama series?",
+    "question_type": "Knowledge",
+    "answer": 24
+  },
+  {
+    "db": "restaurant",
+    "question": "List all the cities in the California county famous for its wine production.",
+    "question_type": "Knowledge",
+    "answer": [
+      "bodega bay",
+      "cotati",
+      "forestville",
+      "glen ellen",
+      "healdsburg",
+      "jenner",
+      "kenwood",
+      "pengrove",
+      "petaluma",
+      "rohnert park",
+      "santa rosa",
+      "sebastopol",
+      "sonoma"
+    ]
+  },
+  {
+    "db": "restaurant",
+    "question": "In how many counties can you find a street named after the ancient Roman road that connected Rome to Brindisi?",
+    "question_type": "Knowledge",
+    "answer": 2
+  },
+  {
+    "db": "restaurant",
+    "question": "Calculate the average rating of reviews for restaurants in the coastal county known for its boardwalk and surfing culture in California.",
+    "question_type": "Knowledge",
+    "answer": 2.29608695652174
+  },
+  {
+    "db": "restaurant",
+    "question": "What percentage of restaurants in the county known for the Monterey Bay Aquarium offer Mexican cuisine?",
+    "question_type": "Knowledge",
+    "answer": 12.5
+  },
+  {
+    "db": "restaurant",
+    "question": "What is the percentage of restaurants that serve American food in the capital of Ireland?",
+    "question_type": "Knowledge",
+    "answer": 0.0
+  },
+  {
+    "db": "restaurant",
+    "question": "Find the percentage of restaurants in the region famous for its wine production in Northern California.",
+    "question_type": "Knowledge",
+    "answer": 0.0
+  },
+  {
+    "db": "restaurant",
+    "question": "In which region can you find the highest number of ice cream shops from the brand known for pink and blue logo?",
+    "question_type": "Knowledge",
+    "answer": "bay area"
+  },
+  {
+    "db": "synthea",
+    "question": "For how long was Elly Koss required to take the over-the-counter medication commonly recommended for pain relief and fever reduction sometimes branded as Tylenol?",
+    "question_type": "Knowledge",
+    "answer": 10.0
+  },
+  {
+    "db": "synthea",
+    "question": "Why did Elly Koss need to take a common over-the-counter pain reliever and fever reducer sometimes known as Ofirmev?",
+    "question_type": "Knowledge",
+    "answer": "Acute bronchitis (disorder)"
+  },
+  {
+    "db": "synthea",
+    "question": "How many patients have billable periods during the year when the first iPad was released?",
+    "question_type": "Knowledge",
+    "answer": 873
+  },
+  {
+    "db": "synthea",
+    "question": "List down the encounter descriptions of patients who were born in the city known for being the largest in Berkshire County, Massachusetts, USA.",
+    "question_type": "Knowledge",
+    "answer": [
+      "Outpatient Encounter",
+      "Encounter for symptom",
+      "Death Certification",
+      "Prenatal visit",
+      "Obstetric emergency hospital admission",
+      "Prenatal initial visit",
+      "Emergency room admission",
+      "Encounter for 'check-up'",
+      "Non-urgent orthopedic admission",
+      "Patient-initiated encounter",
+      "Consultation for treatment",
+      "Patient encounter procedure"
+    ]
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How many players are from the country known for its iconic Sydney Opera House?",
+    "question_type": "Knowledge",
+    "answer": 72
+  },
+  {
+    "db": "soccer_2016",
+    "question": "Which country is the city known for being the capital of Jharkhand located in?",
+    "question_type": "Knowledge",
+    "answer": "India"
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How many umpires hail from the country known for its rugby and diamond production?",
+    "question_type": "Knowledge",
+    "answer": 5
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How many Orange Cap awards were won by the explosive West Indies batsman known for his powerful batting performances in the IPL?",
+    "question_type": "Knowledge",
+    "answer": 2
+  },
+  {
+    "db": "soccer_2016",
+    "question": "Which venue did the IPL team known for wearing purple and gold play most of their matches as the home team?",
+    "question_type": "Knowledge",
+    "answer": "Eden Gardens"
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How many players with a left-hand batting style are from the country home to the Taj Mahal?",
+    "question_type": "Knowledge",
+    "answer": 61
+  },
+  {
+    "db": "soccer_2016",
+    "question": "Give the country where the national football center of England is located.",
+    "question_type": "Knowledge",
+    "answer": "South Africa"
+  },
+  {
+    "db": "soccer_2016",
+    "question": "List the player's names of the Indian Premier League team now captained by Rohit Sharma in match with ID 335990.",
+    "question_type": "Knowledge",
+    "answer": "Mumbai Indians"
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How many of the cricket matches required a tiebreaker involving an extra over?",
+    "question_type": "Knowledge",
+    "answer": 6
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How many cities are located in the country where Nelson Mandela served as president?",
+    "question_type": "Knowledge",
+    "answer": 8
+  },
+  {
+    "db": "soccer_2016",
+    "question": "Provide the point of the winning margin in a match between the team known for its blue jersey from the city famous for Bollywood and the team from the city known as the Silicon Valley of India on May 28, 2008",
+    "question_type": "Knowledge",
+    "answer": 9
+  },
+  {
+    "db": "soccer_2016",
+    "question": "Among players born the same year the first Star Wars movie was released, what is the percentage of those who have held the role of a captain?",
+    "question_type": "Knowledge",
+    "answer": 18.902439024390244
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How many times did the cricketer known for hitting six sixes in an over during a World Cup match receive the Man of the Match award?",
+    "question_type": "Knowledge",
+    "answer": 4
+  },
+  {
+    "db": "soccer_2016",
+    "question": "Among the matches held in Bombay, what percentage took place in the stadium home to the Mumbai Indians IPL team?",
+    "question_type": "Knowledge",
+    "answer": 63.63636363636363
+  },
+  {
+    "db": "soccer_2016",
+    "question": "Count the total venues located in the city that contains the Aga Khan Palace.",
+    "question_type": "Knowledge",
+    "answer": 0.0
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How many players are older than the Indian cricketer born in Muktsar, Punjab, who made his IPL debut with the Kings XI Punjab?",
+    "question_type": "Knowledge",
+    "answer": 392
+  },
+  {
+    "db": "soccer_2016",
+    "question": "List the names of all umpires from the country known for its indigenous Maori culture and breathtaking landscapes.",
+    "question_type": "Knowledge",
+    "answer": [
+      "BF Bowden",
+      "GAV Baxter",
+      "CB Gaffaney",
+      "AL Hill"
+    ]
+  },
+  {
+    "db": "soccer_2016",
+    "question": "In which venue did the IPL team that was captained by Jayawardene in 2011 play most of their matches?",
+    "question_type": "Knowledge",
+    "answer": [
+      "Holkar Cricket Stadium",
+      "Nehru Stadium"
+    ]
+  },
+  {
+    "db": "soccer_2016",
+    "question": "Tally the match IDs in which the player nicknamed Chiku, known for captaining India's national cricket team is the 'Man of the Match'.",
+    "question_type": "Knowledge",
+    "answer": [
+      501232,
+      501237,
+      598022,
+      598053,
+      598073,
+      829812,
+      980942,
+      980974,
+      981000,
+      981004,
+      981016
+    ]
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How many cities are in the country known for its oil wealth and iconic skyscrapers in the Middle East?",
+    "question_type": "Knowledge",
+    "answer": 1
+  },
+  {
+    "db": "soccer_2016",
+    "question": "List the names of all the umpires from the country known for its historic cricket rivalry with Australia.",
+    "question_type": "Knowledge",
+    "answer": [
+      "MR Benson",
+      "SJ Davis",
+      "NJ Llong",
+      "RK Illingworth"
+    ]
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How many matches did the team that won the inaugural Indian Premier League season play in its eighth season?",
+    "question_type": "Knowledge",
+    "answer": 14
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How many matches were held during the year when India won the Cricket World Cup?",
+    "question_type": "Knowledge",
+    "answer": 73
+  },
+  {
+    "db": "soccer_2016",
+    "question": "What is the average winning margin of the matches held in the stadium located in Cape Town, renowned for its scenic mountain backdrop?",
+    "question_type": "Knowledge",
+    "answer": 27.166666666666668
+  },
+  {
+    "db": "soccer_2016",
+    "question": "How old is the former captain of the Indian cricket team, who later became the BCCI president, in the year of the Beijing Olympics?",
+    "question_type": "Knowledge",
+    "answer": 36
+  },
+  {
+    "db": "soccer_2016",
+    "question": "Among the matches of the IPL team now known as the Capitals during the second season of the tournament, what is the percentage of their matches won by wickets?",
+    "question_type": "Knowledge",
+    "answer": 67.85714285714286
+  },
+  {
+    "db": "cs_semester",
+    "question": "How many professors are more popular than the renowned Chinese computer scientist known for his contributions to machine learning and founder of the LAMDA group at Nanjing University?",
+    "question_type": "Knowledge",
+    "answer": 5
+  },
+  {
+    "db": "book_publishing_company",
+    "question": "What is the title with the most ordered quantity during the year when the Olympic basketball dream team was assembled?",
+    "question_type": "Knowledge",
+    "answer": "Onions, Leeks, and Garlic: Cooking Secrets of the Mediterranean"
+  },
+  {
+    "db": "book_publishing_company",
+    "question": "Among the stores that have ordered the book Life Without Fear, how many of them are located in the state known for Harvard University?",
+    "question_type": "Knowledge",
+    "answer": 0
+  },
+  {
+    "db": "book_publishing_company",
+    "question": "How many sales did the store in the town known for its famous annual jazz festival make?",
+    "question_type": "Knowledge",
+    "answer": 6
+  },
+  {
+    "db": "book_publishing_company",
+    "question": "Name the top five titles that exceeded typical sales and list them in descending order of the number of sales in stores located in the Golden State?",
+    "question_type": "Knowledge",
+    "answer": [
+      "Secrets of Silicon Valley",
+      "But Is It User Friendly?",
+      "Cooking with Computers: Surreptitious Balance Sheets"
+    ]
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Which League had the most matches end as draw in the 2016 season?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "What is the average height of players born between 1990 and 1995?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "List the top 10 players' names whose heights are above 180 in descending order of average heading accuracy.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Which league had the most goals in the 2016 season?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "In Scotland Premier League, which away team won the most during the 2010 season?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "At present, calculate for the player's age who have a sprint speed of no less than 97 between 2013 to 2015.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Give the name of the league with the highest matches of all time and how many matches were played in the said league.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Calculate the percentage of unique players who prefer left foot, who were born between 1987 and 1992.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "List the top 5 leagues in ascending order of the number of goals made in all seasons combined.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "List the name of leagues in which the average goals by the home team is higher than the away team in the 2009/2010 season.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "What is the short name of the football team Queens Park Rangers?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "List the football players with a birthyear of 1970 and a birthmonth of October.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "How many matches in the 2015/2016 season were held in Scotland Premier League\n?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "What is the preferred foot when attacking of the youngest football player?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Among all the players whose weight is under 130, how many of them preferred foot in attacking is left?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "List the football teams that has a chance creation passing class of Risky. Inidcate its short name only.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "When is the birthday of the football player who has the highest overall rating?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "What is the name of the football league in the country of Netherlands?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Calculate the average home team goal in the 2010/2011 season in the country of Poland.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Who has the highest average finishing rate between the highest and shortest football player?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Please list player names which are higher than 180.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "How many players were born after 1990?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "List out of players whose preferred foot is left.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Please list all team short names which the speed class is fast.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "What is the passing class of CLB team?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Which football player has the shortest height?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Which teams have build up play passing more than 70? Please list their short names.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "From 2010 to 2015, what was the average overall rating of players who are higher than 170?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "european_football_2_masked",
+    "question": "Which country is the league Italy Serie A from?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Where can the introduction of the races held on Circuit de Barcelona-Catalunya be found?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Please give the name of the race held on the circuits in Germany.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "How many races in the year 2010 are held on grand prixs outside Asia and Europe?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Please give the names of the races held on the circuits in Spain.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "What is the location coordinates of the circuits for Australian grand prix?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Where can I find the information about the races held on Sepang International Circuit?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Give the coordinate position for Abu Dhabi Grand Prix.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Which country is the constructor which got 1 point in the race No. 24 from?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "For the driver who had the Q2 time as 0:01:40 in the qualifying race No. 355, what is his nationality?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Show me the season page of year when the race No. 901 took place.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "For all the drivers who finished the game in race No. 592, who is the top 3 oldest?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Who was the player that got the lap time of 0:01:27 in the race No. 161? Show his introduction website.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "For the top 5 driver who set the fastest lap speed in race No.933, where do they come from?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "For the driver who had the Q2 time as 0:01:15 in race No. 347, where is he from?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "For all the drivers who finished the game in race No. 872, who are the 5 youngest?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "For the drivers who took part in the race in 1983/7/16, what's their race completion rate?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Where is Malaysian Grand Prix held? Give the location coordinates.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "For the top 10 constructor which got the highest point in the race No. 9 , what is its introduction website?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "In the race No. 45, for the driver who had the Q3 time as 0:01:33, what is his abbreviated code?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Show me the season page of year when the race No. 901 took place.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "For the race happened in 2015/11/29, how many drivers finished the game?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "For the driver who set the fastest lap speed, what is his nationality?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Name the first race recorded. What are the other races that happened within the same month and year of that race.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "State the name and date of the last 5 rounds of race in year 1999.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "When was the last three f1 season whereby Brands Hatch hosted the British Grand Prix?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "Name the top 10 driver with the most winning. Mention his nationality and what is his average point scores.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "How old is the youngest 8 Japanese driver? What are their names?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "List circuits which host 4 f1 races from year June 1990 to June 2000.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "formula_1_masked",
+    "question": "List circuits in USA which hosted f1 races in 2006. State the name and location of circuit and the name of the race it hosted.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "How many superheroes have the super power of \"Super Strength\"?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Among the superheroes with the super power of \"Super Strength\", how many of them have a height of over 200cm?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "How many superheroes have blue eyes?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Please list the full names of all the superheroes with over 15 super powers.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "What is the colour of Apocalypse's skin?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "How many superheroes are published by Marvel Comics?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Among the superheroes with blue eyes, how many of them have the super power of \"Agility\"?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Please list the superhero names of all the superheroes that have blue eyes and blond hair.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "What is the publisher's name of Blue Beetle II?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Please give the full name of the tallest hero published by Marvel Comics.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Who is the publisher of Sauron?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Among the superheroes from Marvel Comics, how many of them have blue eyes?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "What is the average height of the superheroes from Marvel Comics?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Among the superheroes from Marvel Comics, what is the percentage of those who have the super power of \"Super Strength\"?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "How many superheroes did DC Comics publish?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "How many gold-eyed superheroes did Marvel Comics publish?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "What is Copycat's race?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "What are the names of the superheroes with the power of death touch?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "What is the name of the superhero that has the most powers?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "How many vampire superheroes are there?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "What is the percentage of superheroes who act in their own self-interest or make decisions based on their own moral code? Indicate how many of the said superheroes were published by Marvel Comics.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Between DC and Marvel Comics, which publisher has published more superheroes? Find the difference in the number of superheroes they have published.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "What is the eye colour of superhero with superhero ID 75?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Provide the superpowers of the superhero called Deathlok.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "What is the average weight of all female superheroes?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "List down at top five superpowers of male superheroes. order by occurances",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Give the name of the alien superheroes.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "Among the superheroes with height from 170 to 190, list the names of the superheroes with no eye color.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "superhero_masked",
+    "question": "How many bad superheroes are there?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "Please list the zip code of all the charter schools in Fresno County Office of Education.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "What is the unabbreviated mailing address (with city name) of the school with the highest FRPM count for K-12 students?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "Please list the phone numbers of the direct charter-funded schools that are opened after 2000/1/1.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "Among the schools with the SAT test takers of over 500, please list the schools that are magnet schools or offer a magnet program.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "Among the schools with the average score in Math over 560 in the SAT test, how many schools are directly charter-funded?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "Please list the phone numbers and cities of the schools with the top 10 SAT excellence rate.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "How many schools in merged Alameda have number of test takers less than 100?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "How many schools in Contra Costa (directly funded) have number of test takers not more than 250?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "In Los Angeles how many schools have more than 500 free meals but less than 700 free or reduced price meals for K-12?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "Which school in Contra Costa has the highest number of test takers?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "Name schools in Riverside which the average of average math score for SAT is grater than 400, what is the funding type of these schools?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "State the names and full communication address of high schools in Monterey which has more than 800 free or reduced price meals for ages 15-17?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "Consider the average difference between K-12 enrollment and 15-17 enrollment of schools that are locally funded, list number of entires which has a difference above this average.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "Which cities have the top 2 lowest enrollment number for students in grades 1 through 12?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "If there are any, what are the websites address of the schools with a free meal count of 1,910-2,000 to students aged 5-17? Include the name of the school.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "What is the administrator's email address of the chartered school with the fewest students enrolled in grades 1 through 12?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "What is the complete address of the 10 school with the lowest excellence rate? Indicate the Street, City, Zip and State.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "What are the webpages for the Los Angeles County school that has between 150 and 160 test takers?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "What is the average number of test takers from Fresno schools that opened between 1/1/1980 and 12/31/1980?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "Which exclusively virtual schools have the top 5 highest average reading scores?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "What is the average math score of the school with the lowest average score for all subjects, and in which county is it located?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "What is the average writing score of the school who has the highest number of test takers whose total SAT sscores are greater or equal to 1500? Indicate the city to where the school is situated.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "What is the monthly average number of schools that opened in Alameda County under the jurisdiction of the Elementary School District in 1980?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "What is the ratio of merged Unified School District schools in Orange County to merged Elementary School District schools?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "How many different county has the most number of closed schools? Please provide the number of unique schools.",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "What is the total number of schools whose total SAT scores are greater or equal to 1500 whose mailing city is Lakeport?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "How many test takers are there at the school/s whose city address is in Fresno?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "Of all the schools with a mailing state address in California, how many are active in San Joaquin?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "california_schools_masked",
+    "question": "How many students from the ages of 5 to 17 are enrolled at the State Special School school in Fremont for the 2014-2015 academic year?",
+    "question_type": "Knowledge",
+    "answer": "TODO"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/lemora_a_childs_tale_of_the_supernatural, among reviewers Josh Ralske, Emanuel Levy, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Josh Ralske"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/mega_shark_vs_giant_octopus, rank reviewers from most negative to most positive: Bill Gibron, Tim Robey, Kim Newman.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Tim Robey",
+      "Kim Newman",
+      "Bill Gibron"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1004790-countdown, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Roger Ebert",
+      "David Nusair"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_taking_of_deborah_logan_2014, among reviewers David Keyes, David Nusair, Steve \"Uncle Creepy\" Barton, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "David Keyes"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/i_still_see_you, among reviewers Simon Foster, Rex Reed, Roger Moore, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Rex Reed"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/pokemon_the_movie_mewtwo_strikes_back_evolution, rank reviewers from most negative to most positive: Josh Wilding, Miranda Sanchez, Mikel Zorrilla.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mikel Zorrilla",
+      "Miranda Sanchez",
+      "Josh Wilding"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_automatic_hate, rank reviewers from most negative to most positive: Alexander Lowe, Roger Moore, William Bibbiani.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Roger Moore",
+      "William Bibbiani",
+      "Alexander Lowe"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/national_lampoons_european_vacation, among reviewers Larry Carroll, Gerry Shamray, John J. Puccio, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "John J. Puccio"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/off_and_running_2010, rank reviewers from most negative to most positive: Kam Williams, Christopher Null, Jeannette Catsoulis.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jeannette Catsoulis",
+      "Christopher Null",
+      "Kam Williams"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1046655-skin_game, rank reviewers from most negative to most positive: Sarah Boslaugh, Mordaunt Hall, Dennis Schwartz.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Sarah Boslaugh",
+      "Mordaunt Hall",
+      "Dennis Schwartz"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/munyurangabo, among reviewers Roger Ebert, Carolyn Blick, Frederic and Mary Ann Brussat, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Roger Ebert"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/creepshow, among reviewers Sean Mulvihill, John Esther, John A. Nesbit, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "John A. Nesbit"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/journey_of_august_king, rank reviewers from most negative to most positive: James Berardinelli, Roger Ebert, Marjorie Baumgarten.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Roger Ebert",
+      "Marjorie Baumgarten",
+      "James Berardinelli"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_child_remains, rank reviewers from most negative to most positive: Emilie Black, Rex Reed, Roger Moore.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Rex Reed",
+      "Roger Moore",
+      "Emilie Black"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/breakfast_with_scot, rank reviewers from most negative to most positive: Rich Cline, Austin Kennedy, David Nusair.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Austin Kennedy",
+      "David Nusair",
+      "Rich Cline"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/brahman_naman, among reviewers Nick Allen, Nico Lang, Sophie Yapp, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Nico Lang"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/beyond_a_reasonable_doubt, among reviewers Dennis Schwartz, Pablo Villa\u00e7a, Emanuel Levy, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Pablo Villa\u00e7a"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/matador, rank reviewers from most negative to most positive: Ken Hanke, Bill Stamets, Philip Martin.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Bill Stamets",
+      "Philip Martin",
+      "Ken Hanke"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/cats_the_musical, rank reviewers from most negative to most positive: Widgett Walls, Walter Chaw, Ryan Cracknell.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Walter Chaw",
+      "Ryan Cracknell",
+      "Widgett Walls"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1040678-last_of_the_mohicans, among reviewers James Berardinelli, David Nusair, Christopher Null, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "James Berardinelli"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1028564-guardian, rank reviewers from most positive to most negative: Mike Massie, Ken Hanke, Emanuel Levy.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mike Massie",
+      "Emanuel Levy",
+      "Ken Hanke"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1046049-fatal_instinct, among reviewers Scott Renshaw, Jeffrey Westhoff, Dragan Antulov, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Scott Renshaw"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/period_of_adjustment, among reviewers Dennis Schwartz, Susan Granger, Emanuel Levy, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Susan Granger"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/after_everything, rank reviewers from most negative to most positive: Chuck Foster, Kevin Jagernauth, Sara Stewart.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Kevin Jagernauth",
+      "Sara Stewart",
+      "Chuck Foster"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/a_vigilante, rank reviewers from most negative to most positive: Matt Zoller Seitz, Chuck Bowen, Aaron Peterson.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Chuck Bowen",
+      "Aaron Peterson",
+      "Matt Zoller Seitz"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1022001-trial, rank reviewers from most positive to most negative: Roger Ebert, Mark R. Leeper, Ryan Cracknell.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Roger Ebert",
+      "Ryan Cracknell",
+      "Mark R. Leeper"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/backstabbing_for_beginners, among reviewers Bobby LePire, Chandler Levack, Roger Moore, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Roger Moore"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/24_days, among reviewers Mark R. Leeper, Roger Moore, Peter Keough, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Roger Moore"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/moments_of_clarity, rank reviewers from most positive to most negative: Mark R. Leeper, Norman Wilner.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mark R. Leeper",
+      "Norman Wilner"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/beer_wars, among reviewers Joe Williams, Phil Hall, Christian Toto, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Phil Hall"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_do_deca_pentathlon, rank reviewers from most negative to most positive: Lisa Schwarzbaum, Andrew Schenker, David Fear.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Andrew Schenker",
+      "David Fear",
+      "Lisa Schwarzbaum"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/love_is_the_devil, among reviewers Matt Bailey, Steve Rhodes, James Berardinelli, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Steve Rhodes"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1021269-this_gun_for_hire, rank reviewers from most negative to most positive: Ken Hanke, Jeffrey M. Anderson, Dennis Schwartz.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jeffrey M. Anderson",
+      "Dennis Schwartz",
+      "Ken Hanke"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1085518-gunshy, among reviewers Ross Anthony, Daniel M. Kimmel, Cheryl DeWolfe, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Ross Anthony"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/from_dusk_till_dawn_2_texas_blood_money, rank reviewers from most negative to most positive: Emanuel Levy, Rob Vaux, Diane Selkirk.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Rob Vaux",
+      "Diane Selkirk",
+      "Emanuel Levy"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/american_swing, rank reviewers from most negative to most positive: Kam Williams, Steve Ramos, Eric Henderson.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Steve Ramos",
+      "Eric Henderson",
+      "Kam Williams"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1192358-1192358-no_smoking, among reviewers Namrata Joshi, Anthony Quinn, Derek Malcolm, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Anthony Quinn"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/24_hours_to_live_2017, rank reviewers from most negative to most positive: Carlos D\u00edaz Reyes, Brian Tallerico, Brian Orndorf.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Brian Tallerico",
+      "Brian Orndorf",
+      "Carlos D\u00edaz Reyes"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/paris_when_it_sizzles, among reviewers Steve Crum, Carol Cling, Scott Renshaw, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Steve Crum"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1020488-sunshine_boys, rank reviewers from most negative to most positive: Matt Brunson, David Nusair, Christopher Null.",
+    "question_type": "Reasoning",
+    "answer": [
+      "David Nusair",
+      "Christopher Null",
+      "Matt Brunson"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_scribbler, among reviewers Joe Bendel, Nicholas Bell, Matt Donato, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Nicholas Bell"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/a_single_girl_2000, among reviewers Stephen Holden, Marjorie Baumgarten, David Nusair, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Stephen Holden"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/flesh_gordon, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Nell Minow",
+      "Steve Crum"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/bogus, rank reviewers from most positive to most negative: Roger Ebert, Philip Martin, Susan Stark.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Roger Ebert",
+      "Susan Stark",
+      "Philip Martin"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/generation_iron, among reviewers Philip Martin, Nick Schager, Nicole Herrington, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Nick Schager"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/lfe_happens, rank reviewers from most positive to most negative: Harvey S. Karten, Matt Pais, Chris Nashawaty.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Harvey S. Karten",
+      "Chris Nashawaty",
+      "Matt Pais"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1015542-on_the_town, among reviewers Emily Blunt, Nick Davis, Ken Hanke, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Ken Hanke"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/all_dogs_go_to_heaven, rank reviewers from most positive to most negative: Tim Brayton, Steve Rhodes, Scott Weinberg.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Tim Brayton",
+      "Scott Weinberg",
+      "Steve Rhodes"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_changeover, rank reviewers from most negative to most positive: Matt Zoller Seitz, Kiko Martinez, J.R. Southall.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Matt Zoller Seitz",
+      "J.R. Southall",
+      "Kiko Martinez"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/agnes_browne, among reviewers Steve Crum, Boo Allen, Eric D. Snider, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Steve Crum"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/walking_and_talking, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Dennis Schwartz",
+      "Mike Clark",
+      "David Nusair"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/le-sel-de-la-mer-salt-of-this-sea, among reviewers Dan Lybarger, Eric Hynes, David Nusair, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Dan Lybarger"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/shade, among reviewers Pablo Villa\u00e7a, Rene Rodriguez, Erik Childress, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Erik Childress"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/budrus, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Nick Schager",
+      "Chuck Bowen",
+      "Tom Long"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/shoot_the_moon, rank reviewers from most negative to most positive: Liam Lacey, Dennis Schwartz, Philip Martin.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Dennis Schwartz",
+      "Philip Martin",
+      "Liam Lacey"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/cheetah_girls, among reviewers Emily Ashby, David Nusair, Adriana Gomez-Weston, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "David Nusair"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/10008705-mr_untouchable, among reviewers V.A. Musetto, Mark Holcomb, Nick Schager, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Nick Schager"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/charlie_casanova, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Peter Bradshaw",
+      "Neil Smith",
+      "Trevor Johnston",
+      "Film4 Staff",
+      "Donald Clarke",
+      "Allan Hunter",
+      "Russell Cook"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/love_affair_1994, among reviewers Carol Cling, Mike McGranaghan, Steve Rhodes, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Mike McGranaghan"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_hot_flashes, rank reviewers from most negative to most positive: Avi Offer, Jen Chaney, Roger Moore.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Avi Offer",
+      "Roger Moore",
+      "Jen Chaney"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/final_exam_1981, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Frank Swietek",
+      "Emanuel Levy",
+      "Mike McGranaghan",
+      "Jeff Beck",
+      "Scott Tobias",
+      "Heather Wixson",
+      "Dennis Schwartz"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/most_likely_to_succeed_2019, rank reviewers from most positive to most negative: Barbara Shulgasser, Alex Saveliev.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Barbara Shulgasser",
+      "Alex Saveliev"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_cotton_club_encore, rank reviewers from most positive to most negative: Jordan Hoffman, Mark Feeney, Odie Henderson.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jordan Hoffman",
+      "Odie Henderson",
+      "Mark Feeney"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/7_chinese_brothers, rank reviewers from most negative to most positive: Matt Shiverdecker, Kimberly Gadette, Charlie Schmidlin.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Kimberly Gadette",
+      "Charlie Schmidlin",
+      "Matt Shiverdecker"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/house_of_cards_1992, among reviewers Robert Faires, Roger Ebert, James Berardinelli, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Roger Ebert"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/of_unknown_origin, among reviewers C.H. Newell, David Nusair, Blake Davis, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Blake Davis"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/anchor_and_hope, among reviewers Alex Montoya, Alberto Luchini, Paula Arantzazu Ruiz, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Alberto Luchini"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_cat_from_outer_space, among reviewers Jo Berry, Alan Jones, Ian Nathan, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Alan Jones"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/ny_export_opus_jazz, among reviewers Diego Semerene, Phil Hall, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Diego Semerene"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/trick_2019, rank reviewers from most negative to most positive: Emilie Black, Henry Stewart, Matt Donato.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Henry Stewart",
+      "Matt Donato",
+      "Emilie Black"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/viral_2016, rank reviewers from most negative to most positive: Ed Gonzalez, Marija Djurovic, Matt Donato.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Ed Gonzalez",
+      "Matt Donato",
+      "Marija Djurovic"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/attack-of-the-killer-tomatoes, rank reviewers from most negative to most positive: Rich Cline, Michael Drakulich, Scott Weinberg.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Michael Drakulich",
+      "Scott Weinberg",
+      "Rich Cline"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_short_history_of_the_long_road, among reviewers Pamela Powell, Kate Erbland, Mark Jackson, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Pamela Powell"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/smokin_aces_2_assassins_ball, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Brian Orndorf",
+      "Brian Orndorf",
+      "Mike Barnard",
+      "Mike Barnard",
+      "Kevin Carr",
+      "Kevin Carr",
+      "R.L. Shaffer",
+      "David Michael Wharton",
+      "R.L. Shaffer",
+      "David Michael Wharton"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/wu_xia, rank reviewers from most positive to most negative: Paul Chambers, Joe Neumaier, Andrew Schenker.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Paul Chambers",
+      "Andrew Schenker",
+      "Joe Neumaier"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/hit_so_hard_2012, rank reviewers from most negative to most positive: Ron Wilkinson, Nick Schager, Cole Smithey.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Nick Schager",
+      "Cole Smithey",
+      "Ron Wilkinson"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/don_quixote_1992, rank reviewers from most negative to most positive: Phil Hall, Scott Renshaw.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Phil Hall",
+      "Scott Renshaw"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_land_2016, among reviewers Joanna Connors, Jordan Hoffman, Keith Watson, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Keith Watson"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/our_children_2012, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Stan Hall",
+      "Mike D'Angelo",
+      "Drew Taylor"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/out_for_justice, among reviewers Chuck O'Leary, Chris Hicks, Dragan Antulov, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Chris Hicks"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/man_with_two_brains, rank reviewers from most negative to most positive: Nell Minow, Karina Montgomery, Jeffrey Westhoff.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Karina Montgomery",
+      "Jeffrey Westhoff",
+      "Nell Minow"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/coming_to_my_senses, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Phil Guie"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/bandolero_1968, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Dennis Schwartz",
+      "Walter Chaw",
+      "Roger Ebert",
+      "Emanuel Levy"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/dry_land, rank reviewers from most positive to most negative: Steve Ramos, Nathan Rabin, Andrew Schenker.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Steve Ramos",
+      "Andrew Schenker",
+      "Nathan Rabin"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/when_i_walk_2013, rank reviewers from most negative to most positive: Jeannette Catsoulis, Silvija Ozols, Dan Schindel.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Dan Schindel",
+      "Silvija Ozols",
+      "Jeannette Catsoulis"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/dantes_peak, rank reviewers from most negative to most positive: David Keyes, Jeanne Aufmuth, Rob Blackwelder.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jeanne Aufmuth",
+      "Rob Blackwelder",
+      "David Keyes"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1071414-moll_flanders, among reviewers Steve Rhodes, Dan Lybarger, Madeleine Williams, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Madeleine Williams"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/making-the-boys, rank reviewers from most negative to most positive: Susan Granger, Chris Barsanti, Bill Weber.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Chris Barsanti",
+      "Bill Weber",
+      "Susan Granger"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_boys_and_girl_from_county_clare_2004, rank reviewers from most negative to most positive: Sid Smith, Frank Swietek, Ed Gonzalez.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Frank Swietek",
+      "Ed Gonzalez",
+      "Sid Smith"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_young_unknown, among reviewers Jay Antani, E! Staff, Steve Rhodes, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "E! Staff"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/california_solo, among reviewers Jeannette Catsoulis, Mark Olsen, Miles Fielder, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Mark Olsen"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/american_crime, among reviewers Felix Vasquez Jr., Matt Noller, Kim Voynar, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Matt Noller"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_earrings_of_madame_de, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "David Nusair"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/grand_hotel, among reviewers TV Guide Staff, Mike Massie, Philip Martin, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Mike Massie"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/born_to_fly, rank reviewers from most negative to most positive: Katie Walsh, Radheyan Simonpillai, Daniel Walber.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Radheyan Simonpillai",
+      "Daniel Walber",
+      "Katie Walsh"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/misconception, among reviewers Frederic and Mary Ann Brussat, Christopher Campbell, Kenji Fujishima, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Frederic and Mary Ann Brussat"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/forget_me_not_2010, among reviewers Kevin Thomas, Joseph Walsh, Jamie Russell, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Joseph Walsh"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_nightingale_2015, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jake Wilson"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1002306-big_brawl, rank reviewers from most positive to most negative: David Poland, Emanuel Levy, Scott Weinberg.",
+    "question_type": "Reasoning",
+    "answer": [
+      "David Poland",
+      "Scott Weinberg",
+      "Emanuel Levy"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/premature_2014, among reviewers Isaac Feldberg, Elizabeth Weitzman, Kyle Turner, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Isaac Feldberg"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/tarzan_escapes, rank reviewers from most negative to most positive: Ken Hanke, Bob Bloom, Brandon Judell.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Bob Bloom",
+      "Brandon Judell",
+      "Ken Hanke"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/joshua_tree_1951_a_portrait_of_james_dean_2012, among reviewers Terrence Butcher, Jessica Baxter, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Terrence Butcher"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/cop, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Tony Toscano",
+      "David Nusair",
+      "Frederic and Mary Ann Brussat"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_apostate_2016, among reviewers Luis Gamboa, Clayton Dillard, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Clayton Dillard"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/mystery_road_2013, rank reviewers from most negative to most positive: Lisa Giles-Keddie, David McGinty, Jay Boller.",
+    "question_type": "Reasoning",
+    "answer": [
+      "David McGinty",
+      "Jay Boller",
+      "Lisa Giles-Keddie"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/non-ma-fille-tu-niras-pas-danser-2009, among reviewers Ed Gonzalez, Mick LaSalle, David Fear, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Ed Gonzalez"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/ghost_of_frankenstein, rank reviewers from most negative to most positive: Ken Hanke, Paul Chambers, Jaime N. Christley.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Paul Chambers",
+      "Jaime N. Christley",
+      "Ken Hanke"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/ride_the_high_country, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Chuck O'Leary",
+      "Chuck O'Leary"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/fred_armisen_standup_for_drummers, among reviewers Garrett Martin, Audra Schroeder, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Audra Schroeder"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/all_fall_down, among reviewers Chuck O'Leary, Dennis Schwartz, Emanuel Levy, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Chuck O'Leary"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/my_father_the_hero, among reviewers Pamela Bruce, Lisa Schwarzbaum, Scott Renshaw, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Lisa Schwarzbaum"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_heir_apparent_largo_winch, rank reviewers from most negative to most positive: Avi Offer, Mick LaSalle, Amber Wilkinson.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mick LaSalle",
+      "Amber Wilkinson",
+      "Avi Offer"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_price_2017, rank reviewers from most negative to most positive: Glenn Kenny, David Ehrlich, Amber Wilkinson.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Amber Wilkinson",
+      "David Ehrlich",
+      "Glenn Kenny"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/nightcomers, rank reviewers from most positive to most negative: Carol Cling, Sarah Boslaugh, Douglas Pratt.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Carol Cling",
+      "Douglas Pratt",
+      "Sarah Boslaugh"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1214788-meerkats, rank reviewers from most negative to most positive: Anthony Quinn, Derek Adams, Daniel Etherington.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Derek Adams",
+      "Daniel Etherington",
+      "Anthony Quinn"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/architect, rank reviewers from most positive to most negative: Kam Williams, Walter Chaw, Richard Mowe.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Kam Williams",
+      "Richard Mowe",
+      "Walter Chaw"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_banshee_chapter, rank reviewers from most negative to most positive: Scott McKellar, David Nusair, Wes Greene.",
+    "question_type": "Reasoning",
+    "answer": [
+      "David Nusair",
+      "Wes Greene",
+      "Scott McKellar"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/orhim_le_rega, rank reviewers from most negative to most positive: Jeannette Catsoulis, Calum Marsh, David Fear.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Calum Marsh",
+      "David Fear",
+      "Jeannette Catsoulis"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/carrington, among reviewers Roger Ebert, Jules Brenner, Mike Clark, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Jules Brenner"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/who_is_dayani_cristal_2013, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Fred Topel",
+      "Brian Tallerico",
+      "Kenji Fujishima",
+      "Alan Laidlaw",
+      "Nicholas Bell"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/ceremony_2010, among reviewers Edward Douglas, Brian Orndorf, David Nusair, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Brian Orndorf"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/and_now_a_word_from_our_sponsor_2012, rank reviewers from most negative to most positive: Gary Goldstein, Joe Neumaier, Mike McGranaghan.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Joe Neumaier",
+      "Mike McGranaghan",
+      "Gary Goldstein"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/what_you_gonna_do_when_the_worlds_on_fire, among reviewers John Bleasdale, Ethan Vestby, Daniel de Partearroyo, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Daniel de Partearroyo"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/happy_campers, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "David Poland",
+      "Ryan Cracknell",
+      "Caffeinated Clint"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/pet_sematary_ii, among reviewers Andy Klein, Philip Martin, Marc Savlov, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Andy Klein"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/excision_2012, rank reviewers from most negative to most positive: Kim Newman, Antonia Quirke, Rosie Fletcher.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Antonia Quirke",
+      "Rosie Fletcher",
+      "Kim Newman"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/antarctica_a_year_on_ice, among reviewers Paul Chambers, Matthew Lickona, Harvey S. Karten, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Paul Chambers"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1153319-land_of_plenty, rank reviewers from most positive to most negative: Kevin Thomas, Jason Gorber, Erik Childress.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Kevin Thomas",
+      "Erik Childress",
+      "Jason Gorber"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/wild_horse_wild_ride_2011, rank reviewers from most negative to most positive: Shannon M. Houston, Calum Marsh, Daniel M. Gold.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Calum Marsh",
+      "Daniel M. Gold",
+      "Shannon M. Houston"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_little_mermaid_2_return_to_the_sea, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Nell Minow",
+      "Michael Szymanski",
+      "Nell Minow",
+      "Tim Brayton",
+      "David Nusair"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/southlander-diary-of-a-desperate-musician, among reviewers V.A. Musetto, Randy Cordova, Phil Hall, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Randy Cordova"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/mummys_tomb, rank reviewers from most negative to most positive: Ken Hanke, Paul Chambers, Dan Jardine.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Paul Chambers",
+      "Dan Jardine",
+      "Ken Hanke"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/what_keeps_you_alive, rank reviewers from most negative to most positive: Kat Hughes, Avi Offer, Chuck Bowen.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Avi Offer",
+      "Chuck Bowen",
+      "Kat Hughes"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/after_words, among reviewers Harvey S. Karten, Joe Neumaier, Steve Davis, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Joe Neumaier"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/sharkys_machine, rank reviewers from most negative to most positive: Carol Cling, John Esther, Scott Weinberg.",
+    "question_type": "Reasoning",
+    "answer": [
+      "John Esther",
+      "Scott Weinberg",
+      "Carol Cling"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/humoresque, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Dennis Schwartz",
+      "Bob Bloom"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/tell_me_that_you_love_me_junie_moon, among reviewers Roger Ebert, Peter Canavese, Dennis Schwartz, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Dennis Schwartz"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/whaledreamers, among reviewers Margaret Pomeranz, Jim Schembri, Maitland McDonagh, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Margaret Pomeranz"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_last_survivors, rank reviewers from most positive to most negative: James Rocchi, J.R. Southall, Christopher Runyon.",
+    "question_type": "Reasoning",
+    "answer": [
+      "James Rocchi",
+      "Christopher Runyon",
+      "J.R. Southall"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_other_f_word_2011, rank reviewers from most negative to most positive: Norm Schrager, Jesse Cataldo, Robert Roten.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jesse Cataldo",
+      "Robert Roten",
+      "Norm Schrager"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/legacy_of_lies_2020, among reviewers Linda Cook, Ellen E Jones, Brian Costello, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Ellen E Jones"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/z_2019, among reviewers Michelle Swope, Andrew Wyatt, Brian Tallerico, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Brian Tallerico"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/isolation_2006, rank reviewers from most negative to most positive: Anton Bitel, Daniel Kasman, David Nusair.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Daniel Kasman",
+      "David Nusair",
+      "Anton Bitel"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/pepi-luci-bom-y-otras-chicas-del-monton-pepi-luci-bom-and-other-girls-like-mom, rank reviewers from most negative to most positive: Marjorie Baumgarten, Janet Maslin, Nick Schager.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Janet Maslin",
+      "Nick Schager",
+      "Marjorie Baumgarten"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/operation_dumbo_drop, among reviewers Linda Cook, Joey O'Bryan, Madeleine Williams, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Linda Cook"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_spirit_of_the_marathon, rank reviewers from most negative to most positive: Chad Greene, Jake Wilson, Margaret Pomeranz.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jake Wilson",
+      "Margaret Pomeranz",
+      "Chad Greene"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/captain_january, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Emanuel Levy"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/mirror_has_two_faces, rank reviewers from most negative to most positive: Bruce Bennett, Michael Dequina, Scott Renshaw.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Michael Dequina",
+      "Scott Renshaw",
+      "Bruce Bennett"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/halloween_4_the_return_of_michael_myers, rank reviewers from most negative to most positive: Dustin Putman, Jake Euker, James Berardinelli.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jake Euker",
+      "James Berardinelli",
+      "Dustin Putman"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/short_eyes, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Phil Hall",
+      "Phil Hall"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/baby_its_you, rank reviewers from most negative to most positive: Janet Maslin, Steve Rhodes, Jeffrey Westhoff.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Steve Rhodes",
+      "Jeffrey Westhoff",
+      "Janet Maslin"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/double_dare, among reviewers Eric Campos, Chris Barsanti, Mark R. Leeper, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Chris Barsanti"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/dtf, among reviewers Kat Hughes, Nathaniel Muir, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Nathaniel Muir"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/targets, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Roger Ebert",
+      "Craig Phillips"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/slingshot_1994, among reviewers James Berardinelli, Michael Szymanski, Marjorie Baumgarten, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "James Berardinelli"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/guys_and_dolls, among reviewers Angie Errigo, Thomas Delapa, John J. Puccio, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Angie Errigo"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_honeymoon_phase, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Shaun Munro"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/masters_of_the_universe, rank reviewers from most negative to most positive: Johanna Steinmetz, James O'Ehley, Stefan Birgir Stefansson.",
+    "question_type": "Reasoning",
+    "answer": [
+      "James O'Ehley",
+      "Stefan Birgir Stefansson",
+      "Johanna Steinmetz"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/blood_brothers_2011, rank reviewers from most negative to most positive: David DeWitt, Sam Adams, Christopher Null.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Sam Adams",
+      "Christopher Null",
+      "David DeWitt"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/stay_hungry, among reviewers Tom Hutchinson, Vincent Canby, Film4 Staff, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Tom Hutchinson"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/fire_in_the_sky, rank reviewers from most positive to most negative: Scott Weinberg, Steve Davis, Roger Ebert.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Scott Weinberg",
+      "Roger Ebert",
+      "Steve Davis"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_snowman_1982, among reviewers Steve Daly, Emanuel Levy, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Steve Daly"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/delirious, rank reviewers from most positive to most negative: Fred Topel, Derek Smith, Louis Black.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Fred Topel",
+      "Louis Black",
+      "Derek Smith"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/vampires_los_muertos, among reviewers David Nusair, Scott Weinberg, Emanuel Levy, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Scott Weinberg"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_warring_states, among reviewers Avi Offer, Brent Simon, Robert Abele, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Robert Abele"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/under_the_roofs_of_paris, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Christopher Null",
+      "Mark Robison"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/making_babies, rank reviewers from most positive to most negative: Jeffrey Lyles, Brian Orndorf, Roger Moore.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jeffrey Lyles",
+      "Roger Moore",
+      "Brian Orndorf"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/mean_dreams, among reviewers Chris Knight, Nick Allen, David Nusair, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Nick Allen"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/test_2014, rank reviewers from most negative to most positive: Ryan Lattanzio, Nicholas Bell, Dan Schindel.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Nicholas Bell",
+      "Dan Schindel",
+      "Ryan Lattanzio"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/greenwich_village_music_that_defined_a_generation, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Chuck Bowen",
+      "Tom Keogh"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1095360-witness_protection, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "David Nusair",
+      "Emanuel Levy"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/friday, among reviewers Phil Villarreal, David Keyes, Philip Martin, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Philip Martin"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1024191-wrong_man, among reviewers David Poland, Christopher Null, Philip Martin, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Christopher Null"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/electroma, rank reviewers from most positive to most negative: Tom Horgen, Marty Mapes.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Tom Horgen",
+      "Marty Mapes"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/love_serenade, rank reviewers from most positive to most negative: Bryant Frazer, Susan Stark, Marc Savlov.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Bryant Frazer",
+      "Marc Savlov",
+      "Susan Stark"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/wolf_totem, rank reviewers from most negative to most positive: Kirk Honeycutt, John Semley, Phil Hoad.",
+    "question_type": "Reasoning",
+    "answer": [
+      "John Semley",
+      "Phil Hoad",
+      "Kirk Honeycutt"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/victim_2012, among reviewers Paul M. Bradshaw, Dave Calhoun, Jennifer Tate, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Paul M. Bradshaw"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/field_of_lost_shoes, among reviewers Mark R. Leeper, Renee Schonfeld, Roger Moore, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Mark R. Leeper"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/strange_invaders, rank reviewers from most positive to most negative: Linda Cook, Andy Klein, Scott Weinberg.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Linda Cook",
+      "Scott Weinberg",
+      "Andy Klein"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/little_pink_house, among reviewers Christian Toto, Laura Clifford, Derek Smith, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Laura Clifford"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/three_men_and_a_baby, among reviewers Caffeinated Clint, Jeffrey Westhoff, Scott Weinberg, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Scott Weinberg"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/son_of_batman, among reviewers Brian Costello, Blake Howard, Jeffrey Lyles, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Jeffrey Lyles"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/sin_alas, among reviewers Jennie Kermode, Terence Johnson, Clayton Dillard, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Terence Johnson"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/alis_wedding, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Luke Buckmaster",
+      "Jim Schembri"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/nothing_in_common, rank reviewers from most negative to most positive: David Poland, Michael Szymanski, Roger Ebert.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Michael Szymanski",
+      "Roger Ebert",
+      "David Poland"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/city_slickers_ii_the_legend_of_curlys_gold, among reviewers Scott Renshaw, Alex Sandell, James Berardinelli, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Scott Renshaw"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1010672-invaders_from_mars, rank reviewers from most negative to most positive: Scott Weinberg, Dennis Schwartz, Frank Swietek.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Dennis Schwartz",
+      "Frank Swietek",
+      "Scott Weinberg"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/failsafe, among reviewers John Urbancich, Walter Chaw, Dan Jardine, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Dan Jardine"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/im_in_love_with_a_church_girl, rank reviewers from most negative to most positive: Richard Propes, Kimberley Jones, Steven Boone.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Kimberley Jones",
+      "Steven Boone",
+      "Richard Propes"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/ilya_and_emilia_kabakov_enter_here, among reviewers Sheila O'Malley, Steve Macfarlane, Jenna Scherer, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Jenna Scherer"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/carter_and_june, rank reviewers from most positive to most negative: Matthew Pejkovic, Kam Williams, Alan Ng.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Matthew Pejkovic",
+      "Alan Ng",
+      "Kam Williams"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/doc_hollywood, among reviewers Brian Mckay, Ken Hanke, Kathleen Maher, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Brian Mckay"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/double_team, rank reviewers from most negative to most positive: Luke Y. Thompson, Carlo Cavagna, Jack Garner.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Carlo Cavagna",
+      "Jack Garner",
+      "Luke Y. Thompson"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_adventurer_the_curse_of_the_midas_box, rank reviewers from most negative to most positive: Avi Offer, Dann Gire, R. Kurt Osenlund.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Dann Gire",
+      "R. Kurt Osenlund",
+      "Avi Offer"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/daffodils, rank reviewers from most positive to most negative: James Croot, Tony Stamp.",
+    "question_type": "Reasoning",
+    "answer": [
+      "James Croot",
+      "Tony Stamp"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1187621-itty_bitty_titty_committee, among reviewers Rich Cline, Jay Antani, Maitland McDonagh, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Rich Cline"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/titanica, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jeffrey Westhoff",
+      "Rich Cline"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/vegas_vacation, among reviewers Mike McGranaghan, Madeleine Williams, Susan Stark, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Susan Stark"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_trials_of_muhammad_ali_2013, among reviewers Kevin Jagernauth, Chris Hewitt, Michael Atkinson, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Michael Atkinson"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/couch_trip, among reviewers Rebecca Murray, Brian J. Arthurs, Roger Ebert, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Brian J. Arthurs"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/plastic-planet, among reviewers Cole Smithey, Christopher Campbell, Mark Keizer, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Christopher Campbell"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/incident_in_a_ghost_land_2018, among reviewers Ben Robins, David Nusair, James Marsh, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Ben Robins"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/better_start_running, rank reviewers from most negative to most positive: Chris Salce, Brian Orndorf, Roger Moore.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Brian Orndorf",
+      "Roger Moore",
+      "Chris Salce"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_cotton_club_encore, rank reviewers from most positive to most negative: Jordan Hoffman, Mark Feeney, Odie Henderson.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jordan Hoffman",
+      "Odie Henderson",
+      "Mark Feeney"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/dr_goldfoot_and_the_bikini_machine, among reviewers Emanuel Levy, John Esther, Christopher Null, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "John Esther"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/unforgivable_2012, among reviewers Chris Barsanti, Cole Smithey, Harvey S. Karten, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Cole Smithey"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/longest_day, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Bob Bloom"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1016338-pink_panther, among reviewers Scott Weinberg, Bill Chambers, Ken Hanke, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Bill Chambers"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/measure_for_measure_2020, rank reviewers from most negative to most positive: Pamela Powell, Robert Kojder, Josh Bell.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Robert Kojder",
+      "Josh Bell",
+      "Pamela Powell"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/turner_and_hooch, rank reviewers from most negative to most positive: Rebecca Murray, Philip Martin, Scott Weinberg.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Philip Martin",
+      "Scott Weinberg",
+      "Rebecca Murray"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/urban_hymn, among reviewers Cassam Looch, Tom Huddleston, Rachel Bowles, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Tom Huddleston"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/wrong_2011, rank reviewers from most negative to most positive: Chris Bumbray, Rob Hunter, Noel Murray.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Rob Hunter",
+      "Noel Murray",
+      "Chris Bumbray"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_stray_2017, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mike McGranaghan",
+      "Josh Terry",
+      "Sandie Angulo Chen",
+      "Roger Moore"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/beauty_and_the_beast_2014, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Anna Tatarska",
+      "Stefan Pape",
+      "Jessica Kiang",
+      "Clint Worthington",
+      "Chuck Bowen",
+      "David Crow",
+      "Brian Orndorf",
+      "Ignatiy Vishnevetsky",
+      "Steve Davis",
+      "Kate Erbland",
+      "Hugo Hern\u00e1ndez Valdivia",
+      "Frank Ochieng",
+      "Rachel Wagner"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/englishman_who_went_up_a_hill_but_came_down_a_mountain, rank reviewers from most negative to most positive: Josh Gilchrist, John Esther, Madeleine Williams.",
+    "question_type": "Reasoning",
+    "answer": [
+      "John Esther",
+      "Madeleine Williams",
+      "Josh Gilchrist"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_zen_of_bennett, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "David Fear"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/grass, among reviewers James Kendrick, Roger Ebert, Marjorie Baumgarten, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Roger Ebert"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/amos_and_andrew, among reviewers Jeffrey Westhoff, Owen Gleiberman, Marjorie Baumgarten, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Jeffrey Westhoff"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1011329-julius_caesar, rank reviewers from most negative to most positive: Steve Crum, Roger Ebert, Ted Prigge.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Roger Ebert",
+      "Steve Crum",
+      "Ted Prigge"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1080265-requiem_for_a_heavyweight, among reviewers Philip Martin, Pablo Villa\u00e7a, Emanuel Levy, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Pablo Villa\u00e7a"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/herbie_hancock_possibilities, among reviewers Laura Kern, V.A. Musetto, Nick Schager, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Laura Kern"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/men_at_work_1990, among reviewers Roger Moore, Scott Weinberg, Bob Grimm, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Scott Weinberg"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1205681-paper_man, rank reviewers from most negative to most positive: Kam Williams, Frank Swietek, Janos Gereben.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Frank Swietek",
+      "Janos Gereben",
+      "Kam Williams"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/dead_of_winter, among reviewers Scott Weinberg, Jake Euker, Roger Ebert, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Roger Ebert"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/beautiful_kate, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Nick Dent",
+      "Alistair Harkness",
+      "David Edwards",
+      "Sophie Ivan",
+      "Matthew Pejkovic"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1028564-guardian, rank reviewers from most positive to most negative: Mike Massie, Ken Hanke, Emanuel Levy.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mike Massie",
+      "Emanuel Levy",
+      "Ken Hanke"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/ladyhawke, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Philip Martin",
+      "Alex Sandell",
+      "Dan Fazio",
+      "Gabriel Shanks",
+      "Jake Euker",
+      "David Kaplan",
+      "Barbara Shulgasser"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/queen_of_outer_space, among reviewers Christopher Smith, Bob Bloom, Ken Hanke, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Christopher Smith"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/3_ninjas, rank reviewers from most negative to most positive: TV Guide Staff, Michael Dequina, David Poland.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Michael Dequina",
+      "David Poland",
+      "TV Guide Staff"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/wicked_little_things, rank reviewers from most positive to most negative: Johnny Butane, Scott Weinberg.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Johnny Butane",
+      "Scott Weinberg"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/i_married_a_monster_from_outer_space, rank reviewers from most positive to most negative: Gerry Shamray, Nell Minow, Bob Bloom.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Gerry Shamray",
+      "Bob Bloom",
+      "Nell Minow"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_titan, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Sol Harris",
+      "Matt Fowler",
+      "Jake Nevins",
+      "David Ehrlich",
+      "Brian Orndorf",
+      "Dan Jolin",
+      "Joanne Soh",
+      "Geoffrey Macnab",
+      "James Luxford",
+      "Larushka Ivan-Zadeh",
+      "Peter Bradshaw",
+      "Robbie Collin",
+      "Linda Marric",
+      "Kevin Maher",
+      "Barbara Shulgasser",
+      "MaryAnn Johanson",
+      "Valerie Kalfrin",
+      "Jeffrey Lyles",
+      "Carlos Frigo"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/being_17, among reviewers Alexander Ryll, Scott Marks, Marcos Gand\u00eda, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Scott Marks"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/anzio, rank reviewers from most negative to most positive: Carol Cling, Robin Clifford, Emanuel Levy.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Robin Clifford",
+      "Emanuel Levy",
+      "Carol Cling"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/10011079-country_teacher, rank reviewers from most positive to most negative: Michael Upchurch, Keith Uhlich, Harvey S. Karten.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Michael Upchurch",
+      "Harvey S. Karten",
+      "Keith Uhlich"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/daleks_invasion_earth_2150_ad, rank reviewers from most negative to most positive: Paul Mount, Mike Massie, Dennis Schwartz.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mike Massie",
+      "Dennis Schwartz",
+      "Paul Mount"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/house_2_the_second_story, among reviewers Ryan Pollard, Nicholas Bell, David Perini, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Ryan Pollard"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/or, rank reviewers from most negative to most positive: David Sterritt, Daniel Kasman, Joshua Tanzer.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Daniel Kasman",
+      "Joshua Tanzer",
+      "David Sterritt"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_dead, rank reviewers from most positive to most negative: Vincent Canby, Chuck O'Leary, Thomas Delapa.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Vincent Canby",
+      "Thomas Delapa",
+      "Chuck O'Leary"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/10008613-burrowers, among reviewers Scott Weinberg, Brian Orndorf, David Nusair, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Brian Orndorf"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/ayurveda_the_art_of_being, among reviewers Jeffrey M. Anderson, Catharine Tunnacliffe, Maitland McDonagh, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Catharine Tunnacliffe"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_witch_who_came_from_the_sea_1976, among reviewers Ian White, Christopher Null, Walter Chaw, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Christopher Null"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/see_no_evil_2, rank reviewers from most positive to most negative: William Bibbiani, David Nusair, Noel Murray.",
+    "question_type": "Reasoning",
+    "answer": [
+      "William Bibbiani",
+      "Noel Murray",
+      "David Nusair"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/10010944-missing_person, among reviewers James Rocchi, Tom Long, Andrew Schenker, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "James Rocchi"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/jimmy_hollywood, among reviewers John Urbancich, Brian J. Arthurs, Roger Ebert, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Brian J. Arthurs"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/monster_road, rank reviewers from most positive to most negative: Steve Schneider, Jay Boyar, Walter Chaw.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Steve Schneider",
+      "Walter Chaw",
+      "Jay Boyar"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/afterglow, rank reviewers from most negative to most positive: Ted Prigge, Nick Davis, Marjorie Baumgarten.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Nick Davis",
+      "Marjorie Baumgarten",
+      "Ted Prigge"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/devils_chair, among reviewers Steve \"Uncle Creepy\" Barton, David Nusair, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Steve \"Uncle Creepy\" Barton"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1016760-prisoner, among reviewers Pablo Villa\u00e7a, David Nusair, Emanuel Levy, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Emanuel Levy"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/one_of_us_2017, rank reviewers from most positive to most negative: Jude Dry, Glenn Dunks, Harvey S. Karten.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Jude Dry",
+      "Harvey S. Karten",
+      "Glenn Dunks"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/digging_up_the_marrow, rank reviewers from most positive to most negative: Abbie Bernstein, Simon Abrams, Dustin Putman.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Abbie Bernstein",
+      "Dustin Putman",
+      "Simon Abrams"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/ma_vie_en_rose, among reviewers James Rocchi, Frank Swietek, Christopher Null, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "James Rocchi"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/stillborn_2018, among reviewers Jennie Kermode, Alejandro Sosa, John Higgins, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Alejandro Sosa"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1068326-sabrina, rank reviewers from most negative to most positive: Michael Dequina, Mike McGranaghan, Marjorie Baumgarten.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mike McGranaghan",
+      "Marjorie Baumgarten",
+      "Michael Dequina"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1000640-all_of_me, among reviewers Fred Topel, Rebecca Murray, Larry Carroll, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Larry Carroll"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1211138-baby_on_board, rank reviewers from most positive to most negative: Pete Hammond, David Nusair, Kevin Carr.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Pete Hammond",
+      "Kevin Carr",
+      "David Nusair"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/firelight, among reviewers Harvey S. Karten, Susan Granger, Rob Blackwelder, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Rob Blackwelder"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_harmonists, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Marc Savlov",
+      "Dennis Schwartz",
+      "Liam Lacey",
+      "Jurgen Fauth"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/distorted, among reviewers Avi Offer, Frank Swietek, Michael Ordo\u00f1a, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Avi Offer"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/bai_she_chuan_shuo_2013, rank reviewers from most negative to most positive: Mike McGranaghan, Simon Weaving, David Stratton.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Simon Weaving",
+      "David Stratton",
+      "Mike McGranaghan"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_field_guide_to_evil, among reviewers Sez\u00edn Koehler, Federico Furzan, Katie Driscoll, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Federico Furzan"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1900, among reviewers Cole Smithey, Michael Szymanski, Vincent Canby, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Michael Szymanski"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1003747-cat_and_the_canary, rank reviewers from most negative to most positive: Ken Hanke, Emanuel Levy, Carol Cling.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Emanuel Levy",
+      "Carol Cling",
+      "Ken Hanke"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/tales_from_the_darkside_the_movie, rank reviewers from most positive to most negative: Mike Massie, James Sanford, James Kendrick.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mike Massie",
+      "James Kendrick",
+      "James Sanford"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/working_girl, rank reviewers from most positive to most negative: Roger Ebert, Rob Blackwelder, Bob Grimm.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Roger Ebert",
+      "Bob Grimm",
+      "Rob Blackwelder"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/heaven_help_us, among reviewers Chuck O'Leary, Scott Weinberg, Frederic and Mary Ann Brussat, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Chuck O'Leary"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/jexi, rank reviewers from most positive to most negative: Louisa Moore, Rendy Jones, David Ehrlich.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Louisa Moore",
+      "David Ehrlich",
+      "Rendy Jones"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/forbidden_world, rank reviewers from most positive to most negative: Emanuel Levy, Scott Weinberg.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Emanuel Levy",
+      "Scott Weinberg"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/sheena, among reviewers Douglas Pratt, Rob Vaux, Philip Martin, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Philip Martin"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/targets, among reviewers David Poland, Craig Phillips, Robin Clifford, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Robin Clifford"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/letters_from_baghdad, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Eve Watling",
+      "Vikram Murthi",
+      "Adam Graham",
+      "Matthew Anderson"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/behold_a_pale_horse, among reviewers David Nusair, Bosley Crowther, Emanuel Levy, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Bosley Crowther"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/mishima_a_life_in_four_chapters, among reviewers Roger Ebert, Jeffrey Westhoff, Ken Hanke, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Ken Hanke"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/custer_of_the_west, among reviewers Emanuel Levy, Dennis Schwartz, Chuck O'Leary, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Emanuel Levy"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/daguerrotype, rank reviewers from most positive to most negative: Emilie Black, Rodrigo Perez, Ignatiy Vishnevetsky.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Emilie Black",
+      "Ignatiy Vishnevetsky",
+      "Rodrigo Perez"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/paulie, rank reviewers from most positive to most negative: MaryAnn Johanson, Marc Savlov, Scott Renshaw.",
+    "question_type": "Reasoning",
+    "answer": [
+      "MaryAnn Johanson",
+      "Scott Renshaw",
+      "Marc Savlov"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/south_pacific, rank reviewers from most positive to most negative: Steve Crum, Walter Chaw, Philip Martin.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Steve Crum",
+      "Philip Martin",
+      "Walter Chaw"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/shirin_in_love_2014, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Noah Berlatsky",
+      "Noah Berlatsky",
+      "Brian Orndorf",
+      "Brian Orndorf",
+      "Mike McGranaghan",
+      "Mike McGranaghan",
+      "Josh Bell",
+      "Josh Bell",
+      "Soren Andersen",
+      "Mark Jenkins",
+      "Soren Andersen",
+      "Mark Jenkins",
+      "Mary Houlihan",
+      "Mary Houlihan",
+      "Roxana Hadadi",
+      "Roxana Hadadi"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/condorman, among reviewers Spence D., Michael Szymanski, Caffeinated Clint, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Spence D."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1_night, among reviewers Brigid Presecky, Brian Orndorf, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Brian Orndorf"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1017321-red_dawn, among reviewers Widgett Walls, Jake Euker, Nicolas Lacroix, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Nicolas Lacroix"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/hellraiser_deader, among reviewers Kevin Carr, David Nusair, Scott Weinberg, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "David Nusair"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/for_love_or_money_1993, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Roger Ebert",
+      "Louis Black",
+      "Scott Renshaw",
+      "James Berardinelli",
+      "Philip Martin",
+      "Josh Gilchrist",
+      "Carol Cling",
+      "Emanuel Levy",
+      "Chuck O'Leary",
+      "Rebecca Murray",
+      "Owen Gleiberman"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/a_murder_in_the_park, among reviewers Godfrey Cheshire, Austin Trunick, Clayton Dillard, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Austin Trunick"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/blood_brothers_2011, among reviewers David DeWitt, Sam Adams, Christopher Null, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "David DeWitt"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/girly-1969, among reviewers Josh Bell, Emanuel Levy, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Josh Bell"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/time_lapse_2015, rank reviewers from most negative to most positive: Mark R. Leeper, Roger Moore, John Beifuss.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Roger Moore",
+      "John Beifuss",
+      "Mark R. Leeper"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/journey-to-italy-viaggio-in-italia, rank reviewers from most negative to most positive: Thomas Delapa, John Esther, Ronald Bergan.",
+    "question_type": "Reasoning",
+    "answer": [
+      "John Esther",
+      "Ronald Bergan",
+      "Thomas Delapa"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/one_bright_shining_moment, rank reviewers from most negative to most positive: David Sterritt, Elizabeth Weitzman, Kim Williamson.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Kim Williamson",
+      "Elizabeth Weitzman",
+      "David Sterritt"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/deceiver, among reviewers Peter Stack, Madeleine Williams, Susan Stark, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Susan Stark"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/number_17, among reviewers Emanuel Levy, Michael W. Phillips, Jr., Dennis Schwartz, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Emanuel Levy"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/samurai_marathon, among reviewers Steven Neish, Nathanael Hood, Adam Patterson, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Nathanael Hood"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/hilife, rank reviewers from most positive to most negative: David Nusair, Christopher Null, Carol Cling.",
+    "question_type": "Reasoning",
+    "answer": [
+      "David Nusair",
+      "Carol Cling",
+      "Christopher Null"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/gaga_five_foot_two, rank reviewers from most negative to most positive: Orlando Maldonado, Bryan Armen Graham, Gregory Ellwood.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Bryan Armen Graham",
+      "Gregory Ellwood",
+      "Orlando Maldonado"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/being_at_home_with_claude, among reviewers Marc Savlov, Roger Ebert, Nicolas Lacroix, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Roger Ebert"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/leprechaun_4_in_space, among reviewers Matthew Rozsa, Ken Hanke, Emanuel Levy, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Emanuel Levy"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/six_sex_scenes_and_a_murder, among reviewers Peter Travers, Mick LaSalle, Brian Chen, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Brian Chen"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/10012058-prodigal_sons, among reviewers David Wiegand, Kevin B. Lee, Fr. Chris Carpenter, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "David Wiegand"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/black_caesar, among reviewers Josh Larsen, Philip Martin, Emanuel Levy, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Philip Martin"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/a_nightmare_on_elm_street_3_dream_warriors, among reviewers Stefan Birgir Stefansson, Roger Ebert, David Keyes, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "David Keyes"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/hammer_of_the_gods_2013, among reviewers Owen Williams, Dave White, Tom Huddleston, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Owen Williams"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/philip_roth_unmasked, among reviewers Stephen Whitty, Kyle Smith, Keith Uhlich, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Kyle Smith"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/14_cameras, among reviewers C.H. Newell, Frank Swietek, Jennie Kermode, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "C.H. Newell"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/fluke, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mike Clark",
+      "Hollis Chacona",
+      "Fred Topel",
+      "Rebecca Murray",
+      "Emanuel Levy",
+      "Lisa Schwarzbaum",
+      "Renee Schonfeld"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/problem_child_2, among reviewers Fred Topel, Steve Davis, Caffeinated Clint, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Steve Davis"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/lion_king_1_12, among reviewers Kevin Carr, Bill Chambers, John J. Puccio, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Kevin Carr"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/period_of_adjustment, among reviewers Dennis Schwartz, Susan Granger, Emanuel Levy, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Dennis Schwartz"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/careful_what_you_wish_for, among reviewers Steve Rubenstein, Matt Fagerholm, Noel Murray, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Steve Rubenstein"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1200797-closing_the_ring, among reviewers Christian Toto, David Stratton, Derek Malcolm, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Derek Malcolm"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/hans_christian_andersen, rank reviewers from most positive to most negative: Carol Cling, Ken Hanke, Bob Grimm.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Carol Cling",
+      "Bob Grimm",
+      "Ken Hanke"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/line_of_duty_2019, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mark Dujsik",
+      "Danny Brogan",
+      "Sophie Willard",
+      "Peter Bradshaw",
+      "Simran Hans",
+      "Dennis Schwartz"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/relentless, rank reviewers from most positive to most negative: Caffeinated Clint, Andy Klein, Philip Martin.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Caffeinated Clint",
+      "Philip Martin",
+      "Andy Klein"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/my_piece_of_the_pie, among reviewers Frederic and Mary Ann Brussat, Andrew Schenker, Keith Uhlich, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Frederic and Mary Ann Brussat"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_competition_2018, among reviewers Avi Offer, Derek Smith, Jeff Simon, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Derek Smith"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/this_property_is_condemned, among reviewers Michael Szymanski, Christopher Null, Carol Cling, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Christopher Null"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/vice_squad, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Dennis Schwartz",
+      "Matt Brunson"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/saint-misbehavin-the-wavy-gravy-movie, among reviewers Frederic and Mary Ann Brussat, V.A. Musetto, Ray Greene, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Frederic and Mary Ann Brussat"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/frankensteins_monsters_monster_frankenstein, among reviewers Vinnie Mancuso, Barbara Shulgasser, Randall Colburn, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Barbara Shulgasser"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/i_hate_valentines_day, rank reviewers from most positive to most negative: Dave White, Frank Swietek, Stephen Whitty.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Dave White",
+      "Stephen Whitty",
+      "Frank Swietek"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/children_of_invention, list the reviewers who gave a negative review.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Kevin B. Lee",
+      "Ron Wilkinson",
+      "Mike Scott"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1038770-high_heels, among reviewers Philip Martin, Nick Schager, Marc Savlov, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Philip Martin"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/1061401-village_of_the_damned, among reviewers Jeffrey M. Anderson, James Sanford, Scott Renshaw, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "James Sanford"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/secret_of_santa_vittoria, among reviewers Steve Crum, Vincent Canby, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Steve Crum"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/hotel_2003, among reviewers Jamie Russell, Manohla Dargis, Elvis Mitchell, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Elvis Mitchell"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/playing_mona_lisa, rank reviewers from most positive to most negative: Rob Blackwelder, Brian Mckay, Steve Rhodes.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Rob Blackwelder",
+      "Steve Rhodes",
+      "Brian Mckay"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/little_vampire, among reviewers Lawrence Van Gelder, Owen Gleiberman, Jack Garner, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Owen Gleiberman"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/mine_vaganti, rank reviewers from most positive to most negative: Katina Vangopoulos, Owen Gleiberman, David Parkinson.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Katina Vangopoulos",
+      "David Parkinson",
+      "Owen Gleiberman"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/silent_tongue, among reviewers John Petrakis, Emanuel Levy, Alvaro Rodriguez, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Alvaro Rodriguez"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/summer_04, rank reviewers from most negative to most positive: Kam Williams, Matt Zoller Seitz, Joseph Proimakis.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Matt Zoller Seitz",
+      "Joseph Proimakis",
+      "Kam Williams"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/another_gay_sequel, among reviewers Dustin Putman, Fr. Chris Carpenter, Tirdad Derakhshani, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Fr. Chris Carpenter"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/mars, rank reviewers from most negative to most positive: Avi Offer, Mark R. Leeper, Jeannette Catsoulis.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Mark R. Leeper",
+      "Jeannette Catsoulis",
+      "Avi Offer"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/hell_comes_to_frogtown, rank reviewers from most positive to most negative: Luke Y. Thompson, Bill Chambers, Emanuel Levy.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Luke Y. Thompson",
+      "Emanuel Levy",
+      "Bill Chambers"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_silence_2013, rank reviewers from most negative to most positive: Chris Hewitt, Cristina \u00c1lvarez L\u00f3pez, Andrew Schenker.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Cristina \u00c1lvarez L\u00f3pez",
+      "Andrew Schenker",
+      "Chris Hewitt"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/fletch_lives, among reviewers Boyd Farrow, KJB, Roger Ebert, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Roger Ebert"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/straight_to_hell, among reviewers John Esther, Laura Clifford, Roger Ebert, who had the most positive sentiment?",
+    "question_type": "Reasoning",
+    "answer": "John Esther"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/no_one_killed_jessica, rank reviewers from most positive to most negative: Nikhat Kazmi, Michael Dequina, Mayank Shekhar.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Nikhat Kazmi",
+      "Michael Dequina",
+      "Mayank Shekhar"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/napping_princess, rank reviewers from most positive to most negative: Allan Hunter, Ed Potton, Michael Leader.",
+    "question_type": "Reasoning",
+    "answer": [
+      "Allan Hunter",
+      "Michael Leader",
+      "Ed Potton"
+    ]
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/the_levelling, among reviewers Oliver Lyttelton, Jon Lyus, Kenji Fujishima, who had the most neutral sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Kenji Fujishima"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question": "For movie with id m/even_money, among reviewers Kevin Carr, Dave White, Harvey S. Karten, who had the most negative sentiment?",
+    "question_type": "Reasoning",
+    "answer": "Dave White"
+  }
+]

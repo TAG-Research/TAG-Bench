@@ -1,0 +1,398 @@
+california_schools,Please list the lowest ten eligible free rates for students aged 5-17 in continuation schools.,Eligible free rates for students aged 5-17 = `Free Meal Count (Ages 5-17)` / `Enrollment (Ages 5-17)`,SELECT `Free Meal Count (Ages 5-17)` / `Enrollment (Ages 5-17)` FROM frpm WHERE `Educational Option Type` = 'Continuation School' AND `Free Meal Count (Ages 5-17)` / `Enrollment (Ages 5-17)` IS NOT NULL ORDER BY `Free Meal Count (Ages 5-17)` / `Enrollment (Ages 5-17)` ASC LIMIT 10,moderate,"WITH temp AS (
+    SELECT *, 
+        'District: ' || `District Name` || ' and School: ' || `School Name` AS district_school_key 
+    FROM frpm
+)
+SELECT `Free Meal Count (Ages 5-17)` / `Enrollment (Ages 5-17)`
+FROM temp
+WHERE `Free Meal Count (Ages 5-17)` / `Enrollment (Ages 5-17)` IS NOT NULL 
+AND {{
+    LLMMap(
+         'What is the educational option type of the school?',
+        'temp::district_school_key',
+        options='Traditional;Juvenile Court School;County Community School;State Special School;Alternative School of Choice;Continuation School;Special Education School;Community Day School;Home and Hospital;Opportunity School;Youth Authority School;District Special Education Consortia School'
+    )
+}} = 'Continuation School'
+ORDER BY `Free Meal Count (Ages 5-17)` / `Enrollment (Ages 5-17)` ASC
+LIMIT 10
+"
+california_schools,Please list the zip code of all the charter schools in Fresno County Office of Education.,Charter schools refers to `Charter School (Y/N)` = 1 in the table fprm,SELECT T2.Zip FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode WHERE T1.`District Name` = 'Fresno County Office of Education' AND T1.`Charter School (Y/N)` = 1,simple,"WITH temp AS (
+    SELECT *, 
+        'District: ' || `District Name` || ' and School: ' || `School Name` AS district_school_key 
+    FROM frpm
+)
+SELECT T2.Zip 
+  FROM temp AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode 
+    WHERE T1.`District Name` = 'Fresno County Office of Education' 
+    AND {{
+        LLMMap(
+            'Is this a charter school?',
+            'temp::district_school_key '
+        )
+        }} = TRUE
+"
+california_schools,What is the unabbreviated mailing address (with city name) of the school with the highest FRPM count for K-12 students?,,"SELECT T2.MailStreet, T2.city FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode ORDER BY T1.`FRPM Count (K-12)` DESC LIMIT 1",simple,"WITH temp AS (
+SELECT T2.MailStreet, T2.Street FROM frpm AS T1
+INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode
+ORDER BY T1.`FRPM Count (K-12)` DESC
+LIMIT 1)
+SELECT temp.MailStreet, {{
+    LLMQA(
+        ""Provide the city name based on the address."",
+        (SELECT T4.Street FROM frpm AS T3 INNER JOIN schools AS T4 ON T3.CDSCode = T4.CDSCode
+        ORDER BY T3.""FRPM Count (K-12)"" DESC LIMIT 1)
+    )
+}} AS City FROM temp
+"
+california_schools,Please list the phone numbers of the direct charter-funded schools that are opened after 2000/1/1.,Charter schools refers to `Charter School (Y/N)` = 1 in the frpm,SELECT T2.Phone FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode WHERE T1.`Charter Funding Type` = 'Directly funded' AND T1.`Charter School (Y/N)` = 1 AND T2.OpenDate > '2000-01-01',moderate,"WITH temp AS (
+    SELECT *, 
+        'District: ' || `District Name` || ' and School: ' || `School Name` AS district_school_key 
+    FROM frpm
+)
+SELECT T2.Phone 
+  FROM temp AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode 
+    WHERE T2.OpenDate > '2000-01-01'
+    AND {{
+        LLMMap(
+            'Is this a charter school?',
+            'temp::district_school_key '
+        )
+        }} = TRUE
+    AND {{
+        LLMMap(
+            'Is the school funded directly under the charter funding type?',
+            'temp::district_school_key '
+        )
+        }} = TRUE
+"
+california_schools,"Among the schools with the SAT test takers of over 500, please list the schools that are magnet schools or offer a magnet program.",Magnet schools or offer a magnet program means that Magnet = 1,SELECT T2.School FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode WHERE T2.Magnet = 1 AND T1.NumTstTakr > 500,simple,"SELECT T2.School
+FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode
+WHERE T1.NumTstTakr > 500 
+AND {{
+    LLMMap(
+        'Is the school at the address a magnet school?', 
+        'T2::Street'
+        )
+}} = TRUE
+"
+california_schools,"Among the schools with the average score in Math over 560 in the SAT test, how many schools are directly charter-funded?",,SELECT COUNT(T2.`School Code`) FROM satscores AS T1 INNER JOIN frpm AS T2 ON T1.cds = T2.CDSCode WHERE T1.AvgScrMath > 560 AND T2.`Charter Funding Type` = 'Directly funded',simple,"WITH temp AS (
+    SELECT *, 
+        'District: ' || `District Name` || ' and School: ' || `School Name` AS district_school_key 
+    FROM frpm
+) SELECT COUNT(T2.`School Code`) 
+    FROM satscores AS T1 INNER JOIN temp AS T2 ON T1.cds = T2.CDSCode
+    WHERE T1.AvgScrMath > 560 AND {{
+        LLMMap(
+            'Is the school funded directly under the charter funding type?',
+            'temp::district_school_key '
+        )
+        }} = TRUE
+"
+california_schools,Please list the phone numbers and cities of the schools with the top 10 SAT excellence rate.,Excellence rate = NumGE1500 / NumTstTakr,"SELECT T1.Phone, T1.city FROM schools AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds ORDER BY CAST(T2.NumGE1500 AS REAL) / T2.NumTstTakr DESC LIMIT 10",simple,"WITH temp AS (
+SELECT T1.Phone, 'Street: ' || T1.Street || ' and School: ' || T1.School AS address
+    FROM schools AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds 
+    ORDER BY CAST(T2.NumGE1500 AS REAL) / T2.NumTstTakr DESC LIMIT 10
+)
+SELECT temp.Phone, {{
+    LLMMap(
+        'Provide the city name based on the address.',
+        'temp::address'
+    )
+}} AS City FROM temp
+"
+california_schools,How many schools in merged Alameda have number of test takers less than 100?,,SELECT COUNT(T1.CDSCode) FROM schools AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds WHERE T1.StatusType = 'Merged' AND T2.NumTstTakr < 100 AND T1.County = 'Alameda',simple,"SELECT COUNT(T1.CDSCode) 
+    FROM schools AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds 
+    WHERE T1.StatusType = 'Merged' AND T2.NumTstTakr < 100 AND {{
+        LLMMap(
+        'Is the address located in Alameda County?',
+        'T1::Street'
+        )
+    }} = TRUE
+"
+california_schools,How many schools in Contra Costa (directly funded) have number of test takers not more than 250?,,SELECT COUNT(T1.CDSCode) FROM frpm AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds WHERE T1.`Charter Funding Type` = 'Directly funded' AND T1.`County Name` = 'Contra Costa' AND T2.NumTstTakr <= 250,simple,"WITH temp AS (
+    SELECT *, 
+        'District: ' || `District Name` || ' and School: ' || `School Name` AS district_school_key 
+    FROM frpm
+)
+SELECT COUNT(T1.CDSCode)
+  FROM schools AS T1 INNER JOIN satscores AS T2 ON T1.CDSCode = T2.cds
+  JOIN temp AS T3 on T1.CDSCode = T3.CDSCode
+  WHERE T2.NumTstTakr <= 250
+    AND {{
+        LLMMap(
+            'Is the school funded directly under the charter funding type?',
+            'temp::district_school_key '
+        )
+        }} = TRUE
+    AND {{
+        LLMMap(
+        'Is the address located in Contra Costa County?',
+        'T1::Street'
+        )
+    }} = TRUE
+"
+california_schools,In Los Angeles how many schools have more than 500 free meals but less than 700 free or reduced price meals for K-12?,,SELECT COUNT(CDSCode) FROM frpm WHERE `County Name` = 'Los Angeles' AND `Free Meal Count (K-12)` > 500 AND `Free Meal Count (K-12)` < 700,simple,"SELECT COUNT(frpm.CDSCode) 
+FROM frpm JOIN schools ON frpm.CDSCode = schools.CDSCode
+WHERE frpm.`Free Meal Count (K-12)` > 500 AND frpm.`Free Meal Count (K-12)` < 700 AND {{
+    LLMMap('Is the address located in Los Angeles County?',
+        'schools::Street'
+        )
+}} = TRUE
+"
+california_schools,Which school in Contra Costa has the highest number of test takers?,,SELECT sname FROM satscores WHERE cname = 'Contra Costa' AND sname IS NOT NULL ORDER BY NumTstTakr DESC LIMIT 1,simple,"WITH temp AS (
+    SELECT schools.School
+    FROM schools
+    WHERE {{
+        LLMMap(
+            'Is the address located in Contra Costa County?',
+            'schools::Street'
+        )
+    }} = TRUE
+)
+SELECT sname 
+FROM satscores
+WHERE sname IN (SELECT School FROM temp)
+ORDER BY satscores.NumTstTakr DESC 
+LIMIT 1
+"
+california_schools,"Name schools in Riverside which the average of average math score for SAT is grater than 400, what is the funding type of these schools?",Average of average math = sum(average math scores) / count(schools).,"SELECT T1.sname, T2.`Charter Funding Type` FROM satscores AS T1 INNER JOIN frpm AS T2 ON T1.cds = T2.CDSCode WHERE T2.`District Name` LIKE 'Riverside%' GROUP BY T1.sname, T2.`Charter Funding Type` HAVING CAST(SUM(T1.AvgScrMath) AS REAL) / COUNT(T1.cds) > 400",moderate,"WITH temp AS (
+    SELECT *, 
+        'District: ' || `District Name` || ' and School: ' || `School Name` AS district_school_key
+    FROM frpm
+), 
+temp2 AS ( 
+    SELECT *, {{
+        LLMMap(
+            'What is the school Charter Funding Type?', 
+            'temp::district_school_key'
+        )
+    }} AS FundingType
+    FROM temp
+)
+SELECT T1.sname, temp2.FundingType
+FROM satscores AS T1 INNER JOIN temp2 ON T1.cds = temp2.CDSCode 
+WHERE temp2.`District Name` LIKE 'Riverside%' 
+GROUP BY T1.sname, temp2.FundingType
+HAVING CAST(SUM(T1.AvgScrMath) AS REAL) / COUNT(T1.cds) > 400
+"
+california_schools,State the names and full communication address of high schools in Monterey which has more than 800 free or reduced price meals for ages 15-17?,"Full communication address should include Zip, Street, City, State","SELECT T1.`School Name`, T2.Zip, T2.Street, T2.City, T2.State FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode WHERE T2.County = 'Monterey' AND T1.`Free Meal Count (Ages 5-17)` > 800 AND T1.`School Type` = 'High Schools (Public)'",moderate,"SELECT T1.`School Name`, T2.Zip, T2.Street, {{
+    LLMMap('Provide the city name based on the address.',
+        'T2::Street'
+        )
+}}, T2.State 
+    FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode 
+    WHERE T1.`Free Meal Count (Ages 5-17)` > 800 AND T1.`School Type` = 'High Schools (Public)' AND {{
+        LLMMap(
+            'Is the address located in Monterey County?',
+            'schools::Street'
+        )
+    }} = TRUE
+"
+california_schools,"Consider the average difference between K-12 enrollment and 15-17 enrollment of schools that are locally funded, list number of entires which has a difference above this average.",Difference between K-12 enrollment and 15-17 enrollment can be computed by `Enrollment (K-12)` - `Enrollment (Ages 5-17)`,"SELECT COUNT(*)
+    FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode
+    WHERE T1.`Charter Funding Type` = 'Locally funded' AND (T1.`Enrollment (K-12)` - T1.`Enrollment (Ages 5-17)`) > 
+            (SELECT AVG(T3.`Enrollment (K-12)` - T3.`Enrollment (Ages 5-17)`) 
+                 FROM frpm AS T3 INNER JOIN schools AS T4 ON T3.CDSCode = T4.CDSCode 
+                 WHERE T3.`Charter Funding Type` = 'Locally funded')",challenging,"WITH temp AS (
+    SELECT *, 
+        'District: ' || `District Name` || ' and School: ' || `School Name` AS district_school_key 
+    FROM frpm
+)
+SELECT COUNT(*)
+FROM temp AS T1
+WHERE {{
+        LLMMap(
+            'Is the school locally funded under the charter funding type?',
+            'T1::district_school_key '
+        )
+        }} = TRUE
+AND (T1.`Enrollment (K-12)` - T1.`Enrollment (Ages 5-17)`) > 
+            (SELECT AVG(T3.`Enrollment (K-12)` - T3.`Enrollment (Ages 5-17)`) 
+            FROM temp as T3 WHERE {{
+        LLMMap(
+            'Is the school locally funded under the charter funding type?',
+            'T3::district_school_key '
+        )
+        }} = TRUE
+    )
+"
+california_schools,Which cities have the top 2 lowest enrollment number for students in grades 1 through 12?,K-12 refers to students in grades 1 through 12.,SELECT T2.City FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode GROUP BY T2.City ORDER BY SUM(T1.`Enrollment (K-12)`) ASC LIMIT 2,simple,"WITH temp AS (
+SELECT frpm.`Enrollment (K-12)`, {{
+    LLMMap(
+        'Provide the city name based on the address.',
+        'schools::Street'
+    )
+}} AS City 
+FROM frpm INNER JOIN schools ON frpm.CDSCode = schools.CDSCode
+)
+SELECT temp.City 
+FROM temp 
+GROUP BY temp.City
+ORDER BY SUM(temp.`Enrollment (K-12)`) ASC 
+LIMIT 2
+"
+california_schools,"If there are any, what are the websites address of the schools with a free meal count of 1,910-2,000 to students aged 5-17? Include the name of the school.",,"SELECT T2.Website, T1.`School Name` FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode WHERE T1.`Free Meal Count (Ages 5-17)` BETWEEN 1910 AND 2000 AND T2.Website IS NOT NULL",moderate,"WITH temp AS (
+SELECT T1.`School Name` , 'Street: ' || T2.Street || ' and School: ' || T2.School AS address
+    FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode
+    WHERE T1.`Free Meal Count (Ages 5-17)` BETWEEN 1910 AND 2000 
+)
+SELECT {{
+    LLMMap(
+        'Provide the website based on the school address.',
+        'temp::address'
+    )
+}} AS Website, `School Name`
+FROM temp
+"
+california_schools,What is the administrator's email address of the chartered school with the fewest students enrolled in grades 1 through 12?,Charted school means `Charter School (Y/N)` = 1 in the table frpm; Students enrolled in grades 1 through 12 refers to `Enrollment (K-12)`,SELECT T2.AdmEmail1 FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode WHERE T1.`Charter School (Y/N)` = 1 ORDER BY T1.`Enrollment (K-12)` ASC LIMIT 1,moderate,"WITH temp AS (
+    SELECT *, 
+        'District: ' || `District Name` || ' and School: ' || `School Name` AS district_school_key 
+    FROM frpm
+)
+SELECT T2.AdmEmail1 
+    FROM temp AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode 
+    WHERE {{
+        LLMMap(
+            'Is this a charter school?',
+            'temp::district_school_key '
+        )
+        }} = TRUE
+    ORDER BY T1.`Enrollment (K-12)` ASC LIMIT 1
+"
+california_schools,"What is the complete address of the 10 school with the lowest excellence rate? Indicate the Street, City, Zip and State.","Execellence Rate = NumGE1500 / NumTstTakr; complete address has Street, City, State, Zip code","SELECT T2.Street, T2.City, T2.Zip, T2.State FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode ORDER BY CAST(T1.NumGE1500 AS REAL) / T1.NumTstTakr ASC LIMIT 10",moderate,"SELECT schools.Street, {{
+    LLMMap (
+        'Provide the city name based on the address.',
+        'schools::Street'
+        )
+}} AS City, schools.Zip, schools.State 
+    FROM satscores AS T1 INNER JOIN schools ON T1.cds = schools.CDSCode 
+    ORDER BY CAST(T1.NumGE1500 AS REAL) / T1.NumTstTakr ASC LIMIT 10
+"
+california_schools,What are the webpages for the Los Angeles County school that has between 150 and 160 test takers?,,SELECT T2.Website FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode WHERE T1.NumTstTakr BETWEEN 150 AND 160 AND T2.County = 'Los Angeles',simple,"SELECT {{
+    LLMMap (
+        'Provide the school website address for each school.',
+        'schools::School'
+        )
+}} AS Website
+FROM satscores INNER JOIN schools ON satscores.cds = schools.CDSCode
+WHERE {{
+        LLMMap(
+            'Is the address located in Los Angeles County?',
+            'schools::Street'
+        )
+    }} = TRUE AND 1 AND satscores.NumTstTakr >= 150 AND satscores.NumTstTakr <= 160
+"
+california_schools,What is the average number of test takers from Fresno schools that opened between 1/1/1980 and 12/31/1980?,between 1/1/1980 and 12/31/1980 means the year = 1980,"SELECT AVG(T1.NumTstTakr) FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode WHERE strftime('%Y', T2.OpenDate) = '1980' AND T2.County = 'Fresno'",simple,"SELECT AVG(T1.NumTstTakr) 
+FROM satscores AS T1 INNER JOIN schools ON T1.cds = schools.CDSCode 
+WHERE strftime('%Y', schools.OpenDate) = '1980' AND {{
+        LLMMap(
+            'Is the address located in Fresno County?',
+            'schools::Street'
+        )
+    }} = TRUE
+"
+california_schools,Which exclusively virtual schools have the top 5 highest average reading scores?,Exclusively virtual refers to Virtual = 'F'.,SELECT T2.School FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode WHERE T2.Virtual = 'F' ORDER BY T1.AvgScrRead DESC LIMIT 5,simple,"SELECT T2.School 
+FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode 
+WHERE {{
+        LLMMap(
+            'Is the school operate exclusively virtual?',
+            'T2::School'
+        )
+    }} = TRUE
+ORDER BY T1.AvgScrRead DESC LIMIT 5
+"
+california_schools,"What is the average math score of the school with the lowest average score for all subjects, and in which county is it located?",Average score for all subjects can be computed by AvgScrMath + AvgScrRead + AvgScrWrite,"SELECT T1.AvgScrMath, T2.County FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode WHERE T1.AvgScrMath IS NOT NULL ORDER BY T1.AvgScrMath + T1.AvgScrRead + T1.AvgScrWrite ASC LIMIT 1",moderate,"SELECT T1.AvgScrMath, {{
+    LLMMap(
+        'Provide the county name based on the street address.',
+        'schools::Street'
+    )
+}} AS County
+FROM satscores AS T1 INNER JOIN schools ON T1.cds = schools.CDSCode 
+WHERE T1.AvgScrMath IS NOT NULL ORDER BY T1.AvgScrMath + T1.AvgScrRead + T1.AvgScrWrite ASC LIMIT 1
+"
+california_schools,What is the average writing score of the school who has the highest number of test takers whose total SAT sscores are greater or equal to 1500? Indicate the city to where the school is situated.,,"SELECT T1.AvgScrWrite, T2.City FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode ORDER BY T1.NumGE1500 DESC LIMIT 1",simple,"SELECT T1.AvgScrMath, {{
+    LLMMap(
+        'Provide the city name based on the address.',
+        'schools::Street'
+    )
+}} AS City
+FROM satscores AS T1 INNER JOIN schools ON T1.cds = schools.CDSCode 
+ORDER BY T1.NumGE1500 DESC LIMIT 1
+"
+california_schools,What is the monthly average number of schools that opened in Alameda County under the jurisdiction of the Elementary School District in 1980?,Elementary School District refers to DOC = 52; Monthly average number of schools that opened in 2018 = count(schools that opened in 1980) / 12,"SELECT CAST(COUNT(School) AS REAL) / 12 FROM schools WHERE DOC = 52 AND County = 'Alameda' AND strftime('%Y', OpenDate) = '1980'",moderate,"SELECT CAST(COUNT(DISTINCT schools.School) AS REAL) / 12 
+FROM schools
+WHERE schools.DOC = 52 AND {{
+        LLMMap(
+            'Is the address located in Alameda County?',
+            'schools::Street'
+        )
+    }} = TRUE AND strftime('%Y', schools.OpenDate) = '1980'
+
+"
+california_schools,What is the ratio of merged Unified School District schools in Orange County to merged Elementary School District schools?,Elementary School District refers to DOC = 52; Unified School District refers to DOC = 54.,SELECT CAST(SUM(CASE WHEN DOC = 54 THEN 1 ELSE 0 END) AS REAL) / SUM(CASE WHEN DOC = 52 THEN 1 ELSE 0 END) FROM schools WHERE StatusType = 'Merged' AND County = 'Orange',moderate,"SELECT CAST(SUM(CASE WHEN schools.DOC = 54 THEN 1 ELSE 0 END) AS REAL) / SUM(CASE WHEN schools.DOC = 52 THEN 1 ELSE 0 END) 
+FROM schools
+WHERE schools.StatusType = 'Merged' AND {{
+        LLMMap(
+            'Is the address located in Orange County?',
+            'schools::Street'
+        )
+    }} = TRUE
+"
+california_schools,How many different county has the most number of closed schools? Please provide the number of unique schools.,Closure date and closed date are synonyms; 'Closed' was mentioned in schools.StatusType.,"SELECT COUNT(DISTINCT School)
+    FROM schools
+    WHERE County = ( SELECT County FROM schools WHERE StatusType = 'Closed' GROUP BY County ORDER BY COUNT(School) DESC LIMIT 1 ) 
+    AND StatusType = 'Closed' AND school IS NOT NULL AND street IS NOT NULL",moderate,"WITH temp AS (
+SELECT *, {{
+    LLMMap(
+        'Provide the county name based on the street address.',
+        'schools::Street'
+    )
+}} AS County
+FROM schools
+WHERE schools.StatusType = 'Closed' 
+)
+SELECT COUNT(DISTINCT School)
+FROM temp
+WHERE temp.County = ( SELECT T1.County 
+                     FROM temp AS T1 
+                     GROUP BY T1.County ORDER BY COUNT(T1.School) DESC LIMIT 1 
+                   ) 
+AND temp.StatusType = 'Closed' AND temp.school IS NOT NULL AND temp.Street IS NOT NULL
+"
+california_schools,What is the total number of schools whose total SAT scores are greater or equal to 1500 whose mailing city is Lakeport?,Total SAT scores can be computed by AvgScrRead + AvgScrMath + AvgScrWrite,SELECT COUNT(T1.cds) FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode WHERE T2.MailCity = 'Lakeport' AND (T1.AvgScrRead + T1.AvgScrMath + T1.AvgScrWrite) >= 1500,simple,"SELECT COUNT(T1.cds) 
+ FROM satscores AS T1 INNER JOIN schools ON T1.cds = schools.CDSCode
+WHERE (T1.AvgScrRead + T1.AvgScrMath + T1.AvgScrWrite) >= 1500 AND {{
+        LLMMap(
+            'Is the address located in Lakeport City?',
+            'schools::Street'
+        )
+    }} = TRUE
+"
+california_schools,How many test takers are there at the school/s whose city address is in Fresno?,,"SELECT T1.NumTstTakr FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode WHERE T2.City = 'Fresno' AND Street IS NOT NULL AND School IS NOT NULL
+",simple,"SELECT T1.NumTstTakr 
+FROM satscores AS T1 INNER JOIN schools AS T2 ON T1.cds = T2.CDSCode 
+WHERE {{
+        LLMMap(
+            'Is the address located in Fresno City?',
+            'schools::Street'
+        )
+    }} = TRUE
+"
+california_schools,"Of all the schools with a mailing state address in California, how many are active in San Joaquin?",,SELECT COUNT(CDSCode) FROM schools WHERE City = 'San Joaquin' AND MailState = 'CA' AND StatusType = 'Active',simple,"SELECT COUNT(schools.CDSCode) 
+ FROM schools
+WHERE schools.MailState = 'CA' AND schools.StatusType = 'Active' AND {{
+        LLMMap(
+            'Is the address located in San Joaquin City?',
+            'schools::Street'
+        )
+    }} = TRUE
+"
+california_schools,How many students from the ages of 5 to 17 are enrolled at the State Special School school in Fremont for the 2014-2015 academic year?,State Special School means EdOpsCode = 'SSS',SELECT T1.`Enrollment (Ages 5-17)` FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode WHERE T2.EdOpsCode = 'SSS' AND T2.City = 'Fremont' AND T1.`Academic Year` BETWEEN 2014 AND 2015,moderate,"SELECT T1.`Enrollment (Ages 5-17)` 
+FROM frpm AS T1 INNER JOIN schools AS T2 ON T1.CDSCode = T2.CDSCode 
+WHERE T2.EdOpsCode = 'SSS' AND {{
+        LLMMap(
+            'Is the address located in Fremont City?',
+            'T2::Street'
+        )
+    }} = TRUE AND T1.`Academic Year` >= 2014 AND T1.`Academic Year` <= 2015
+"

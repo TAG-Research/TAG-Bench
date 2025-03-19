@@ -1,0 +1,659 @@
+european_football_2,What is the height of the tallest player? Indicate his name.,tallest player refers to MAX(height);,SELECT player_name FROM Player ORDER BY height DESC LIMIT 1,simple,"WITH temp AS (
+SELECT *, 'Player: '||Player.player_name || ', Player Weight: ' || Player.weight AS key
+FROM Player
+)
+SELECT player_name 
+FROM temp
+ORDER BY {{
+    LLMMap(
+        'Provide the player height (int).',
+        'temp::key'
+    )
+}}
+DESC LIMIT 1
+"
+european_football_2,Which League had the most matches end as draw in the 2016 season?,most matches end as draw refers to MAX(SUM(home_team_goal = away_team_goal)); 2016 season refers to season = '2015/2016';,SELECT t2.name FROM Match AS t1 INNER JOIN League AS t2 ON t1.league_id = t2.id WHERE t1.season = '2015/2016' AND t1.home_team_goal = t1.away_team_goal GROUP BY t2.name ORDER BY COUNT(t1.id) DESC LIMIT 1,moderate,"WITH temp AS (
+SELECT ""Match"".id, CONCAT(""Hometeam: "", hometeam.team_long_name, "", Awayteam: "", awayteam.team_long_name) AS teamnames
+FROM ""Match""
+INNER JOIN Team AS awayteam ON ""Match"".away_team_api_id = awayteam.team_api_id 
+INNER JOIN Team AS hometeam ON ""Match"".home_team_api_id = hometeam.team_api_id 
+WHERE ""Match"".season = '2015/2016' AND ""Match"".home_team_goal = ""Match"".away_team_goal
+), 
+temp2 AS (
+    SELECT temp.id, {{
+        LLMMap(
+            'Provide the football league name.',
+            'temp::teamnames'
+        )
+    }} AS league_name
+    FROM temp
+)
+SELECT temp2.league_name 
+FROM temp2
+GROUP BY temp2.league_name
+ORDER BY COUNT(temp2.id) DESC LIMIT 1;
+"
+european_football_2,What is the average height of players born between 1990 and 1995?,"average height = DIVIDE(SUM(height), COUNT(id)); players born between 1990 and 1995 refers to birthday > = '1990-01-01 00:00:00' AND birthday < '1996-01-01 00:00:00';","SELECT SUM(height) / COUNT(id) FROM Player WHERE SUBSTR(birthday, 1, 4) BETWEEN '1990' AND '1995'",simple,"WITH temp AS (
+SELECT *, 'Player: '||Player.player_name || ', Player Weight: ' || Player.weight AS key
+FROM Player
+), 
+temp2 AS (
+SELECT id, {{
+    LLMMap(
+        'Provide the player height (int).',
+        'temp::key'
+    )
+}} AS height
+FROM temp
+WHERE {{
+    LLMMap(
+        'Is the player born in between 1990 and 1995?',
+        'temp::key'
+    )
+}} = TRUE
+)
+SELECT SUM(height) / COUNT(id)
+FROM temp2
+"
+european_football_2,List the top 10 players' names whose heights are above 180 in descending order of average heading accuracy.,"height > 180; average heading accuracy = DIVIDE(SUM(heading_accuracy), COUNT(player_fifa_api_id));","SELECT t1.player_name,  CAST(SUM(t2.heading_accuracy) AS REAL) / COUNT(t2.`player_fifa_api_id`)  FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.height > 180 GROUP BY t1.id 
+    ORDER BY CAST(SUM(t2.heading_accuracy) AS REAL) / COUNT(t2.`player_fifa_api_id`), t1.id DESC LIMIT 10",moderate,"WITH temp AS (
+    SELECT *, 'Player: ' || Player.player_name || ', Player Weight: ' || Player.weight AS key
+    FROM Player
+), 
+temp2 AS (
+    SELECT temp.player_name, 
+           temp.id,
+           CAST(SUM(t2.heading_accuracy) AS REAL) / COUNT(t2.`player_fifa_api_id`) AS heading_accuracy_avg
+    FROM temp
+    INNER JOIN Player_Attributes AS t2 ON temp.player_api_id = t2.player_api_id 
+    WHERE {{
+        LLMMap(
+            'Is the player height greater than 180 cm?',
+            'temp::key'
+        )
+    }} = TRUE
+    GROUP BY temp.id
+)
+SELECT player_name, heading_accuracy_avg
+FROM temp2
+ORDER BY heading_accuracy_avg DESC, id DESC
+LIMIT 10;
+"
+european_football_2,Which league had the most goals in the 2016 season?,"league that had the most goals refers to MAX(SUM(home_team_goal, away_team_goal)); 2016 season refers to season = '2015/2016';",SELECT t2.name FROM Match AS t1 INNER JOIN League AS t2 ON t1.league_id = t2.id WHERE t1.season = '2015/2016' GROUP BY t2.name ORDER BY SUM(t1.home_team_goal + t1.away_team_goal) DESC LIMIT 1,moderate,"WITH temp AS (
+    SELECT t1.date, t2.team_long_name AS home_team, t3.team_long_name AS away_team,
+           'Home Team: ' || t2.team_long_name || ', Away Team: ' || t3.team_long_name || ', Date: ' || t1.date AS match_key
+    FROM ""Match"" AS t1
+    INNER JOIN Team AS t2 ON t1.home_team_api_id = t2.team_api_id
+    INNER JOIN Team AS t3 ON t1.away_team_api_id = t3.team_api_id
+    WHERE t1.season = '2015/2016'
+), 
+temp2 AS (
+    SELECT temp.*, {{
+        LLMMap(
+            'Provide the league name.',
+            'temp::match_key'
+        )
+    }} AS league_name,
+    {{
+        LLMMap(
+            'Provide the total goals for this match.',
+            'temp::match_key'
+        )
+    }} AS total_goals
+    FROM temp
+)
+SELECT league_name 
+FROM temp2
+GROUP BY league_name
+ORDER BY SUM(total_goals) DESC
+LIMIT 1;
+"
+european_football_2,"In Scotland Premier League, which away team won the most during the 2010 season?","Scotland Premier League refers to League.name = 'Scotland Premier League'; away team refers to away_team_api_id; away team that won the most refers to MAX(SUBTRACT(away_team_goal, home_team_goal) > 0); 2010 season refers to season = '2009/2010';",SELECT teamInfo.team_long_name FROM League AS leagueData INNER JOIN Match AS matchData ON leagueData.id = matchData.league_id INNER JOIN Team AS teamInfo ON matchData.away_team_api_id = teamInfo.team_api_id WHERE leagueData.name = 'Scotland Premier League' AND matchData.season = '2009/2010' AND matchData.away_team_goal - matchData.home_team_goal > 0 GROUP BY matchData.away_team_api_id ORDER BY COUNT(*) DESC LIMIT 1,challenging,"WITH temp AS (
+    SELECT t1.date, 
+           away.team_long_name AS away_team, 
+           home.team_long_name AS home_team,
+           'Home Team: ' || home.team_long_name || ', Away Team: ' || away.team_long_name || ', Date: ' || t1.date AS match_key
+    FROM ""Match"" AS t1
+    INNER JOIN Team AS away ON t1.away_team_api_id = away.team_api_id
+    INNER JOIN Team AS home ON t1.home_team_api_id = home.team_api_id
+    WHERE t1.season = '2009/2010'
+), 
+temp2 AS (
+    SELECT temp.away_team, {{
+        LLMMap(
+            'Provide the league name for this match.',
+            'temp::match_key'
+        )
+    }} AS league_name,
+    {{
+        LLMMap(
+            'Provide the goals for home and away teams in this match.',
+            'temp::match_key'
+        )
+    }} AS goal_difference
+    FROM temp
+)
+SELECT away_team
+FROM temp2
+WHERE league_name = 'Scotland Premier League'
+  AND goal_difference > 0
+GROUP BY away_team
+ORDER BY COUNT(*) DESC
+LIMIT 1;
+"
+european_football_2,"At present, calculate for the player's age who have a sprint speed of no less than 97 between 2013 to 2015.","players age at present = SUBTRACT((DATETIME(), birthday)); sprint_speed > = 97; between 2013 to 2015 refers to date > = '2013-01-01 00:00:00' AND date < = '2015-12-31 00:00:00';","SELECT DATETIME() - T2.birthday age FROM Player_Attributes AS t1 INNER JOIN Player AS t2 ON t1.player_api_id = t2.player_api_id WHERE SUBSTR(t1.`date`, 1, 10) BETWEEN '2013-01-01' AND '2015-12-31' AND t1.sprint_speed >= 97",challenging,"WITH temp AS (
+SELECT t1.player_api_id, t2.player_name, t1.sprint_speed, t1.`date`
+FROM Player_Attributes AS t1 INNER JOIN Player AS t2 ON t1.player_api_id = t2.player_api_id
+WHERE SUBSTR(t1.`date`, 1, 10) BETWEEN '2013-01-01' AND '2015-12-31' AND t1.sprint_speed >= 97
+), 
+temp2 AS (
+    SELECT temp.*, {{
+        LLMMap(
+            'Provide the birthday for this player (in SQL Datetime format).',
+            'temp::player_name'
+        )
+    }} AS birthday
+    FROM temp
+)
+SELECT DATETIME('now') - birthday AS age
+FROM temp2;
+"
+european_football_2,Give the name of the league with the highest matches of all time and how many matches were played in the said league.,name of the league refers to League.name; league with highest matches of all time refers to MAX(COUNT(league_id));,"SELECT t2.name, COUNT(t1.id) FROM Match AS t1 INNER JOIN League AS t2 ON t1.league_id = t2.id GROUP BY t2.name ORDER BY COUNT(t1.id) DESC LIMIT 1",moderate,"WITH temp AS (
+    SELECT t1.id, 
+           hometeam.team_long_name AS home_team, 
+           awayteam.team_long_name AS away_team, 
+           t1.date,
+           'Home Team: ' || hometeam.team_long_name || ', Away Team: ' || awayteam.team_long_name || ', Date: ' || t1.date AS match_key
+    FROM ""Match"" AS t1
+    INNER JOIN Team AS awayteam ON t1.away_team_api_id = awayteam.team_api_id 
+    INNER JOIN Team AS hometeam ON t1.home_team_api_id = hometeam.team_api_id
+),
+temp2 AS (
+    SELECT *, {{
+        LLMMap(
+            'Provide the football league name.',
+            'temp::match_key'
+        )
+    }} AS league_name
+    FROM temp
+)
+SELECT league_name, COUNT(id)
+FROM temp2
+GROUP BY league_name
+ORDER BY COUNT(id) DESC
+LIMIT 1;
+"
+european_football_2,"Calculate the percentage of unique players who prefer left foot, who were born between 1987 and 1992.","players who prefer left foot refers to preferred_foot = 'left'; percentage of players who prefer left foot = DIVIDE(MULTIPLY((SUM(preferred_foot = 'left'), 1.0)), COUNT(player_fifa_api_id)); born between 1987 and 1992 refers to birthday BETWEEN '1987-01-01 00:00:00'AND '1992-12-31 00:00:00';","WITH temp as (Select DISTINCT player_api_id, preferred_foot FROM Player_Attributes)
+SELECT CAST(COUNT(CASE WHEN t2.preferred_foot = 'left' THEN t1.id ELSE NULL END) AS REAL) * 100 / COUNT(t1.id) percent 
+    FROM Player AS t1 INNER JOIN temp AS t2 ON t1.player_api_id = t2.player_api_id 
+    WHERE SUBSTR(t1.birthday, 1, 4) BETWEEN '1987' AND '1992'",challenging,"WITH temp AS (
+    SELECT t1.id,
+           t1.player_name,
+           t1.weight,
+           'Player Name: ' || t1.player_name || ', Weight: ' || t1.weight AS player_info_key
+    FROM Player AS t1
+), 
+temp2 AS (
+    SELECT temp.id, 
+           temp.player_name, 
+           temp.weight, 
+           {{
+               LLMMap(
+                   'Is the player__ preferred foot left?',
+                   'temp::player_info_key'
+               )
+           }} AS is_left_foot,
+           {{
+               LLMMap(
+                   'Provide the player birthday (YYYY-MM-DD).',
+                   'temp::player_info_key'
+               )
+           }} AS birthday
+    FROM temp
+)
+SELECT CAST(COUNT(CASE WHEN temp2.is_left_foot = 't' THEN temp2.id ELSE NULL END) AS REAL) * 100 / COUNT(temp2.id) AS percent
+FROM temp2
+WHERE SUBSTR(birthday, 1, 4) BETWEEN '1987' AND '1992'
+"
+european_football_2,List the top 5 leagues in ascending order of the number of goals made in all seasons combined.,"number of goals made in all seasons combine = SUM(home_team_goal, away_team_goal);","SELECT t1.name, SUM(t2.home_team_goal) + SUM(t2.away_team_goal) FROM League AS t1 INNER JOIN Match AS t2 ON t1.id = t2.league_id GROUP BY t1.name ORDER BY SUM(t2.home_team_goal) + SUM(t2.away_team_goal) ASC LIMIT 5",moderate,"WITH temp AS (
+    SELECT t1.id,
+           t1.date,
+           t2.team_long_name AS home_team,
+           t3.team_long_name AS away_team,
+           'Home Team: ' || t2.team_long_name || ', Away Team: ' || t3.team_long_name || ', Date: ' || t1.date AS match_key
+    FROM ""Match"" AS t1
+    INNER JOIN Team AS t2 ON t1.home_team_api_id = t2.team_api_id
+    INNER JOIN Team AS t3 ON t1.away_team_api_id = t3.team_api_id
+),
+temp2 AS (
+    SELECT *, 
+           {{
+               LLMMap(
+                   'Provide the league name.',
+                   'temp::match_key'
+               )
+           }} AS league_name,
+           {{
+               LLMMap(
+                   'Provide the home team goals.',
+                   'temp::match_key'
+               )
+           }} AS home_team_goal,
+           {{
+               LLMMap(
+                   'Provide the away team goals.',
+                   'temp::match_key'
+               )
+           }} AS away_team_goal
+    FROM temp
+)
+SELECT league_name, SUM(home_team_goal) + SUM(away_team_goal) AS total_goals
+FROM temp2
+GROUP BY league_name
+ORDER BY total_goals ASC
+LIMIT 5;
+"
+european_football_2,List the name of leagues in which the average goals by the home team is higher than the away team in the 2009/2010 season.,name of league refers to League.name; average goals by the home team is higher than the away team = AVG(home_team_goal) > AVG(away_team_goal);,SELECT t1.name FROM League AS t1 INNER JOIN Match AS t2 ON t1.id = t2.league_id WHERE t2.season = '2009/2010' GROUP BY t1.name HAVING (CAST(SUM(t2.home_team_goal) AS REAL) / COUNT(DISTINCT t2.id)) - (CAST(SUM(t2.away_team_goal) AS REAL) / COUNT(DISTINCT t2.id)) > 0,challenging,"WITH temp AS (
+    SELECT t1.id,
+           t1.season,
+           t1.date,
+           t2.team_long_name AS home_team,
+           t3.team_long_name AS away_team,
+           'Home Team: ' || t2.team_long_name || ', Away Team: ' || t3.team_long_name || ', Date: ' || t1.date AS match_key
+    FROM ""Match"" AS t1
+    INNER JOIN Team AS t2 ON t1.home_team_api_id = t2.team_api_id
+    INNER JOIN Team AS t3 ON t1.away_team_api_id = t3.team_api_id
+    WHERE t1.season = '2009/2010'
+),
+temp2 AS (
+    SELECT *, 
+           {{
+               LLMMap(
+                   'Provide the league name.',
+                   'temp::match_key'
+               )
+           }} AS league_name,
+           {{
+               LLMMap(
+                   'Provide the home team goals.',
+                   'temp::match_key'
+               )
+           }} AS home_team_goal,
+           {{
+               LLMMap(
+                   'Provide the away team goals.',
+                   'temp::match_key'
+               )
+           }} AS away_team_goal
+    FROM temp
+)
+SELECT league_name
+FROM temp2
+GROUP BY league_name
+HAVING (CAST(SUM(home_team_goal) AS REAL) / COUNT(DISTINCT temp2.id)) - 
+       (CAST(SUM(away_team_goal) AS REAL) / COUNT(DISTINCT temp2.id)) > 0;
+"
+european_football_2,What is the short name of the football team Queens Park Rangers?,short name of the football team refers to team_short_name; Queens Park Rangers refers to team_long_name = 'Queens Park Rangers';,SELECT team_short_name FROM Team WHERE team_long_name = 'Queens Park Rangers',simple,"{{
+LLMQA(
+    'Provide the 3 letters short team name',
+    (SELECT Team.team_long_name FROM Team
+        WHERE Team.team_long_name = 'Queens Park Rangers'
+    )
+)
+}}
+"
+european_football_2,List the football players with a birthyear of 1970 and a birthmonth of October.,"players with a birthyear of 1970 and a birthmonth of October refers to substr(birthday,1,4) AS year, substr(birthday,6,2) AS month WHERE year = '1970' AND month = '10';","SELECT player_name FROM Player WHERE SUBSTR(birthday, 1, 7) = '1970-10'",simple,"WITH temp AS (
+SELECT T1.player_name, T1.weight, 'Player Name: ' || T1.player_name || ', Weight: ' || T1.weight AS player_key
+FROM Player AS T1
+)
+SELECT temp.player_name
+FROM temp
+WHERE {{
+    LLMMap(
+        'Is the player born in October 1970?',
+        'temp::player_key'
+    )
+}} = TRUE
+"
+european_football_2,"How many matches in the 2015/2016 season were held in Scotland Premier League
+?",Scotland Premier League refers to League.name = 'Scotland Premier League';,SELECT COUNT(t2.id) FROM League AS t1 INNER JOIN Match AS t2 ON t1.id = t2.league_id WHERE t2.season = '2015/2016' AND t1.name = 'Scotland Premier League',simple,"WITH temp AS (
+    SELECT t1.id,
+           t1.date,
+           t1.season,
+           hometeam.team_long_name AS home_team,
+           awayteam.team_long_name AS away_team,
+           'Home Team: ' || hometeam.team_long_name || ', Away Team: ' || awayteam.team_long_name || ', Date: ' || t1.date AS match_key
+    FROM ""Match"" AS t1
+    INNER JOIN Team AS awayteam ON t1.away_team_api_id = awayteam.team_api_id
+    INNER JOIN Team AS hometeam ON t1.home_team_api_id = hometeam.team_api_id
+    WHERE t1.season = '2015/2016'
+), 
+temp2 AS (
+    SELECT *, {{
+        LLMMap(
+            'Provide the league name.',
+            'temp::match_key'
+        )
+    }} AS league_name
+    FROM temp
+)
+SELECT COUNT(temp2.id)
+FROM temp2
+WHERE temp2.league_name LIKE '%Scotland Premier League%'
+"
+european_football_2,What is the preferred foot when attacking of the youngest football player?,preferred foot when attacking refers to preferred_foot; youngest football player refers to latest birthday;,SELECT t2.preferred_foot FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id ORDER BY t1.birthday DESC LIMIT 1,simple,"WITH temp AS (
+    SELECT T1.player_name,
+           T1.weight,
+           'Player Name: ' || T1.player_name || ', Weight: ' || T1.weight AS player_key
+    FROM Player AS T1
+),
+temp2 AS (
+    SELECT temp.player_name,
+           temp.player_key,
+           {{
+               LLMMap(
+                   'Provide the preferred foot (left or right).',
+                   'temp::player_key'
+               )
+           }} AS preferred_foot,
+           {{
+               LLMMap(
+                   'Provide the player__ birthday (YYYY-MM-DD).',
+                   'temp::player_key'
+               )
+           }} AS birthday
+    FROM temp
+)
+SELECT temp2.preferred_foot
+FROM temp2
+ORDER BY temp2.birthday DESC
+LIMIT 1
+"
+european_football_2,"Among all the players whose weight is under 130, how many of them preferred foot in attacking is left?",weight < 130; preferred foot in attacking refers to preferred_foot; preferred_foot = 'left';,SELECT COUNT(DISTINCT t1.id) FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.weight < 130 AND t2.preferred_foot = 'left',moderate,"WITH temp AS (
+    SELECT T1.id,
+           T1.player_name,
+           T1.weight,
+           'Player Name: ' || T1.player_name || ', Weight: ' || T1.weight AS player_key
+    FROM Player AS T1
+    WHERE T1.weight < 130
+)
+SELECT COUNT(DISTINCT id)
+FROM temp WHERE {{
+    LLMMap(
+        'Is the player preferred foot left?',
+        'temp::player_key'
+    )
+}} = TRUE
+"
+european_football_2,List the football teams that has a chance creation passing class of Risky. Inidcate its short name only.,chance creation passing class refers to chanceCreationPassingClass; chanceCreationPassingClass = 'Risky'; short name refers to team_short_name;,SELECT DISTINCT t1.team_short_name FROM Team AS t1 INNER JOIN Team_attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t2.chanceCreationPassingClass = 'Risky',moderate,"WITH temp AS (
+    SELECT t1.team_long_name,
+           'Team Long Name: ' || t1.team_long_name AS team_key
+    FROM Team AS t1
+    INNER JOIN Team_attributes AS t2 ON t1.team_api_id = t2.team_api_id
+    WHERE t2.chanceCreationPassingClass = 'Risky'
+),
+temp2 AS (
+    SELECT temp.team_long_name,
+           {{
+               LLMMap(
+                   'Provide the team short name (3 letters code).',
+                   'temp::team_key'
+               )
+           }} AS team_short_name
+    FROM temp
+)
+SELECT DISTINCT temp2.team_short_name
+FROM temp2
+"
+european_football_2,When is the birthday of the football player who has the highest overall rating?,football player who has the highest overall rating refers to MAX(overall_rating);,SELECT t1.birthday FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id ORDER BY t2.overall_rating DESC LIMIT 1,simple,"{{
+LLMQA(
+    'What is the player birthday (format: YYYY-MM-DD HH:MI:SS)',
+    (SELECT t1.player_name,  t1.weight
+    FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id 
+    ORDER BY t2.overall_rating DESC LIMIT 1)
+)
+}}
+"
+european_football_2,What is the name of the football league in the country of Netherlands?,name of the football league refers to League.name;,SELECT t2.name FROM Country AS t1 INNER JOIN League AS t2 ON t1.id = t2.country_id WHERE t1.name = 'Netherlands',simple,"WITH temp AS (
+    SELECT t1.date,
+           hometeam.team_long_name AS home_team,
+           awayteam.team_long_name AS away_team,
+           'Home Team: ' || hometeam.team_long_name || ', Away Team: ' || awayteam.team_long_name || ', Date: ' || t1.date AS match_key
+    FROM ""Match"" AS t1
+    INNER JOIN Team AS awayteam ON t1.away_team_api_id = awayteam.team_api_id
+    INNER JOIN Team AS hometeam ON t1.home_team_api_id = hometeam.team_api_id
+),
+temp2 AS (
+    SELECT temp.match_key,
+           {{
+               LLMMap(
+                   'Provide the league name.',
+                   'temp::match_key'
+               )
+           }} AS league_name,
+           {{
+               LLMMap(
+                   'Is the match in country Netherlands?',
+                   'temp::match_key'
+               )
+           }} AS in_Netherlands
+    FROM temp
+)
+SELECT temp2.league_name
+FROM temp2
+GROUP BY temp2.league_name
+HAVING in_Netherlands = 't'
+"
+european_football_2,Calculate the average home team goal in the 2010/2011 season in the country of Poland.,average home team goal = AVG(home_team_goal) WHERE name = 'Poland' and season = '2010/2011';,SELECT CAST(SUM(t2.home_team_goal) AS REAL) / COUNT(t2.id) FROM Country AS t1 INNER JOIN Match AS t2 ON t1.id = t2.country_id WHERE t1.name = 'Poland' AND t2.season = '2010/2011',moderate,"WITH temp AS (
+    SELECT t1.id,
+           t1.date,
+           t1.season,
+           hometeam.team_long_name AS home_team,
+           awayteam.team_long_name AS away_team,
+           'Home Team: ' || hometeam.team_long_name || ', Away Team: ' || awayteam.team_long_name || ', Date: ' || t1.date AS match_key
+    FROM ""Match"" AS t1
+    INNER JOIN Team AS awayteam ON t1.away_team_api_id = awayteam.team_api_id
+    INNER JOIN Team AS hometeam ON t1.home_team_api_id = hometeam.team_api_id
+    WHERE t1.season = '2010/2011'
+),
+temp2 AS (
+    SELECT temp.match_key,
+           temp.id,
+           {{
+               LLMMap(
+                   'Provide the home team goals.',
+                   'temp::match_key'
+               )
+           }} AS home_team_goal,
+           {{
+               LLMMap(
+                   'Is the match in country Poland.',
+                   'temp::match_key'
+               )
+           }} AS in_Poland
+    FROM temp
+)
+SELECT CAST(SUM(temp2.home_team_goal) AS REAL) / COUNT(temp2.id) AS avg_home_goals
+FROM temp2
+WHERE temp2.in_Poland = 't';
+"
+european_football_2,Who has the highest average finishing rate between the highest and shortest football player?,finishing rate refers to finishing; highest average finishing rate = MAX(AVG(finishing)); highest football player refers to MAX(height); shortest football player refers to MIN(height);,"SELECT A FROM ( SELECT AVG(finishing) result, 'Max' A FROM Player AS T1 INNER JOIN Player_Attributes AS T2 ON T1.player_api_id = T2.player_api_id WHERE T1.height = ( SELECT MAX(height) FROM Player ) UNION SELECT AVG(finishing) result, 'Min' A FROM Player AS T1 INNER JOIN Player_Attributes AS T2 ON T1.player_api_id = T2.player_api_id WHERE T1.height = ( SELECT MIN(height) FROM Player ) ) ORDER BY result DESC LIMIT 1",challenging,"WITH player_key AS (
+    SELECT T1.player_name,
+           T1.player_api_id,
+           'Player Name: ' || T1.player_name AS player_key
+    FROM Player AS T1
+),
+temp AS (
+    SELECT *,
+           {{
+               LLMMap(
+                   'Provide the height in cm.',
+                   'player_key::player_key'
+               )
+           }} AS height
+    FROM player_key
+)
+SELECT A 
+FROM (
+    SELECT AVG(T3.finishing) AS result, 'Max' AS A 
+    FROM Player AS T1
+    INNER JOIN Player_Attributes AS T3 ON T1.player_api_id = T3.player_api_id
+    WHERE T1.height = (SELECT MAX(height) FROM temp)
+    
+    UNION
+
+    SELECT AVG(T3.finishing) AS result, 'Min' AS A 
+    FROM Player AS T1
+    INNER JOIN Player_Attributes AS T3 ON T1.player_api_id = T3.player_api_id
+    WHERE T1.height = (SELECT MIN(height) FROM temp)
+) AS result_table
+ORDER BY result DESC 
+LIMIT 1;
+"
+european_football_2,Please list player names which are higher than 180.,height>180;,SELECT player_name FROM Player WHERE height > 180,simple,"WITH temp AS (
+    SELECT T1.player_name,
+           T1.weight,
+           'Player Name: ' || T1.player_name || ', Weight: ' || T1.weight AS player_key
+    FROM Player AS T1
+)
+SELECT temp.player_name
+FROM temp
+WHERE {{
+    LLMMap(
+        'Is player taller than 180cm?'
+        'temp::player_key'
+    )
+}} = TRUE
+"
+european_football_2,How many players were born after 1990?,"born after 1990 refers to strftime('%Y', birthday) = '1990';","SELECT COUNT(id) FROM Player WHERE STRFTIME('%Y', birthday) > '1990'",simple,"WITH temp AS (
+    SELECT T1.player_name,
+           T1.id,
+           'Player Name: ' || T1.player_name || ', Weight: ' || T1.weight AS player_key
+    FROM Player AS T1
+)
+SELECT COUNT(id)
+FROM temp
+WHERE {{
+    LLMMap(
+        'Is player born after 1990?'
+        'temp::player_key'
+    )
+}} = TRUE
+"
+european_football_2,List out of players whose preferred foot is left.,preferred_foot = 'left';,"SELECT DISTINCT t1.id, t1.player_name FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t2.preferred_foot = 'left'",simple,"WITH temp AS (
+    SELECT T1.player_name,
+           T1.id,
+           'Player Name: ' || T1.player_name || ', Weight: ' || T1.weight AS player_key
+    FROM Player AS T1
+)
+SELECT DISTINCT id, player_name 
+FROM temp
+WHERE {{
+    LLMMap(
+        'Is player preferred foot left'
+        'temp::player_key'
+    )
+}} = TRUE
+"
+european_football_2,Please list all team short names which the speed class is fast.,team names refers to team_long_name; speed class refers to buildUpPlaySpeedClass; buildUpPlaySpeedClass = 'Fast';,SELECT DISTINCT t1.team_short_name FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t2.buildUpPlaySpeedClass = 'Fast',simple,"WITH team_key AS (
+    SELECT t1.team_long_name, 'Team Long Name: ' || t1.team_long_name AS team_key
+    FROM Team AS t1
+    INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id
+    WHERE t2.buildUpPlaySpeedClass = 'Fast'
+),
+temp AS (
+    SELECT *,
+           {{
+               LLMMap(
+                   'Provide the 3 letters team short name.',
+                   'team_key::team_key'
+               )
+           }} AS team_short_name
+    FROM team_key
+)
+SELECT DISTINCT temp.team_short_name
+FROM temp;
+"
+european_football_2,What is the passing class of CLB team?,passing class refers to buildUpPlayPassingClass; CLB refers to team_short_name = 'CLB';,SELECT DISTINCT t2.buildUpPlayPassingClass FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t1.team_short_name = 'CLB',simple,"WITH team_key AS (
+    SELECT t1.team_long_name, t2.buildUpPlayPassingClass, 'Team Long Name: ' || t1.team_long_name AS team_key
+    FROM Team AS t1
+    INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id
+    WHERE t2.buildUpPlaySpeedClass = 'Fast'
+),
+temp AS (
+    SELECT *,
+           {{
+               LLMMap(
+                   'Provide the 3 letters team short name.',
+                   'team_key::team_key'
+               )
+           }} AS team_short_name
+    FROM team_key
+)
+SELECT DISTINCT temp.buildUpPlayPassingClass
+FROM temp
+WHERE temp.team_short_name = 'CLB'
+"
+european_football_2,Which football player has the shortest height?,shortest height refers to MIN(height);,SELECT player_name FROM player ORDER BY height ASC LIMIT 1,simple,"WITH player_key AS (
+    SELECT T1.player_name,
+           'Player Name: ' || T1.player_name AS player_key
+    FROM Player AS T1
+),
+temp AS (
+    SELECT *,
+           {{
+               LLMMap(
+                   'Provide the height in cm.',
+                   'player_key::player_key'
+               )
+           }} AS height
+    FROM player_key
+)
+SELECT temp.player_name
+FROM temp
+ORDER BY temp.height ASC
+LIMIT 1;
+"
+european_football_2,Which teams have build up play passing more than 70? Please list their short names.,build up play passing refers to buildUpPlayPassing; buildUpPlayPassing > 70; short names refers to team_short_name;,SELECT DISTINCT t1.team_short_name FROM Team AS t1 INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id WHERE t2.buildUpPlayPassing > 70,moderate,"WITH team_key AS (
+    SELECT t1.team_long_name, t2.buildUpPlayPassing, 'Team Long Name: ' || t1.team_long_name AS team_key
+    FROM Team AS t1
+    INNER JOIN Team_Attributes AS t2 ON t1.team_api_id = t2.team_api_id
+    WHERE t2.buildUpPlaySpeedClass = 'Fast'
+),
+temp AS (
+    SELECT team_key.buildUpPlayPassing,
+           {{
+               LLMMap(
+                   'Provide the 3 letters team short name.',
+                   'team_key::team_key'
+               )
+           }} AS team_short_name
+    FROM team_key
+)
+SELECT DISTINCT temp.team_short_name 
+FROM temp
+WHERE temp.buildUpPlayPassing > 70
+"
+european_football_2,"From 2010 to 2015, what was the average overall rating of players who are higher than 170?","from 2010 to 2015 refers to strftime('%Y', date) BETWEEN '2010' AND '2015'; height > 170;","SELECT CAST(SUM(t2.overall_rating) AS REAL) / COUNT(t2.id) FROM Player AS t1 INNER JOIN Player_Attributes AS t2 ON t1.player_api_id = t2.player_api_id WHERE t1.height > 170 AND SUBSTR(t2.`date`, 1, 4) BETWEEN '2010' AND '2015'",moderate,"WITH temp AS (
+    SELECT *, 'Player: ' || Player.player_name || ', Player Weight: ' || Player.weight AS key
+    FROM Player
+),
+temp2 AS (
+    SELECT t2.id, t2.overall_rating, {{
+        LLMMap(
+            'Provide the player height (int).',
+            'temp::key'
+        )
+    }} AS height
+    FROM temp INNER JOIN Player_Attributes AS t2 ON temp.player_api_id = t2.player_api_id
+    WHERE SUBSTR(t2.`date`, 1, 4) BETWEEN '2010' AND '2015'
+)
+SELECT CAST(SUM(temp2.overall_rating) AS REAL) / COUNT(temp2.id)
+FROM temp2
+WHERE temp2.height > 179
+"
+european_football_2,Which country is the league Italy Serie A from?,Italy Serie A from refers to League.name = 'Italy Serie A';,SELECT t1.name FROM Country AS t1 INNER JOIN League AS t2 ON t1.id = t2.country_id WHERE t2.name = 'Italy Serie A',simple,"{{
+    LLMQA('Which country is the league Italy Serie A from?',
+        context=(SELECT ""Italy Serie A"")
+    )
+}}"

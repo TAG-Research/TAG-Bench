@@ -1,0 +1,772 @@
+[
+    {
+        "db_id": "cookbook",
+        "question": "How much Vitamin A is in Sherry beef?",
+        "evidence": "Sherry beef refers to title = 'Sherried Beef'",
+        "SQL": "SELECT T2.vitamin_a FROM Recipe AS T1 INNER JOIN Nutrition AS T2 ON T1.recipe_id = T2.recipe_id WHERE T1.title = 'Sherried Beef'",
+        "new_question": "How much Vitamin A is in the beef dish named after a type of fortified wine?"
+    },
+    {
+        "db_id": "retail_complains",
+        "question": "Among all the clients from the New York city, how many of them have filed a complaint on the issue of Deposits and withdrawals?",
+        "evidence": "",
+        "SQL": "SELECT COUNT(T2.Issue) FROM client AS T1 INNER JOIN events AS T2 ON T1.client_id = T2.Client_ID WHERE T2.Issue = 'Deposits and withdrawals' AND T1.city = 'New York City'",
+        "new_question": "Among all the clients from the city known as the Big Apple, how many have filed a complaint regarding issues with Deposits and withdrawals?"
+    },
+    {
+        "db_id": "retail_complains",
+        "question": "How many complaints on credit cards in the year 2016 were filed by male clients?",
+        "evidence": "credit cards refers to Product = 'Credit card'; 2016 refers to year(Date received) = 2016; male refers to sex = 'Male';",
+        "SQL": "SELECT COUNT(T1.sex) FROM client AS T1 INNER JOIN events AS T2 ON T1.client_id = T2.Client_ID WHERE strftime('%Y', T2.`Date received`) = '2016' AND T1.sex = 'Male' AND T2.Product = 'Credit card'",
+        "new_question": "How many complaints on credit cards during the year of the U.S. presidential election when Trump was elected were filed by male clients?"
+    },
+    {
+        "db_id": "retail_complains",
+        "question": "Please list the full names of all the male clients in the Pacific division.",
+        "evidence": "full names = first, middle, last; male refers to sex = 'Male';",
+        "SQL": "SELECT T1.first, T1.middle, T1.last FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id WHERE T2.division = 'Pacific' AND T1.sex = 'Male'",
+        "new_question": "Please list the full names of all the male clients in the division named after the largest ocean."
+    },
+    {
+        "db_id": "retail_complains",
+        "question": "What is the average number of complaints on credit cards filed by clients from New York in the 3 consecutive years starting from 2015?",
+        "evidence": "average = AVG(Complaint ID); credit cards refers to Product = 'Credit card'; New York refers to city = 'New York'; 3 consecutive years starting from 2015 refers to Date received BETWEEN 2015 AND 2017;",
+        "SQL": "SELECT CAST(COUNT(T2.`Complaint ID`) AS REAL) / 3 AS average FROM client AS T1 INNER JOIN events AS T2 ON T1.client_id = T2.Client_ID WHERE strftime('%Y', T2.`Date received`) BETWEEN '2015' AND '2017' AND T1.city = 'New York City' AND T2.Product = 'Credit card'",
+        "new_question": "What is the average number of complaints on credit cards filed by clients from the city known as the Big Apple during the three consecutive years starting from the year of the release of the movie 'The Force Awakens'?"
+    },
+    {
+        "db_id": "retail_complains",
+        "question": "List all the states in the South region.",
+        "evidence": "",
+        "SQL": "SELECT state FROM state WHERE Region = 'South'",
+        "new_question": "List all the states in the region known for its historical ties to the Confederacy during the Civil War."
+    },
+    {
+        "db_id": "retail_complains",
+        "question": "Calculate the average age of clients from the Midwest region.",
+        "evidence": "average age = AVG(age);",
+        "SQL": "SELECT CAST(SUM(T1.age) AS REAL) / COUNT(T3.Region) AS average FROM client AS T1 INNER JOIN district AS T2 ON T1.district_id = T2.district_id INNER JOIN state AS T3 ON T2.state_abbrev = T3.StateCode WHERE T3.Region = 'Midwest'",
+        "new_question": "Calculate the average age of clients from the region known for its Great Lakes and cornfields."
+    },
+    {
+        "db_id": "retail_complains",
+        "question": "What is the medium through which most complaints are registered in Florida?",
+        "evidence": "medium refers to Submitted via; most complaints refers to MAX(Complaint ID); Florida refers to state = 'florida';",
+        "SQL": "SELECT T3.`Submitted via` FROM callcenterlogs AS T1 INNER JOIN client AS T2 ON T1.`rand client` = T2.client_id INNER JOIN events AS T3 ON T1.`Complaint ID` = T3.`Complaint ID` WHERE T2.state = 'FL' GROUP BY T1.`Complaint ID` ORDER BY COUNT(T1.`Complaint ID`) DESC LIMIT 1",
+        "new_question": "What is the medium through which most complaints are registered in the southeastern U.S. state known for its theme parks and beaches?"
+    },
+    {
+        "db_id": "retail_complains",
+        "question": "Among the calls from California, what percentage are priority 1?",
+        "evidence": "California refers to state = 'California'; percentage = MULTIPLY(DIVIDE(SUM(priority = 1), COUNT(Complaint ID), 1.0));",
+        "SQL": "SELECT CAST(SUM(CASE WHEN T1.priority = 1 THEN 1 ELSE 0 END) AS REAL) * 100 / COUNT(T1.priority) FROM callcenterlogs AS T1 INNER JOIN client AS T2 ON T1.`rand client` = T2.client_id INNER JOIN district AS T3 ON T2.district_id = T3.district_id INNER JOIN state AS T4 ON T3.state_abbrev = T4.StateCode WHERE T4.State = 'California'",
+        "new_question": "Among the calls from the state known for Silicon Valley, what percentage are priority 1?"
+    },
+    {
+        "db_id": "social_media",
+        "question": "How many female Twitter users are there from Wisconsin?",
+        "evidence": "female users refers to Gender = 'Female'; 'Wisconsin' is the State",
+        "SQL": "SELECT COUNT(T1.Likes) FROM twitter AS T1 INNER JOIN location AS T2 ON T2.LocationID = T1.LocationID INNER JOIN user AS T3 ON T3.UserID = T1.UserID WHERE T2.State = 'Wisconsin' AND T3.Gender = 'Female'",
+        "new_question": "How many female users are there on the platform with the blue bird logo from the U.S. state known for its dairy production?"
+    },
+    {
+        "db_id": "movie_platform",
+        "question": "Name movie titles released in year 1945. Sort the listing by the descending order of movie popularity.",
+        "evidence": "released in the year 1945 refers to movie_release_year = 1945;",
+        "SQL": "SELECT movie_title FROM movies WHERE movie_release_year = 1945 ORDER BY movie_popularity DESC LIMIT 1",
+        "new_question": "Name movie titles released in the year when World War II ended. Sort the listing by descending order of movie popularity."
+    },
+    {
+        "db_id": "movie_platform",
+        "question": "What is the average number of Mubi users who love movies directed by Stanley Kubrick?",
+        "evidence": "average = AVG(movie_popularity); number of Mubi users who loves the movie refers to movie_popularity;",
+        "SQL": "SELECT AVG(movie_popularity) FROM movies WHERE director_name = 'Stanley Kubrick'",
+        "new_question": "What is the average number of Mubi users who love movies directed by the filmmaker known for '2001: A Space Odyssey' and 'The Shining'?"
+    },
+    {
+        "db_id": "movie_platform",
+        "question": "For all ratings which are rated in year 2020, name the movies which has the rating scored 4 and above.",
+        "evidence": "ratings in year 2020 refers to rating_timestamp_utc like '%2020%'; rating_score > = 4;",
+        "SQL": "SELECT T2.movie_title FROM ratings AS T1 INNER JOIN movies AS T2 ON T1.movie_id = T2.movie_id WHERE CAST(SUBSTR(T1.rating_timestamp_utc, 1, 4) AS INTEGER) = 2020 AND CAST(SUBSTR(T1.rating_timestamp_utc, 6, 2) AS INTEGER) > 4",
+        "new_question": "For all ratings given during the year COVID-19 lockdown started, name the movies which have a rating of 4 and above."
+    },
+    {
+        "db_id": "movie_platform",
+        "question": "Which year was the third movie directed by Quentin Tarantino released? Indicate the user ids of the user who gave it a rating score of 4.",
+        "evidence": "third movie refers to third movie that has oldest movie_release_year;",
+        "SQL": "SELECT T2.movie_release_year, T1.user_id FROM ratings AS T1 INNER JOIN movies AS T2 ON T1.movie_id = T2.movie_id WHERE T1.movie_id = ( SELECT movie_id FROM movies WHERE director_name = 'Quentin Tarantino' ORDER BY movie_release_year ASC LIMIT 2, 1 ) AND T1.rating_score = 4",
+        "new_question": "Which year saw the release of the third film by the director known for 'Pulp Fiction'? Indicate the user ids of those who rated it 4 stars."
+    },
+    {
+        "db_id": "movie_platform",
+        "question": "How many movies directed by Francis Ford Coppola have a popularity of more than 1,000? Indicate what is the highest amount of likes that each critic per movie has received, if there's any.",
+        "evidence": "Francis Ford Coppola refers to director_name; popularity of more than 1,000 refers to movie_popularity >1000;highest amount of likes that each critic per movie has received refers to MAX(critic_likes)",
+        "SQL": "SELECT COUNT(T2.movie_title), T1.critic FROM ratings AS T1 INNER JOIN movies AS T2 ON T1.movie_id = T2.movie_id WHERE T2.director_name = 'Francis Ford Coppola' AND T2.movie_popularity > 1000",
+        "new_question": "How many movies directed by the filmmaker of 'The Godfather' have a popularity score exceeding 1,000? Indicate the highest number of likes received by each critic per movie, if available."
+    },
+    {
+        "db_id": "movie_platform",
+        "question": "What is the average score of the movie The Fall of Berlin in 2019?",
+        "evidence": "The Fall of Berlin' is movie_title; in 2019 refers to rating_timestamp_utc = 2019; Average score refers to Avg(rating_score);",
+        "SQL": "SELECT SUM(T1.rating_score) / COUNT(T1.rating_id) FROM ratings AS T1 INNER JOIN movies AS T2 ON T1.movie_id = T2.movie_id WHERE T1.rating_timestamp_utc LIKE '2019%' AND T2.movie_title LIKE 'The Fall of Berlin'",
+        "new_question": "What is the average score of the movie about the historical event marking the end of World War II in Europe, reviewed the year before the pandemic started?"
+    },
+    {
+        "db_id": "movie_platform",
+        "question": "Which of the film directed by director Abbas Kiarostami has the highest average score?",
+        "evidence": "Abbas Kiarostami' is director_name; the highest Average score refers to Max(Avg(rating_score));",
+        "SQL": "SELECT T2.movie_title FROM ratings AS T1 INNER JOIN movies AS T2 ON T1.movie_id = T2.movie_id WHERE T2.director_name = 'Abbas Kiarostami' GROUP BY T2.movie_title ORDER BY SUM(T1.rating_score) / COUNT(T1.rating_id) DESC LIMIT 1",
+        "new_question": "Which film directed by the renowned Iranian filmmaker known for his poetic style has the highest average score?"
+    },
+    {
+        "db_id": "movie_platform",
+        "question": "Who is the user who created the list titled 'Sound and Vision'? Was he a subcriber when he created the list?",
+        "evidence": "list titled 'Sound and Vision' refers to list_title = 'Sound and Vision'; user_subscriber = 1 means the user was a subscriber when he rated the movie; user_subscriber = 0 means the user was not a subscriber when he rated the movie\n\n\n\n",
+        "SQL": "SELECT T1.user_id, T1.user_subscriber FROM lists_users AS T1 INNER JOIN lists AS T2 ON T1.list_id = T2.list_id WHERE T2.list_title LIKE 'Sound and Vision'",
+        "new_question": "Who is the individual who compiled the list named after a David Bowie song? Was this person a subscriber at the time of its creation?"
+    },
+    {
+        "db_id": "social_media",
+        "question": "Give the location id of West Sussex State.",
+        "evidence": "",
+        "SQL": "SELECT DISTINCT LocationID FROM location WHERE State = 'West Sussex'",
+        "new_question": "Give the location id of the English county known for the South Downs and coastal attractions."
+    },
+    {
+        "db_id": "social_media",
+        "question": "How many reshared tweets are there in Texas?",
+        "evidence": "reshared tweet refers to IsReshare = 'TRUE'; 'Texas' is the State",
+        "SQL": "SELECT COUNT(T1.TweetID) FROM twitter AS T1 INNER JOIN location AS T2 ON T2.LocationID = T1.LocationID WHERE T2.State = 'Texas' AND T1.IsReshare = 'TRUE'",
+        "new_question": "How many reshared tweets are there in the state known for its large size and hosting the city of Austin?"
+    },
+    {
+        "db_id": "social_media",
+        "question": "Show the text of the tweet with the highest klout from Connecticut.",
+        "evidence": "highest klout refers to Max(Klout); 'Connecticut' is the State",
+        "SQL": "SELECT T1.text FROM twitter AS T1 INNER JOIN location AS T2 ON T2.LocationID = T1.LocationID WHERE T2.State = 'Connecticut' ORDER BY T1.Klout DESC LIMIT 1",
+        "new_question": "Show the text of the tweet with the highest klout from the state known for its prestigious Ivy League university beginning with Y."
+    },
+    {
+        "db_id": "university",
+        "question": "How many universities are there in the United States of America?",
+        "evidence": "in the United States of America refers to country_name = 'United States of America';",
+        "SQL": "SELECT COUNT(*) FROM university AS T1 INNER JOIN country AS T2 ON T1.country_id = T2.id WHERE T2.country_name = 'United States of America'",
+        "new_question": "How many universities are there in the country known for having the Ivy League?"
+    },
+    {
+        "db_id": "university",
+        "question": "In 2016, what is the name of the university in Australia with the highest score in Citations criteria?",
+        "evidence": "In 2016 refers to year = 2016; name of the university refers to university_name; in Australia refers to country_name = 'Australia'; in Citations criteria refers to criteria_name = 'Citations'; highest score refers to MAX(score)",
+        "SQL": "SELECT T3.university_name FROM ranking_criteria AS T1 INNER JOIN university_ranking_year AS T2 ON T1.id = T2.ranking_criteria_id INNER JOIN university AS T3 ON T3.id = T2.university_id INNER JOIN country AS T4 ON T4.id = T3.country_id WHERE T1.criteria_name = 'Citations' AND T2.year = 2016 AND T1.id = 4 AND T4.country_name = 'Australia' ORDER BY T2.score DESC LIMIT 1",
+        "new_question": "In the year when Pokemon Go became a global phenomenon, what is the name of the university in the Land Down Under with the highest score in Citations criteria?"
+    },
+    {
+        "db_id": "university",
+        "question": "What is the ranking criteria ID of Brown University in 2014?",
+        "evidence": "Brown University refers to university_name = 'Brown University'; in 2014 refers to year = 2014",
+        "SQL": "SELECT T1.ranking_criteria_id FROM university_ranking_year AS T1 INNER JOIN university AS T2 ON T1.university_id = T2.id WHERE T2.university_name = 'Brown University' AND T1.year = 2014",
+        "new_question": "What is the ranking criteria ID of the Ivy League university located in Providence during the year 2014?"
+    },
+    {
+        "db_id": "university",
+        "question": "What is the ranking criteria ID of Yale University in 2014?",
+        "evidence": "Yale University refers to university_name = 'Yale University'; in 2014 refers to year = 2014",
+        "SQL": "SELECT T1.ranking_criteria_id FROM university_ranking_year AS T1 INNER JOIN university AS T2 ON T1.university_id = T2.id WHERE T2.university_name = 'Yale University' AND T1.year = 2014",
+        "new_question": "What is the ranking criteria ID of the Ivy League university with the mascot Handsome Dan during the year 2014?"
+    },
+    {
+        "db_id": "university",
+        "question": "Compute the average score of the university located in Brazil.",
+        "evidence": "average score refers to avg(score); located in Brazil refers to country_name = 'Brazil';",
+        "SQL": "SELECT AVG(T2.score) FROM university AS T1 INNER JOIN university_ranking_year AS T2 ON T1.id = T2.university_id INNER JOIN country AS T3 ON T3.id = T1.country_id WHERE T3.country_name = 'Brazil'",
+        "new_question": "Compute the average score of the university situated in the largest country in South America."
+    },
+    {
+        "db_id": "university",
+        "question": "How many female students were there at Stanford University in 2011?",
+        "evidence": "in 2011 refers to year 2011; female students refers to DIVIDE(MULTIPLY(pct_female_students, num_students), 100); Stanford University refers to university_name = 'Stanford University';",
+        "SQL": "SELECT CAST(T1.num_students * T1.pct_female_students AS REAL) / 100 FROM university_year AS T1 INNER JOIN university AS T2 ON T1.university_id = T2.id WHERE T1.year = 2011 AND T2.university_name = 'Stanford University'",
+        "new_question": "How many female students were there at the prestigious university in California with a tree mascot during the year when Steve Jobs passed away?"
+    },
+    {
+        "db_id": "university",
+        "question": "Name the most famous university in Argentina.",
+        "evidence": "in Argentina refers to country_name = 'Argentina';\u00a0 most famous refers to MAX(SUM(score))",
+        "SQL": "SELECT T1.university_name FROM university AS T1 INNER JOIN university_ranking_year AS T2 ON T1.id = T2.university_id INNER JOIN country AS T3 ON T3.id = T1.country_id WHERE T3.country_name = 'Argentina' GROUP BY T1.university_name ORDER BY SUM(T2.score) DESC LIMIT 1",
+        "new_question": "Name the most prestigious university in the country known for its tango and diverse landscapes."
+    },
+    {
+        "db_id": "talkingdata",
+        "question": "How many events did the 88-years-old male users participate on 4th May,2016?",
+        "evidence": "88-years-old refers to age = 88; male refers to gender = 'M'; on 4th May, 2016 refers to timestamp LIKE '2016-05-04%';",
+        "SQL": "SELECT COUNT(T2.event_id) FROM gender_age AS T1 INNER JOIN events AS T2 ON T2.device_id = T1.device_id WHERE T1.gender = 'M' AND SUBSTR(`timestamp`, 1, 10) = '2016-05-04' AND T1.age = 88",
+        "new_question": "How many events did male users, who were born the year the stock market crashed, participate in on the day known as Star Wars Day in 2016?"
+    },
+    {
+        "db_id": "talkingdata",
+        "question": "How many events in total have happened on the devices in 2016?",
+        "evidence": "in 2016 refers to `timestamp` LIKE '2016%';",
+        "SQL": "SELECT COUNT(event_id) FROM `events` WHERE SUBSTR(`timestamp`, 1, 4) = '2016'",
+        "new_question": "How many events in total have happened on the devices during the year when the Rio Olympics took place?"
+    },
+    {
+        "db_id": "talkingdata",
+        "question": "For the event which happened at 23:33:34 on 2016/5/6, how many installed apps were involved?",
+        "evidence": "at 23:33:34 on 2016/5/6 refers to timestamp = '2016/5/6 23:33:34'; installed refers to is_installed = '1';",
+        "SQL": "SELECT COUNT(T1.event_id) FROM app_events AS T1 INNER JOIN events AS T2 ON T1.event_id = T2.event_id WHERE SUBSTR(T2.`timestamp`, 1, 10) = '2016-05-06' AND T1.is_installed = '1'",
+        "new_question": "For the event that occurred late at night on the day after Cinco de Mayo in 2016, how many installed apps were involved?"
+    },
+    {
+        "db_id": "talkingdata",
+        "question": "Among the users who use OPPO, calculate the percentage of those who are under 50 years old.",
+        "evidence": "OPPO refers to phone_brand = 'OPPO'; percentage = MULTIPLY(DIVIDE(SUM(age < 50), COUNT(device_id)), 1.0); under 50 years old refers to age < 50;",
+        "SQL": "SELECT SUM(IIF(T1.age < 50, 1, 0)) / COUNT(T1.device_id) AS per FROM gender_age AS T1 INNER JOIN phone_brand_device_model2 AS T2 ON T1.device_id = T2.device_id WHERE T2.phone_brand = 'OPPO'",
+        "new_question": "Among the users who use the smartphone brand founded in 2004 known for its innovative camera technology and based in a country with the largest population in the world, calculate the percentage of those who are under 50 years old."
+    },
+    {
+        "db_id": "talkingdata",
+        "question": "Mention the group of age of users who use phone brand of LG.",
+        "evidence": "group of age refers to group;",
+        "SQL": "SELECT T1.`group` FROM gender_age AS T1 INNER JOIN phone_brand_device_model2 AS T2 ON T1.device_id = T2.device_id WHERE T2.phone_brand = 'LG'",
+        "new_question": "Mention the group of age of users who use phones from the South Korean electronics giant known for its appliances and smartphones."
+    },
+    {
+        "db_id": "talkingdata",
+        "question": "Among the users who are above 20, how many users use device model of ELIFE E7 Mini?",
+        "evidence": "above 20 refers to age > 20;",
+        "SQL": "SELECT COUNT(T1.device_id) FROM gender_age AS T1 INNER JOIN phone_brand_device_model2 AS T2 ON T1.device_id = T2.device_id WHERE T2.device_model = 'ELIFE E7 Mini' AND T1.age > 20",
+        "new_question": "Among the users who are no longer teenagers, how many use the device model known for its unique rotating camera?"
+    },
+    {
+        "db_id": "car_retails",
+        "question": "How many checks were issued by Euro+ Shopping Channel in the year 2004?",
+        "evidence": "Euro+ Shopping Channel is a customer name; year(paymentDate) = '2004';",
+        "SQL": "SELECT COUNT(T1.checkNumber) FROM payments AS T1 INNER JOIN customers AS T2 ON T1.customerNumber = T2.customerNumber WHERE customerName = 'Euro+ Shopping Channel' AND STRFTIME('%Y', T1.paymentDate) = '2004'",
+        "new_question": "How many checks were issued by Euro+ Shopping Channel during a year Greece hosted the Summer Olympics?"
+    },
+    {
+        "db_id": "car_retails",
+        "question": "State the email of those who are staff of Murphy Diane whose number is 1002 and living in San Francisco",
+        "evidence": "staff of refers to reportsTO; San Francisco is a city;",
+        "SQL": "SELECT T1.email FROM employees AS T1 INNER JOIN offices AS T2 ON T1.officeCode = T2.officeCode WHERE T1.reportsTo = 1002 AND T2.city = 'San Francisco'",
+        "new_question": "State the email of those who are staff of the individual with employee ID 1002, residing in the city known for the Golden Gate Bridge."
+    },
+    {
+        "db_id": "car_retails",
+        "question": "Determine the email and Code of employee who are working at United State, state MA",
+        "evidence": "code of employee refers to employeeNumber; United States of America refers to country = 'USA';",
+        "SQL": "SELECT T1.email, T1.employeeNumber FROM employees AS T1 INNER JOIN offices AS T2 ON T1.officeCode = T2.officeCode WHERE T2.state = 'MA' AND T2.country = 'USA'",
+        "new_question": "Determine the email and Code of employees who are working in the northeastern state known for the city of Boston."
+    },
+    {
+        "db_id": "car_retails",
+        "question": "Determine the email and Code of employee who are working at United State, state CA",
+        "evidence": "United States of America refers to country = 'USA'; code of employee refers to employeeNumber;",
+        "SQL": "SELECT T1.email, T1.employeeNumber FROM employees AS T1 INNER JOIN offices AS T2 ON T1.officeCode = T2.officeCode WHERE T2.country = 'USA' AND T2.state = 'CA' GROUP BY T1.email, T1.officeCode",
+        "new_question": "Determine the email and Code of employees working in the U.S. state known for Hollywood and Silicon Valley."
+    },
+    {
+        "db_id": "car_retails",
+        "question": "How many customers who are in Norway and have credit line under 220000?",
+        "evidence": "Norway is a country; credit line refers to creditLimit; creditLimit<220000;",
+        "SQL": "SELECT COUNT(creditLimit) FROM customers WHERE creditLimit < 220000 AND country = 'Norway'",
+        "new_question": "How many customers located in the country known for fjords and have a credit line below 220,000?"
+    },
+    {
+        "db_id": "car_retails",
+        "question": "List out full name and email of employees who are working in Paris?",
+        "evidence": "full name = firstName+LastName; Paris is a city;",
+        "SQL": "SELECT T1.firstName, T1.lastName, T1.email FROM employees AS T1 INNER JOIN offices AS T2 ON T1.officeCode = T2.officeCode WHERE T2.city = 'Paris'",
+        "new_question": "List out the full name and email of employees who are working in the city known for the Eiffel Tower?"
+    },
+    {
+        "db_id": "car_retails",
+        "question": "Calculate the total quantity ordered for 18th Century Vintage Horse Carriage and the average price.",
+        "evidence": "18th Century Vintage Horse Carriage is a product name; average price = AVG(priceEach);",
+        "SQL": "SELECT SUM(T2.quantityOrdered) , SUM(T2.quantityOrdered * T2.priceEach) / SUM(T2.quantityOrdered) FROM products AS T1 INNER JOIN orderdetails AS T2 ON T1.productCode = T2.productCode WHERE T1.productName = '18th Century Vintage Horse Carriage'",
+        "new_question": "Calculate the total quantity ordered for the antique horse-drawn vehicle from the era of powdered wigs and the average price."
+    },
+    {
+        "db_id": "car_retails",
+        "question": "Which customer ordered 1939 'Chevrolet Deluxe Coupe' at the highest price?",
+        "evidence": "1939 'Chevrolet Deluxe Coupe' refers to productName; the highest price refers to MAX(priceEach)",
+        "SQL": "SELECT t4.customerName FROM products AS t1 INNER JOIN orderdetails AS t2 ON t1.productCode = t2.productCode INNER JOIN orders AS t3 ON t2.orderNumber = t3.orderNumber INNER JOIN customers AS t4 ON t3.customerNumber = t4.customerNumber WHERE t1.productName = '1939 Chevrolet Deluxe Coupe' ORDER BY t2.priceEach DESC LIMIT 1",
+        "new_question": "Which customer purchased the late 1930s model of the Chevrolet known for its sleek design at the highest price?"
+    },
+    {
+        "db_id": "law_episode",
+        "question": "How many awards has Rene Balcer been nominated for?",
+        "evidence": "",
+        "SQL": "SELECT COUNT(T2.award_id) FROM Person AS T1 INNER JOIN Award AS T2 ON T1.person_id = T2.person_id WHERE T1.name = 'Rene Balcer'",
+        "new_question": "How many awards has the creator of the crime drama series 'Law & Order: Criminal Intent' been nominated for?"
+    },
+    {
+        "db_id": "law_episode",
+        "question": "How many episodes did J.K. Simmons' role appear on the show?",
+        "evidence": "",
+        "SQL": "SELECT COUNT(T1.role) FROM Credit AS T1 INNER JOIN Person AS T2 ON T2.person_id = T1.person_id WHERE T2.name = 'J.K. Simmons'",
+        "new_question": "How many episodes featured the actor who played the strict prison guard on the show 'Oz'?"
+    },
+    {
+        "db_id": "law_episode",
+        "question": "How many awards has Julia Roberts been nominated for?",
+        "evidence": "been nominated refers to result = 'Nominee'",
+        "SQL": "SELECT COUNT(T2.award_id) FROM Person AS T1 INNER JOIN Award AS T2 ON T1.person_id = T2.person_id WHERE T1.name = 'Julia Roberts' AND T2.result = 'Nominee'",
+        "new_question": "How many awards has the actress known for her role in 'Pretty Woman' been nominated for?"
+    },
+    {
+        "db_id": "law_episode",
+        "question": "How many people, who were born in Canada, won an award in 1999?",
+        "evidence": "born in Canada refers to birth_country = 'Canada'; in 1999 refers to year = 1999",
+        "SQL": "SELECT COUNT(T1.person_id) FROM Person AS T1 INNER JOIN Award AS T2 ON T1.person_id = T2.person_id WHERE T2.year = 1999 AND T1.birth_country = 'Canada'",
+        "new_question": "How many people, who were born in the country known for its maple syrup, won an award during the year when Prince announced his symbolic name change?"
+    },
+    {
+        "db_id": "law_episode",
+        "question": "Among the episodes that were aired in 1998, how many won an International Monitor Awards?",
+        "evidence": "aired in 1998 refers to air_date like '1998%'; won refers to result = 'Winner'; International Monitor Awards refers to organization = 'International Monitor Awards'",
+        "SQL": "SELECT COUNT(T1.episode_id) FROM Episode AS T1 INNER JOIN Award AS T2 ON T1.episode_id = T2.episode_id WHERE strftime('%Y', T1.air_date) = '1998' AND T2.organization = 'International Monitor Awards' AND T2.result = 'Winner'",
+        "new_question": "Among the episodes that were aired during the year the Winter Olympics were held in Nagano, how many won an International Monitor Awards?"
+    },
+    {
+        "db_id": "law_episode",
+        "question": "How many roles did Julia Roberts play in the series?",
+        "evidence": "",
+        "SQL": "SELECT COUNT(T1.role) FROM Credit AS T1 INNER JOIN Person AS T2 ON T2.person_id = T1.person_id WHERE T2.name = 'Julia Roberts'",
+        "new_question": "How many roles did the actress known for 'Pretty Woman' play in the series?"
+    },
+    {
+        "db_id": "law_episode",
+        "question": "What is the full place of birth of Rene Chenevert Balcer?",
+        "evidence": "full place of birth refers to birth_place, birth_region; Rene Chenevert Balcer refers to birth_name = 'Rene Chenevert Balcer'",
+        "SQL": "SELECT birth_place, birth_region FROM Person WHERE birth_name = 'Rene Chenevert Balcer'",
+        "new_question": "What is the full place of birth of the creator of the TV series 'Law & Order: Criminal Intent'?"
+    },
+    {
+        "db_id": "law_episode",
+        "question": "What is the name of the actors born in the USA?",
+        "evidence": "born in the USA refers to birth_country = 'USA'",
+        "SQL": "SELECT name FROM Person WHERE birth_country = 'USA'",
+        "new_question": "What is the name of the actors born in the country known for Hollywood?"
+    },
+    {
+        "db_id": "law_episode",
+        "question": "How many episodes are credited to Jerry Orbach?",
+        "evidence": "",
+        "SQL": "SELECT COUNT(T2.person_id) FROM Credit AS T1 INNER JOIN Person AS T2 ON T2.person_id = T1.person_id WHERE T2.name = 'Jerry Orbach'",
+        "new_question": "How many episodes feature the actor known for portraying Detective Lennie Briscoe in the long-running crime drama series?"
+    },
+    {
+        "db_id": "restaurant",
+        "question": "List all the cities in Sonoma County.",
+        "evidence": "",
+        "SQL": "SELECT city FROM geographic WHERE county = 'sonoma county'",
+        "new_question": "List all the cities in the California county famous for its wine production."
+    },
+    {
+        "db_id": "restaurant",
+        "question": "In how many counties is there a street called Appian Way?",
+        "evidence": "a street called Appian Way refers to street_name = 'appian way'",
+        "SQL": "SELECT COUNT(DISTINCT T2.county) FROM location AS T1 INNER JOIN geographic AS T2 ON T1.city = T2.city WHERE T1.street_name = 'appian way'",
+        "new_question": "In how many counties can you find a street named after the ancient Roman road that connected Rome to Brindisi?"
+    },
+    {
+        "db_id": "restaurant",
+        "question": "Identify all restaurants in Contra Costa County by id.",
+        "evidence": "",
+        "SQL": "SELECT T1.id_restaurant FROM location AS T1 INNER JOIN geographic AS T2 ON T1.city = T2.city WHERE T2.county = 'contra costa county'",
+        "new_question": "Identify all restaurants in the California county located just east of the San Francisco Bay Area by id."
+    },
+    {
+        "db_id": "restaurant",
+        "question": "Which restaurant on the street Alameda de las Pulgas in the city of Menlo Park is the worst rated?",
+        "evidence": "restaurant refers to label; street Alameda de las Pulgas refers to street_name = 'avenida de las pulgas'; the worst rated refers to min(review)",
+        "SQL": "SELECT T2.label FROM location AS T1 INNER JOIN generalinfo AS T2 ON T1.id_restaurant = T2.id_restaurant WHERE T1.street_name = 'avenida de las pulgas' AND T2.city = 'menlo park' ORDER BY review LIMIT 1",
+        "new_question": "Which restaurant on the street known for its Spanish name meaning 'Avenue of the Fleas' in the city where Facebook's headquarters is located is the worst rated?"
+    },
+    {
+        "db_id": "restaurant",
+        "question": "On what street in Tuolumne County is Good Heavens restaurant located?",
+        "evidence": "street refers to street_name; Good Heavens restaurant refers to label = 'good heavens'",
+        "SQL": "SELECT T1.street_name FROM location AS T1 INNER JOIN generalinfo AS T2 ON T1.id_restaurant = T2.id_restaurant INNER JOIN geographic AS T3 ON T2.city = T3.city WHERE T2.label = 'good heavens' AND T3.county = 'tuolumne county'",
+        "new_question": "On what street in the California county containing Sonora is Good Heavens restaurant located?"
+    },
+    {
+        "db_id": "restaurant",
+        "question": "Identify all the restaurants in Marin County by their id.",
+        "evidence": "",
+        "SQL": "SELECT T1.id_restaurant FROM generalinfo AS T1 INNER JOIN geographic AS T2 ON T1.city = T2.city WHERE T2.county = 'marin county'",
+        "new_question": "Identify all the restaurants in the county located just north of the Golden Gate Bridge by their id."
+    },
+    {
+        "db_id": "restaurant",
+        "question": "Calculate the average rating of reviews for restaurants in Santa Cruz County.",
+        "evidence": "average rating = divide(sum(review where county = 'santa cruz county'), count(id_restaurant where county = 'santa cruz county'))",
+        "SQL": "SELECT AVG(T2.review) FROM geographic AS T1 INNER JOIN generalinfo AS T2 ON T1.city = T2.city WHERE T1.county = 'santa cruz county'",
+        "new_question": "Calculate the average rating of reviews for restaurants in the coastal county known for its boardwalk and surfing culture in California."
+    },
+    {
+        "db_id": "restaurant",
+        "question": "What percentage of restaurants in Monterey County have Mexican food?",
+        "evidence": "Mexican food refers to food_type = 'mexican'; percentage = divide(count(id_restaurant where food_type = 'mexican'), count(id_restaurant)) where county = 'monterey county' * 100%",
+        "SQL": "SELECT CAST(SUM(IIF(T2.food_type = 'mexican', 1, 0)) AS REAL) * 100 / COUNT(T2.id_restaurant) FROM geographic AS T1 INNER JOIN generalinfo AS T2 ON T1.city = T2.city WHERE T1.county = 'monterey county'",
+        "new_question": "What percentage of restaurants in the county known for the Monterey Bay Aquarium offer Mexican cuisine?"
+    },
+    {
+        "db_id": "restaurant",
+        "question": "What is the percentage of restaurants that serve American food in Dublin city?",
+        "evidence": "American food refers to food_type = 'american food'; percentage = divide(count(id_restaurant), count(id_restaurant where food_type = 'american food')) where city = 'dublin' * 100%",
+        "SQL": "SELECT CAST(SUM(IIF(food_type = 'american food', 1, 0)) AS REAL) * 100 / COUNT(id_restaurant) FROM generalinfo WHERE city = 'dublin'",
+        "new_question": "What is the percentage of restaurants that serve American food in the capital of Ireland?"
+    },
+    {
+        "db_id": "restaurant",
+        "question": "What is the name of the least popular Indian restaurant on Shattuck Avenue in Berkeley?",
+        "evidence": "restaurant name refers to label; the least popular refers to min(review); Indian restaurant refers to food_type = 'Indian restaurant'; Shattuck Avenue in Berkeley refers to street_name = 'shattuck ave' and city = 'berkeley'",
+        "SQL": "SELECT T1.id_restaurant FROM generalinfo AS T1 INNER JOIN location AS T2 ON T1.id_restaurant = T2.id_restaurant WHERE T1.city = 'berkeley' AND T2.street_name = 'shattuck ave' AND T1.food_type = 'Indian restaurant' ORDER BY T1.review LIMIT 1",
+        "new_question": "What is the name of the least popular Indian restaurant on the downtown street with the BART station in Berkeley?"
+    },
+    {
+        "db_id": "restaurant",
+        "question": "Please indicate which labels have the city located in Santa Cruz.",
+        "evidence": "Santa Cruz refers to county = 'Santa Cruz county'",
+        "SQL": "SELECT T1.label FROM generalinfo AS T1 INNER JOIN geographic AS T2 ON T1.city = T2.city WHERE T2.county = 'Santa Cruz county'",
+        "new_question": "Please indicate which labels have the city located in the coastal region known for its Boardwalk and University."
+    },
+    {
+        "db_id": "restaurant",
+        "question": "Find the percentage of restaurant in Napa Valley.",
+        "evidence": "Napa Valley refers to region = 'Napa Valley'; percentage = divide(count(id_restaurant where region = 'Napa Valley'), count(id_restaurant)) * 100%",
+        "SQL": "SELECT CAST(SUM(IIF(region = 'Napa Valley', 1, 0)) AS REAL) * 100 / COUNT(region) FROM geographic",
+        "new_question": "Find the percentage of restaurants in the region famous for its wine production in Northern California."
+    },
+    {
+        "db_id": "restaurant",
+        "question": "In which region can you find the highest number of Baskin Robbins restaurants?",
+        "evidence": "the highest number refers to max(count(city)); Baskin Robbins restaurant refers to label = 'baskin robbins'",
+        "SQL": "SELECT T2.region AS num FROM generalinfo AS T1 INNER JOIN geographic AS T2 ON T1.city = T2.city WHERE T1.label = 'baskin robbins' GROUP BY T2.region ORDER BY COUNT(T1.city) DESC LIMIT 1",
+        "new_question": "In which region can you find the highest number of ice cream shops from the brand known for pink and blue logo?"
+    },
+    {
+        "db_id": "synthea",
+        "question": "For how long was Elly Koss required to take Acetaminophen?",
+        "evidence": "SUM(MULTIPLY(365, SUBTRACT(strftime('%Y', STOP), strftime('%Y', START))), MULTIPLY(30, SUBTRACT(strftime('%m', STOP), strftime('%m', START))), SUBTRACT(strftime('%d', STOP), strftime('%d', START))) where DESCRIPTION like 'Acetaminophen%';",
+        "SQL": "SELECT strftime('%J', T2.STOP) - strftime('%J', T2.START) AS days FROM patients AS T1 INNER JOIN medications AS T2 ON T1.patient = T2.PATIENT WHERE T1.first = 'Elly' AND T1.last = 'Koss' AND T2.description LIKE 'Acetaminophen%'",
+        "new_question": "For how long was Elly Koss required to take the over-the-counter medication commonly recommended for pain relief and fever reduction sometimes branded as Tylenol?"
+    },
+    {
+        "db_id": "synthea",
+        "question": "Why did Elly Koss need to take Acetaminophen?",
+        "evidence": "why need to take Acetaminophen refers to REASONDESCRIPTION\u00a0 where DESCRIPTION like 'Acetaminophen%' from medications;",
+        "SQL": "SELECT T2.REASONDESCRIPTION FROM patients AS T1 INNER JOIN medications AS T2 ON T1.patient = T2.PATIENT WHERE T1.first = 'Elly' AND T1.last = 'Koss' AND T2.description LIKE 'Acetaminophen%'",
+        "new_question": "Why did Elly Koss need to take a common over-the-counter pain reliever and fever reducer sometimes known as Ofirmev?"
+    },
+    {
+        "db_id": "synthea",
+        "question": "List down the address of patients who have billable period in 2010.",
+        "evidence": "",
+        "SQL": "SELECT DISTINCT T1.address FROM patients AS T1 INNER JOIN claims AS T2 ON T1.patient = T2.PATIENT WHERE T2.BILLABLEPERIOD LIKE '2010%'",
+        "new_question": "List down the address of patients who have billable periods during the year when the first iPad was released."
+    },
+    {
+        "db_id": "synthea",
+        "question": "List down the encounter descriptions of patients who were born in Pittsfield MA US.",
+        "evidence": "born in Pittsfield MA US refers to birthplace = 'Pittsfield MA US';",
+        "SQL": "SELECT DISTINCT T2.DESCRIPTION FROM patients AS T1 INNER JOIN encounters AS T2 ON T1.patient = T2.PATIENT WHERE T1.birthplace = 'Pittsfield MA US'",
+        "new_question": "List down the encounter descriptions of patients who were born in the city known for being the largest in Berkshire County, Massachusetts, USA."
+    },
+    {
+        "db_id": "synthea",
+        "question": "In 2009, who among the married patients had undergone a care plan for more than 60 days?",
+        "evidence": "in 2009 refers to year(careplans.START) = 2009; married patients refers to marital = 'M'; undergone a care plan for more than 60 days refers to SUBTRACT(careplans.STOP, careplans.START) > 60;",
+        "SQL": "SELECT DISTINCT T1.first, T1.last FROM patients AS T1 INNER JOIN careplans AS T2 ON T1.patient = T2.PATIENT WHERE T1.marital = 'M' AND strftime('%J', T2.STOP) - strftime('%J', T2.START) > 60",
+        "new_question": "In the year when Barack Obama began his first term as U.S. President, who among the married patients had undergone a care plan for more than 60 days?"
+    },
+    {
+        "db_id": "synthea",
+        "question": "In 2010, how many single patients took Nitrofurantoin 5 mg/ML [Furadantin] to cure cystitis?",
+        "evidence": "in 2010 refers to substr(medications.START, 1, 4) = '2010' AND substr(medications.stop, 1, 4) = '2010'; Nitrofurantoin 5 mg/ML [Furadantin] refers to medications.DESCRIPTION = 'Nitrofurantoin 5 MG/ML [Furadantin]'; cystitis refers to medications.REASONDESCRIPTION = 'Cystitis';",
+        "SQL": "SELECT COUNT(DISTINCT T1.patient) FROM patients AS T1 INNER JOIN medications AS T2 ON T1.patient = T2.PATIENT WHERE T1.marital = 'S' AND T2.REASONDESCRIPTION = 'Cystitis' AND T2.DESCRIPTION = 'Nitrofurantoin 5 MG/ML [Furadantin]' AND strftime('%Y', T2.START) = '2010'",
+        "new_question": "In the year when the Deepwater Horizon oil spill occurred, how many individual patients used Nitrofurantoin 5 mg/ML [Furadantin] to treat bladder infections?"
+    },
+    {
+        "db_id": "synthea",
+        "question": "When did Mrs. Joye Homenick receive her most recent influenza seasonal vaccine?",
+        "evidence": "when a patient received her most recent vaccine refers to MAX(immunications.DATE); influenza seasonal vaccine refers to immunizations.DESCRIPTION = 'Influenza seasonal injectable preservative free';",
+        "SQL": "SELECT T2.DATE FROM patients AS T1 INNER JOIN immunizations AS T2 ON T1.patient = T2.PATIENT WHERE T2.DESCRIPTION = 'Influenza  seasonal  injectable  preservative free' AND T1.first = 'Joye' AND T1.last = 'Homenick' ORDER BY T2.DATE DESC LIMIT 1",
+        "new_question": "When did Mrs. Joye Homenick receive her latest annual flu shot?"
+    },
+    {
+        "db_id": "synthea",
+        "question": "What is the start date of the care plan of the patient whose maiden name is Adams?",
+        "evidence": "start date of the care plan refers to careplans.START;",
+        "SQL": "SELECT DISTINCT T1.START FROM careplans AS T1 INNER JOIN patients AS T2 ON T1.PATIENT = T2.patient WHERE T2.maiden = 'Adams'",
+        "new_question": "What is the start date of the care plan for the patient whose maiden name is the same as the second U.S. president?"
+    },
+    {
+        "db_id": "synthea",
+        "question": "What are the medical encounter ids of patients who were born in Pembroke MA US?",
+        "evidence": "medical encounter ids careplans.ID; born in Pembroke MA US refers to birthplace = 'Pembroke MA US';",
+        "SQL": "SELECT DISTINCT T1.ENCOUNTER FROM careplans AS T1 INNER JOIN patients AS T2 ON T1.PATIENT = T2.patient WHERE T2.birthplace = 'Pembroke MA US'",
+        "new_question": "What are the medical encounter ids of patients who were born in the town known for its cranberry bogs in Massachusetts?"
+    },
+    {
+        "db_id": "synthea",
+        "question": "How many white patients whose birth year is 1935 have a stroke?",
+        "evidence": "white refers to race = 'white'; birth year is 1935 refers to substr(birthdate, 1, 4) = '1935'; stroke refers to conditions.DESCRIPTION = 'Stroke';",
+        "SQL": "SELECT COUNT(DISTINCT T1.patient) FROM patients AS T1 INNER JOIN conditions AS T2 ON T1.patient = T2.patient WHERE strftime('%Y', T1.birthdate) = '1935' AND T1.race = 'white' AND T2.DESCRIPTION = 'Stroke'",
+        "new_question": "How many white patients born the year Elvis Presley was born have a stroke?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many players were born after the year 1985?",
+        "evidence": "born after the year 1985 refers to SUBSTR(DOB, 1, 4) > 1985",
+        "SQL": "SELECT COUNT(Player_Id) FROM Player WHERE SUBSTR(DOB, 1, 4) > 1985",
+        "new_question": "How many players were born after the year when the Nintendo Entertainment System was first released?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many matches were there in May, 2008?",
+        "evidence": "in May 2008 refers to SUBSTR(Match_Date, 1, 4) = '2008' AND SUBSTR(Match_Date, 7, 1) = '5'",
+        "SQL": "SELECT COUNT(Match_Id) FROM `Match` WHERE SUBSTR(Match_Date, 1, 4) = '2008' AND SUBSTR(Match_Date, 7, 1) = '5'",
+        "new_question": "How many matches took place in the month when the UEFA Champions League final featured Manchester United and Chelsea?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "Please list the IDs of all the matches in the year 2008.",
+        "evidence": "ID of matches refers to Match_Id; in the year 2008 refers to SUBSTR(Match_Date, 1, 4) = '2008'",
+        "SQL": "SELECT Match_Id FROM `Match` WHERE SUBSTR(Match_Date, 1, 4) = '2008'",
+        "new_question": "Please list the IDs of all the matches from the year when the Beijing Olympics took place."
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many players are from Australia?",
+        "evidence": "Australia refers to Country_Name = 'Australia'",
+        "SQL": "SELECT COUNT(CASE WHEN T2.Country_Name = 'Australia' THEN T1.Player_Id ELSE NULL END) FROM Player AS T1 INNER JOIN Country AS T2 ON T1.Country_Name = T2.Country_Id",
+        "new_question": "How many players are from the country known for its iconic Sydney Opera House?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "Which country does Ranchi city belong to?",
+        "evidence": "country refers to Country_Name; Ranchi city refers to City_Name = 'Ranchi'",
+        "SQL": "SELECT T2.Country_Name FROM City AS T1 INNER JOIN Country AS T2 ON T1.Country_Id = T2.Country_Id WHERE T1.City_Name = 'Ranchi'",
+        "new_question": "Which country is the city known for being the capital of Jharkhand located in?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many umpires are from South Africa?",
+        "evidence": "South Africa refers to Country_Name = 'South Africa'",
+        "SQL": "SELECT SUM(CASE WHEN T1.Country_Name = 'South Africa' THEN 1 ELSE 0 END) FROM Country AS T1 INNER JOIN Umpire AS T2 ON T1.Country_ID = T2.Umpire_Country",
+        "new_question": "How many umpires hail from the country known for its rugby and diamond production?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many Orange Cap awards were won by CH Gayle?",
+        "evidence": "CH Gayle refers to Player_Name = 'CH Gayle'",
+        "SQL": "SELECT SUM(CASE WHEN T1.Player_Name = 'CH Gayle' THEN 1 ELSE 0 END) AS cnt FROM Player AS T1 INNER JOIN Season AS T2 ON T1.Player_Id = T2.Orange_Cap",
+        "new_question": "How many Orange Cap awards were won by the explosive West Indies batsman known for his powerful batting performances in the IPL?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "Which venue did Kolkata Knight Riders play most of their matches as a Team 1?",
+        "evidence": "venue refers to Venue_Name; Kolkata Knight Riders refers to Team_Name = 'Kolkata Knight Riders'; most of their matches refers to max(count(Venue_Id)); Team 1 refers to Team_Id = Team_1",
+        "SQL": "SELECT T3.Venue_Name FROM Team AS T1 INNER JOIN Match AS T2 ON T1.Team_Id = T2.Team_1 INNER JOIN Venue AS T3 ON T2.Venue_Id = T3.Venue_Id WHERE T1.Team_Name = 'Kolkata Knight Riders' GROUP BY T3.Venue_Id ORDER BY COUNT(T3.Venue_Id) DESC LIMIT 1",
+        "new_question": "Which venue did the IPL team known for wearing purple and gold play most of their matches as the home team?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many players with left-hand batting style are from India?",
+        "evidence": "left-hand batting style refers to Batting_hand = 'Left-hand bat'; India refers to Country_Name = 'India'",
+        "SQL": "SELECT SUM(CASE WHEN T1.Batting_hand = 'Left-hand bat' THEN 1 ELSE 0 END) AS cnt FROM Batting_Style AS T1 INNER JOIN Player AS T2 ON T1.Batting_Id = T2.Batting_hand INNER JOIN Country AS T3 ON T2.Country_Name = T3.Country_Id WHERE T3.Country_Name = 'India'",
+        "new_question": "How many players with a left-hand batting style are from the country home to the Taj Mahal?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "Give the country where St. George's Park is located.",
+        "evidence": "country refers to Country_Name; St. George's Park refers to Venue_Name = 'St George''s Park'",
+        "SQL": "SELECT T3.Country_Name FROM Venue AS T1 INNER JOIN City AS T2 ON T2.City_Id = T1.City_Id INNER JOIN Country AS T3 ON T3.Country_Id = T2.Country_id WHERE T1.Venue_Name = 'St George''s Park'",
+        "new_question": "Give the country where the national football center of England is located."
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "List the player's name of Mumbai Indians in the match ID 335990.",
+        "evidence": "Mumbai Indians refers to Team_Name = 'Mumbai Indians'; match ID 335990 refers to Match_Id = 335990",
+        "SQL": "SELECT T3.Team_Name FROM Player AS T1 INNER JOIN Player_Match AS T2 ON T2.Player_Id = T1.Player_Id INNER JOIN Team AS T3 ON T3.Team_Id = T2.Team_Id WHERE T2.Match_Id = 335990 AND T3.Team_Name = 'Mumbai Indians' GROUP BY T3.Team_Name",
+        "new_question": "List the player's names of the Indian Premier League team now captained by Rohit Sharma in match with ID 335990."
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many of the matches are Superover?",
+        "evidence": "Superover refers to Outcome_Type = 'Superover'",
+        "SQL": "SELECT SUM(CASE WHEN T2.Outcome_Type = 'Superover' THEN 1 ELSE 0 END) FROM Match AS T1 INNER JOIN Outcome AS T2 ON T2.Outcome_Id = T1.Outcome_type",
+        "new_question": "How many of the cricket matches required a tiebreaker involving an extra over?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many cities are located in South Africa?",
+        "evidence": "South Africa refers to Country_Name = 'South Africa'",
+        "SQL": "SELECT SUM(CASE WHEN T2.Country_Name = 'South Africa' THEN 1 ELSE 0 END) FROM City AS T1 INNER JOIN Country AS T2 ON T2.Country_Id = T1.Country_id",
+        "new_question": "How many cities are located in the country where Nelson Mandela served as president?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "Provide the point of the winning margin in a match between Mumbai Indians and Royal Challengers Bangalore on May 28, 2008.",
+        "evidence": "point of the winning margin refers to Win_Margin; Mumbai Indians refers to Team_Name = 'Mumbai Indians'; Royal Challengers Bangalore refers to Team_Name = 'Royal Challengers Bangalore'; on May 28 2008 refers to Match_Date = '2008-05-28'",
+        "SQL": "SELECT T1.Win_Margin FROM Match AS T1 INNER JOIN Team AS T2 ON T2.Team_Id = T1.Team_1 INNER JOIN Team AS T3 ON T3.Team_Id = T1.Team_2 WHERE (T2.Team_Name = 'Mumbai Indians' AND T3.Team_Name = 'Royal Challengers Bangalore' AND T1.Match_Date = '2008-05-28') OR (T2.Team_Name = 'Royal Challengers Bangalore' AND T3.Team_Name = 'Mumbai Indians' AND T1.Match_Date = '2008-05-28')",
+        "new_question": "Provide the point of the winning margin in a match between the team known for its blue jersey from the city famous for Bollywood and the team from the city known as the Silicon Valley of India on May 28, 2008"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "List the names of the first andthe second teams that played a match with the point of the winning margin lower than the 30% of the average winning margin of the matches held in 2011.",
+        "evidence": "name of the team refers to Team_Name; in 2011 refers to Match_Date LIKE '2011%'; the point of winning margin lower than 30% of the average winning margin refers to Win_Margin < multiply(avg(Win_Margin), 0.3) where Match_Date LIKE '2011%'",
+        "SQL": "SELECT DISTINCT CASE WHEN T1.Win_Margin < ( SELECT AVG(Win_Margin) * 0.3 FROM Match WHERE Match_Date LIKE '2011%' ) THEN T2.Team_Name END, CASE WHEN T1.Win_Margin < ( SELECT AVG(Win_Margin) * 0.3 FROM Match WHERE Match_Date LIKE '2011%' ) THEN T3.Team_Name END FROM Match AS T1 INNER JOIN Team AS T2 ON T2.Team_Id = T1.Team_1 INNER JOIN Team AS T3 ON T3.Team_Id = T1.Team_2 WHERE T1.Match_Date LIKE '2011%'",
+        "new_question": "List the names of the first and the second teams that played a match with the point of the winning margin lower than 30% of the average winning margin of matches held the year after the FIFA World Cup in South Africa."
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "Among the players born in 1977, what is the percentage of the players with a role as a captain?",
+        "evidence": "born in 1977 refers to DOB LIKE '1977%'; a role as a captain refers to Role_Desc = 'Captain'; percentage = divide(count(Role_Id where Role_Desc = 'Captain'), count(Role_Id)) * 100% where DOB LIKE '1977%'",
+        "SQL": "SELECT CAST(SUM(CASE WHEN T1.Role_Desc = 'Captain' THEN 1 ELSE 0 END) AS REAL) * 100 / COUNT(T1.Role_Id) FROM Rolee AS T1 INNER JOIN Player_Match AS T2 ON T2.Role_Id = T1.Role_Id INNER JOIN Player AS T3 ON T3.Player_Id = T2.Player_Id WHERE T3.DOB LIKE '1977%'",
+        "new_question": "Among players born the same year the first Star Wars movie was released, what is the percentage of those who have held the role of a captain?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many times did Yuvraj Singh receive the Man of the Match award?",
+        "evidence": "Yuvraj Singh refers to Player_Name = 'Yuvraj Singh'; receive the Man of the Match award refers to Player_Id = Man_of_the_Match",
+        "SQL": "SELECT SUM(CASE WHEN T2.Player_Name = 'Yuvraj Singh' THEN 1 ELSE 0 END) FROM Match AS T1 INNER JOIN Player AS T2 ON T2.Player_Id = T1.Man_of_the_Match",
+        "new_question": "How many times did the cricketer known for hitting six sixes in an over during a World Cup match receive the Man of the Match award?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "Among the matches held in Mumbai, how many percent of them were held in Wankhede Stadium?",
+        "evidence": "Mumbai refers to City_Name = 'Mumbai'; Wankhede Stadium refers to Venue_Name = 'Wankhede Stadium'; percent = divide(count(Match_Id where Venue_Name = 'Wankhede Stadium'), count(Match_Id)) * 100% where City_Name = 'Mumbai'",
+        "SQL": "SELECT CAST(SUM(CASE WHEN T2.Venue_Name = 'Wankhede Stadium' THEN 1 ELSE 0 END) AS REAL) * 100 / COUNT(T3.Match_Id) FROM City AS T1 INNER JOIN Venue AS T2 ON T2.City_Id = T1.City_Id INNER JOIN Match AS T3 ON T3.Venue_Id = T2.Venue_Id WHERE T1.City_Name = 'Mumbai'",
+        "new_question": "Among the matches held in Bombay, what percentage took place in the stadium home to the Mumbai Indians IPL team?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "Count the total venues located in Pune City.",
+        "evidence": "Pune City refers to City_Name = 'Pune'",
+        "SQL": "SELECT SUM(T1.Venue_Name) FROM Venue AS T1 INNER JOIN City AS T2 ON T1.City_Id = T2.City_Id WHERE T2.City_Name = 'Pune'",
+        "new_question": "Count the total venues located in the city that contains the Aga Khan Palace."
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many players are older than Gurkeerat Singh player?",
+        "evidence": "older than Gurkeerat Singh player refers to DOB ! = 'Gurkeerat Singh' and DOB < '1990-06-29'",
+        "SQL": "SELECT SUM(CASE WHEN DOB < '1990-06-29' THEN 1 ELSE 0 END) FROM Player WHERE Player_Name != 'Gurkeerat Singh'",
+        "new_question": "How many players are older than the Indian cricketer born in Muktsar, Punjab, who made his IPL debut with the Kings XI Punjab?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "Which teams have had a player awarded the Purple Cap and another with the Orange Cap in the same season?",
+        "evidence": "",
+        "SQL": "SELECT T5.Team_Name, T1.Orange_Cap, T1.Purple_Cap FROM Season AS T1 INNER JOIN Match AS T2 ON T1.Season_Id = T2.Season_Id INNER JOIN Player_Match AS T3 ON T2.Match_Id = T3.Match_Id INNER JOIN Player AS T4 ON T3.Player_Id = T4.Player_Id INNER JOIN Team AS T5 ON T3.Team_Id = T5.Team_Id GROUP BY T5.Team_Name, T1.Orange_Cap, T1.Purple_Cap",
+        "new_question": "Which teams have had a player win both the top wicket-taker and top run-scorer awards in the same cricket season?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "List the name of all New Zealand umpires.",
+        "evidence": "New Zealand umpires refers to Country_Name = 'New Zealand'; name of umpires refers to Umpire_Name",
+        "SQL": "SELECT T1.Umpire_Name FROM Umpire AS T1 INNER JOIN Country AS T2 ON T1.Umpire_Country = T2.Country_Id WHERE T2.Country_Name = 'New Zealand'",
+        "new_question": "List the names of all umpires from the country known for its indigenous Maori culture and breathtaking landscapes."
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "In which venue did Kochi Tuskers Kerala play most of their matches?",
+        "evidence": "Kochi Tuskers Kerala refers to Team_Name = 'Kochi Tuskers Kerala'; most of their matches refers to max(Venue_Id)",
+        "SQL": "SELECT T1.Venue_Name FROM Venue AS T1 INNER JOIN Match AS T2 ON T1.Venue_Id = T2.Venue_Id INNER JOIN Team AS T3 ON T2.Team_1 = T3.Team_Id WHERE T3.Team_Name = 'Kochi Tuskers Kerala' GROUP BY T1.Venue_Name",
+        "new_question": "In which venue did the IPL team that was captained by Jayawardene in 2011 play most of their matches?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "Tally the match IDs in which V Kohli is the Man of the Match.",
+        "evidence": "",
+        "SQL": "SELECT T1.Match_Id FROM `Match` AS T1 INNER JOIN Player AS T2 ON T1.Man_of_the_Match = T2.Player_Id WHERE T2.Player_Name = 'V Kohli'",
+        "new_question": "Tally the match IDs in which the player nicknamed Chiku, known for captaining India's national cricket team is the 'Man of the Match'."
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many cities are in U.A.E?",
+        "evidence": "U.A.E refers to Country_Name = 'U.A.E'",
+        "SQL": "SELECT SUM(CASE WHEN T2.Country_Name = 'U.A.E' THEN 1 ELSE 0 END) FROM City AS T1 INNER JOIN country AS T2 ON T1.Country_id = T2.Country_id",
+        "new_question": "How many cities are in the country known for its oil wealth and iconic skyscrapers in the Middle East?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "List the names of all the umpires from England.",
+        "evidence": "from England refers to Country_Name = 'England'",
+        "SQL": "SELECT T1.Umpire_Name FROM Umpire AS T1 INNER JOIN country AS T2 ON T2.Country_Id = T1.Umpire_Country WHERE T2.Country_Name = 'England'",
+        "new_question": "List the names of all the umpires from the country known for its historic cricket rivalry with Australia."
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many matches did Rajasthan Royals play in Season 8?",
+        "evidence": " Season 8 refers to Season_Id = 8",
+        "SQL": "SELECT SUM(CASE WHEN T1.Season_Id = 8 THEN 1 ELSE 0 END) FROM `Match` AS T1 INNER JOIN Team AS T2 ON T1.Team_1 = T2.Team_Id OR T1.Team_2 = T2.Team_Id WHERE T2.Team_Name = 'Rajasthan Royals'",
+        "new_question": "How many matches did the team that won the inaugural Indian Premier League season play in its eighth season?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "How many matches were held in 2011?",
+        "evidence": "held in 2011 refers to Match_Date like '2011%';",
+        "SQL": "SELECT COUNT(Match_Id) FROM `Match` WHERE Match_Date LIKE '2011%'",
+        "new_question": "How many matches were held during the year when India won the Cricket World Cup?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "What is the average winning margin of the matches held in Newlands?",
+        "evidence": "average winning margin refers to avg(win_margin); held in Newlands refers to venue_name = 'Newlands'",
+        "SQL": "SELECT AVG(T1.win_margin) FROM Match AS T1 INNER JOIN Venue AS T2 ON T1.venue_id = T2.venue_id WHERE T2.venue_name = 'Newlands'",
+        "new_question": "What is the average winning margin of the matches held in the stadium located in Cape Town, renowned for its scenic mountain backdrop?"
+    }, 
+    {
+        "db_id": "soccer_2016",
+        "question": "How old is SC Ganguly in 2008?",
+        "evidence": "SC Ganguly refers to Player_Name = 'SC Ganguly'; old refers to SUBTRACT(2008, strftime('%Y',DOB))",
+        "SQL": "SELECT 2008 - strftime('%Y', DOB) FROM Player WHERE Player_Name = 'SC Ganguly'",
+        "new_question": "How old is the former captain of the Indian cricket team, who later became the BCCI president, in the year of the Beijing Olympics?"
+    },
+    {
+        "db_id": "soccer_2016",
+        "question": "Among the matches of Delhi Daredevils in 2009, what is the percentage of their matches won by wickets?",
+        "evidence": "Delhi Daredevils refers to team_name = 'Delhi Daredevils'; in 2009 refers to Match_Date = '2009%'; won by wickets refers to Win_Type = 'wickets'; percentage refers to DIVIDE(COUNT(Win_Type = 'wickets'), COUNT(Win_Type))",
+        "SQL": "SELECT CAST(SUM(CASE WHEN T3.Win_Type = 'wickets' THEN 1 ELSE 0 END) AS REAL) * 100 / COUNT(T3.Win_Type) FROM Team AS T1 INNER JOIN Match AS T2 ON T1.Team_Id = T2.Match_Winner INNER JOIN Win_By AS T3 ON T2.Win_Type = T3.Win_Id WHERE T1.Team_Name = 'Delhi Daredevils'",
+        "new_question": "Among the matches of the IPL team now known as the Capitals during the second season of the tournament, what is the percentage of their matches won by wickets?"
+    },
+    {
+        "db_id": "cs_semester",
+        "question": "How many professors are more popular than Zhou Zhihua?",
+        "evidence": "higher popularity means the professor is more popular;",
+        "SQL": "SELECT COUNT(prof_id) FROM prof WHERE popularity > ( SELECT popularity FROM prof WHERE first_name = 'Zhihua' AND last_name = 'Zhou' )",
+        "new_question": "How many professors are more popular than the renowned Chinese computer scientist known for his contributions to machine learning and founder of the LAMDA group at Nanjing University?"
+    },
+    {
+        "db_id": "book_publishing_company",
+        "question": "What is the title with the most ordered quantity in year 1992?",
+        "evidence": "total quantity refers to qty; most ordered quantity refers to order with the highest quantity where MAX(count(qty)); date refers to ord_date; year 1992 refers to YEAR(ord_date) = 1992",
+        "SQL": "SELECT T2.title FROM sales AS T1 INNER JOIN titles AS T2 ON T1.title_id = T2.title_id WHERE STRFTIME('%Y', T1.ord_date) = '1992' ORDER BY T1.qty DESC LIMIT 1",
+        "new_question": "What is the title with the most ordered quantity during the year when the Olympic basketball dream team was assembled?"
+    },
+    {
+        "db_id": "book_publishing_company",
+        "question": "Among the stores that have ordered the book Life Without Fear, how many of them are located in Massachusetts?",
+        "evidence": "Massachusetts is a state",
+        "SQL": "SELECT COUNT(T1.stor_id) FROM sales AS T1 INNER JOIN stores AS T2 ON T1.stor_id = T2.stor_id INNER JOIN titles AS T3 ON T1.title_id = T3.title_id WHERE T2.state = 'Massachusetts'",
+        "new_question": "Among the stores that have ordered the book Life Without Fear, how many of them are located in the state known for Harvard University?"
+    },
+    {
+        "db_id": "book_publishing_company",
+        "question": "How many sales did the store in Remulade make?",
+        "evidence": "Remulade is a city; sales in the store refers to ord_num",
+        "SQL": "SELECT COUNT(T1.ord_num) FROM sales AS T1 INNER JOIN stores AS T2 ON T1.stor_id = T2.stor_id WHERE T2.city = 'Remulade'",
+        "new_question": "How many sales did the store in the town known for its famous annual jazz festival make?"
+    },
+    {
+        "db_id": "book_publishing_company",
+        "question": "Name the top five titles that sold more than average and list them in descending order of the number of sales in California stores?",
+        "evidence": "qty is abbreviation for quantity; sold more than average refers to qty > AVG(qty); california refers to state = 'CA",
+        "SQL": "SELECT T1.title FROM titles AS T1 INNER JOIN sales AS T2 ON T1.title_id = T2.title_id INNER JOIN publishers AS T3 ON T1.pub_id = T3.pub_id WHERE T2.qty > ( SELECT CAST(SUM(qty) AS REAL) / COUNT(title_id) FROM sales ) AND T3.state = 'CA' ORDER BY T2.qty DESC LIMIT 5",
+        "new_question": "Name the top five titles that exceeded typical sales and list them in descending order of the number of sales in stores located in the Golden State?"
+    }
+]

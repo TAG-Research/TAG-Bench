@@ -1,0 +1,2116 @@
+[
+    {
+        "question": "For movie with id m/lemora_a_childs_tale_of_the_supernatural, among reviewers Josh Ralske, Emanuel Levy, who had the most positive sentiment?",
+        "answer": "Josh Ralske"
+    },
+    {
+        "question": "For movie with id m/mega_shark_vs_giant_octopus, rank reviewers from most negative to most positive: Bill Gibron, Tim Robey, Kim Newman.",
+        "answer": [
+            "Tim Robey",
+            "Kim Newman",
+            "Bill Gibron"
+        ]
+    },
+    {
+        "question": "For movie with id m/1004790-countdown, list the reviewers who gave a negative review.",
+        "answer": [
+            "Roger Ebert",
+            "David Nusair"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_taking_of_deborah_logan_2014, among reviewers David Keyes, David Nusair, Steve \"Uncle Creepy\" Barton, who had the most positive sentiment?",
+        "answer": "David Keyes"
+    },
+    {
+        "question": "For movie with id m/i_still_see_you, among reviewers Simon Foster, Rex Reed, Roger Moore, who had the most negative sentiment?",
+        "answer": "Rex Reed"
+    },
+    {
+        "question": "For movie with id m/pokemon_the_movie_mewtwo_strikes_back_evolution, rank reviewers from most negative to most positive: Josh Wilding, Miranda Sanchez, Mikel Zorrilla.",
+        "answer": [
+            "Mikel Zorrilla",
+            "Miranda Sanchez",
+            "Josh Wilding"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_automatic_hate, rank reviewers from most negative to most positive: Alexander Lowe, Roger Moore, William Bibbiani.",
+        "answer": [
+            "Roger Moore",
+            "William Bibbiani",
+            "Alexander Lowe"
+        ]
+    },
+    {
+        "question": "For movie with id m/national_lampoons_european_vacation, among reviewers Larry Carroll, Gerry Shamray, John J. Puccio, who had the most neutral sentiment?",
+        "answer": "John J. Puccio"
+    },
+    {
+        "question": "For movie with id m/off_and_running_2010, rank reviewers from most negative to most positive: Kam Williams, Christopher Null, Jeannette Catsoulis.",
+        "answer": [
+            "Jeannette Catsoulis",
+            "Christopher Null",
+            "Kam Williams"
+        ]
+    },
+    {
+        "question": "For movie with id m/1046655-skin_game, rank reviewers from most negative to most positive: Sarah Boslaugh, Mordaunt Hall, Dennis Schwartz.",
+        "answer": [
+            "Sarah Boslaugh",
+            "Mordaunt Hall",
+            "Dennis Schwartz"
+        ]
+    },
+    {
+        "question": "For movie with id m/munyurangabo, among reviewers Roger Ebert, Carolyn Blick, Frederic and Mary Ann Brussat, who had the most positive sentiment?",
+        "answer": "Roger Ebert"
+    },
+    {
+        "question": "For movie with id m/creepshow, among reviewers Sean Mulvihill, John Esther, John A. Nesbit, who had the most neutral sentiment?",
+        "answer": "John A. Nesbit"
+    },
+    {
+        "question": "For movie with id m/journey_of_august_king, rank reviewers from most negative to most positive: James Berardinelli, Roger Ebert, Marjorie Baumgarten.",
+        "answer": [
+            "Roger Ebert",
+            "Marjorie Baumgarten",
+            "James Berardinelli"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_child_remains, rank reviewers from most negative to most positive: Emilie Black, Rex Reed, Roger Moore.",
+        "answer": [
+            "Rex Reed",
+            "Roger Moore",
+            "Emilie Black"
+        ]
+    },
+    {
+        "question": "For movie with id m/breakfast_with_scot, rank reviewers from most negative to most positive: Rich Cline, Austin Kennedy, David Nusair.",
+        "answer": [
+            "Austin Kennedy",
+            "David Nusair",
+            "Rich Cline"
+        ]
+    },
+    {
+        "question": "For movie with id m/brahman_naman, among reviewers Nick Allen, Nico Lang, Sophie Yapp, who had the most negative sentiment?",
+        "answer": "Nico Lang"
+    },
+    {
+        "question": "For movie with id m/beyond_a_reasonable_doubt, among reviewers Dennis Schwartz, Pablo Villa\u00e7a, Emanuel Levy, who had the most negative sentiment?",
+        "answer": "Pablo Villa\u00e7a"
+    },
+    {
+        "question": "For movie with id m/matador, rank reviewers from most negative to most positive: Ken Hanke, Bill Stamets, Philip Martin.",
+        "answer": [
+            "Bill Stamets",
+            "Philip Martin",
+            "Ken Hanke"
+        ]
+    },
+    {
+        "question": "For movie with id m/cats_the_musical, rank reviewers from most negative to most positive: Widgett Walls, Walter Chaw, Ryan Cracknell.",
+        "answer": [
+            "Walter Chaw",
+            "Ryan Cracknell",
+            "Widgett Walls"
+        ]
+    },
+    {
+        "question": "For movie with id m/1040678-last_of_the_mohicans, among reviewers James Berardinelli, David Nusair, Christopher Null, who had the most positive sentiment?",
+        "answer": "James Berardinelli"
+    },
+    {
+        "question": "For movie with id m/1028564-guardian, rank reviewers from most positive to most negative: Mike Massie, Ken Hanke, Emanuel Levy.",
+        "answer": [
+            "Mike Massie",
+            "Emanuel Levy",
+            "Ken Hanke"
+        ]
+    },
+    {
+        "question": "For movie with id m/1046049-fatal_instinct, among reviewers Scott Renshaw, Jeffrey Westhoff, Dragan Antulov, who had the most neutral sentiment?",
+        "answer": "Scott Renshaw"
+    },
+    {
+        "question": "For movie with id m/period_of_adjustment, among reviewers Dennis Schwartz, Susan Granger, Emanuel Levy, who had the most neutral sentiment?",
+        "answer": "Susan Granger"
+    },
+    {
+        "question": "For movie with id m/after_everything, rank reviewers from most negative to most positive: Chuck Foster, Kevin Jagernauth, Sara Stewart.",
+        "answer": [
+            "Kevin Jagernauth",
+            "Sara Stewart",
+            "Chuck Foster"
+        ]
+    },
+    {
+        "question": "For movie with id m/a_vigilante, rank reviewers from most negative to most positive: Matt Zoller Seitz, Chuck Bowen, Aaron Peterson.",
+        "answer": [
+            "Chuck Bowen",
+            "Aaron Peterson",
+            "Matt Zoller Seitz"
+        ]
+    },
+    {
+        "question": "For movie with id m/1022001-trial, rank reviewers from most positive to most negative: Roger Ebert, Mark R. Leeper, Ryan Cracknell.",
+        "answer": [
+            "Roger Ebert",
+            "Ryan Cracknell",
+            "Mark R. Leeper"
+        ]
+    },
+    {
+        "question": "For movie with id m/backstabbing_for_beginners, among reviewers Bobby LePire, Chandler Levack, Roger Moore, who had the most neutral sentiment?",
+        "answer": "Roger Moore"
+    },
+    {
+        "question": "For movie with id m/24_days, among reviewers Mark R. Leeper, Roger Moore, Peter Keough, who had the most negative sentiment?",
+        "answer": "Roger Moore"
+    },
+    {
+        "question": "For movie with id m/moments_of_clarity, rank reviewers from most positive to most negative: Mark R. Leeper, Norman Wilner.",
+        "answer": [
+            "Mark R. Leeper",
+            "Norman Wilner"
+        ]
+    },
+    {
+        "question": "For movie with id m/beer_wars, among reviewers Joe Williams, Phil Hall, Christian Toto, who had the most negative sentiment?",
+        "answer": "Phil Hall"
+    },
+    {
+        "question": "For movie with id m/the_do_deca_pentathlon, rank reviewers from most negative to most positive: Lisa Schwarzbaum, Andrew Schenker, David Fear.",
+        "answer": [
+            "Andrew Schenker",
+            "David Fear",
+            "Lisa Schwarzbaum"
+        ]
+    },
+    {
+        "question": "For movie with id m/love_is_the_devil, among reviewers Matt Bailey, Steve Rhodes, James Berardinelli, who had the most negative sentiment?",
+        "answer": "Steve Rhodes"
+    },
+    {
+        "question": "For movie with id m/1021269-this_gun_for_hire, rank reviewers from most negative to most positive: Ken Hanke, Jeffrey M. Anderson, Dennis Schwartz.",
+        "answer": [
+            "Jeffrey M. Anderson",
+            "Dennis Schwartz",
+            "Ken Hanke"
+        ]
+    },
+    {
+        "question": "For movie with id m/1085518-gunshy, among reviewers Ross Anthony, Daniel M. Kimmel, Cheryl DeWolfe, who had the most positive sentiment?",
+        "answer": "Ross Anthony"
+    },
+    {
+        "question": "For movie with id m/from_dusk_till_dawn_2_texas_blood_money, rank reviewers from most negative to most positive: Emanuel Levy, Rob Vaux, Diane Selkirk.",
+        "answer": [
+            "Rob Vaux",
+            "Diane Selkirk",
+            "Emanuel Levy"
+        ]
+    },
+    {
+        "question": "For movie with id m/american_swing, rank reviewers from most negative to most positive: Kam Williams, Steve Ramos, Eric Henderson.",
+        "answer": [
+            "Steve Ramos",
+            "Eric Henderson",
+            "Kam Williams"
+        ]
+    },
+    {
+        "question": "For movie with id m/1192358-1192358-no_smoking, among reviewers Namrata Joshi, Anthony Quinn, Derek Malcolm, who had the most negative sentiment?",
+        "answer": "Anthony Quinn"
+    },
+    {
+        "question": "For movie with id m/24_hours_to_live_2017, rank reviewers from most negative to most positive: Carlos D\u00edaz Reyes, Brian Tallerico, Brian Orndorf.",
+        "answer": [
+            "Brian Tallerico",
+            "Brian Orndorf",
+            "Carlos D\u00edaz Reyes"
+        ]
+    },
+    {
+        "question": "For movie with id m/paris_when_it_sizzles, among reviewers Steve Crum, Carol Cling, Scott Renshaw, who had the most positive sentiment?",
+        "answer": "Steve Crum"
+    },
+    {
+        "question": "For movie with id m/1020488-sunshine_boys, rank reviewers from most negative to most positive: Matt Brunson, David Nusair, Christopher Null.",
+        "answer": [
+            "David Nusair",
+            "Christopher Null",
+            "Matt Brunson"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_scribbler, among reviewers Joe Bendel, Nicholas Bell, Matt Donato, who had the most negative sentiment?",
+        "answer": "Nicholas Bell"
+    },
+    {
+        "question": "For movie with id m/a_single_girl_2000, among reviewers Stephen Holden, Marjorie Baumgarten, David Nusair, who had the most positive sentiment?",
+        "answer": "Stephen Holden"
+    },
+    {
+        "question": "For movie with id m/flesh_gordon, list the reviewers who gave a negative review.",
+        "answer": [
+            "Nell Minow",
+            "Steve Crum"
+        ]
+    },
+    {
+        "question": "For movie with id m/bogus, rank reviewers from most positive to most negative: Roger Ebert, Philip Martin, Susan Stark.",
+        "answer": [
+            "Roger Ebert",
+            "Susan Stark",
+            "Philip Martin"
+        ]
+    },
+    {
+        "question": "For movie with id m/generation_iron, among reviewers Philip Martin, Nick Schager, Nicole Herrington, who had the most negative sentiment?",
+        "answer": "Nick Schager"
+    },
+    {
+        "question": "For movie with id m/lfe_happens, rank reviewers from most positive to most negative: Harvey S. Karten, Matt Pais, Chris Nashawaty.",
+        "answer": [
+            "Harvey S. Karten",
+            "Chris Nashawaty",
+            "Matt Pais"
+        ]
+    },
+    {
+        "question": "For movie with id m/1015542-on_the_town, among reviewers Emily Blunt, Nick Davis, Ken Hanke, who had the most neutral sentiment?",
+        "answer": "Ken Hanke"
+    },
+    {
+        "question": "For movie with id m/all_dogs_go_to_heaven, rank reviewers from most positive to most negative: Tim Brayton, Steve Rhodes, Scott Weinberg.",
+        "answer": [
+            "Tim Brayton",
+            "Scott Weinberg",
+            "Steve Rhodes"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_changeover, rank reviewers from most negative to most positive: Matt Zoller Seitz, Kiko Martinez, J.R. Southall.",
+        "answer": [
+            "Matt Zoller Seitz",
+            "J.R. Southall",
+            "Kiko Martinez"
+        ]
+    },
+    {
+        "question": "For movie with id m/agnes_browne, among reviewers Steve Crum, Boo Allen, Eric D. Snider, who had the most positive sentiment?",
+        "answer": "Steve Crum"
+    },
+    {
+        "question": "For movie with id m/walking_and_talking, list the reviewers who gave a negative review.",
+        "answer": [
+            "Dennis Schwartz",
+            "Mike Clark",
+            "David Nusair"
+        ]
+    },
+    {
+        "question": "For movie with id m/le-sel-de-la-mer-salt-of-this-sea, among reviewers Dan Lybarger, Eric Hynes, David Nusair, who had the most positive sentiment?",
+        "answer": "Dan Lybarger"
+    },
+    {
+        "question": "For movie with id m/shade, among reviewers Pablo Villa\u00e7a, Rene Rodriguez, Erik Childress, who had the most neutral sentiment?",
+        "answer": "Erik Childress"
+    },
+    {
+        "question": "For movie with id m/budrus, list the reviewers who gave a negative review.",
+        "answer": [
+            "Nick Schager",
+            "Chuck Bowen",
+            "Tom Long"
+        ]
+    },
+    {
+        "question": "For movie with id m/shoot_the_moon, rank reviewers from most negative to most positive: Liam Lacey, Dennis Schwartz, Philip Martin.",
+        "answer": [
+            "Dennis Schwartz",
+            "Philip Martin",
+            "Liam Lacey"
+        ]
+    },
+    {
+        "question": "For movie with id m/cheetah_girls, among reviewers Emily Ashby, David Nusair, Adriana Gomez-Weston, who had the most negative sentiment?",
+        "answer": "David Nusair"
+    },
+    {
+        "question": "For movie with id m/10008705-mr_untouchable, among reviewers V.A. Musetto, Mark Holcomb, Nick Schager, who had the most neutral sentiment?",
+        "answer": "Nick Schager"
+    },
+    {
+        "question": "For movie with id m/charlie_casanova, list the reviewers who gave a negative review.",
+        "answer": [
+            "Peter Bradshaw",
+            "Neil Smith",
+            "Trevor Johnston",
+            "Film4 Staff",
+            "Donald Clarke",
+            "Allan Hunter",
+            "Russell Cook"
+        ]
+    },
+    {
+        "question": "For movie with id m/love_affair_1994, among reviewers Carol Cling, Mike McGranaghan, Steve Rhodes, who had the most negative sentiment?",
+        "answer": "Mike McGranaghan"
+    },
+    {
+        "question": "For movie with id m/the_hot_flashes, rank reviewers from most negative to most positive: Avi Offer, Jen Chaney, Roger Moore.",
+        "answer": [
+            "Avi Offer",
+            "Roger Moore",
+            "Jen Chaney"
+        ]
+    },
+    {
+        "question": "For movie with id m/final_exam_1981, list the reviewers who gave a negative review.",
+        "answer": [
+            "Frank Swietek",
+            "Emanuel Levy",
+            "Mike McGranaghan",
+            "Jeff Beck",
+            "Scott Tobias",
+            "Heather Wixson",
+            "Dennis Schwartz"
+        ]
+    },
+    {
+        "question": "For movie with id m/most_likely_to_succeed_2019, rank reviewers from most positive to most negative: Barbara Shulgasser, Alex Saveliev.",
+        "answer": [
+            "Barbara Shulgasser",
+            "Alex Saveliev"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_cotton_club_encore, rank reviewers from most positive to most negative: Jordan Hoffman, Mark Feeney, Odie Henderson.",
+        "answer": [
+            "Jordan Hoffman",
+            "Odie Henderson",
+            "Mark Feeney"
+        ]
+    },
+    {
+        "question": "For movie with id m/7_chinese_brothers, rank reviewers from most negative to most positive: Matt Shiverdecker, Kimberly Gadette, Charlie Schmidlin.",
+        "answer": [
+            "Kimberly Gadette",
+            "Charlie Schmidlin",
+            "Matt Shiverdecker"
+        ]
+    },
+    {
+        "question": "For movie with id m/house_of_cards_1992, among reviewers Robert Faires, Roger Ebert, James Berardinelli, who had the most negative sentiment?",
+        "answer": "Roger Ebert"
+    },
+    {
+        "question": "For movie with id m/of_unknown_origin, among reviewers C.H. Newell, David Nusair, Blake Davis, who had the most neutral sentiment?",
+        "answer": "Blake Davis"
+    },
+    {
+        "question": "For movie with id m/anchor_and_hope, among reviewers Alex Montoya, Alberto Luchini, Paula Arantzazu Ruiz, who had the most negative sentiment?",
+        "answer": "Alberto Luchini"
+    },
+    {
+        "question": "For movie with id m/the_cat_from_outer_space, among reviewers Jo Berry, Alan Jones, Ian Nathan, who had the most negative sentiment?",
+        "answer": "Alan Jones"
+    },
+    {
+        "question": "For movie with id m/ny_export_opus_jazz, among reviewers Diego Semerene, Phil Hall, who had the most positive sentiment?",
+        "answer": "Diego Semerene"
+    },
+    {
+        "question": "For movie with id m/trick_2019, rank reviewers from most negative to most positive: Emilie Black, Henry Stewart, Matt Donato.",
+        "answer": [
+            "Henry Stewart",
+            "Matt Donato",
+            "Emilie Black"
+        ]
+    },
+    {
+        "question": "For movie with id m/viral_2016, rank reviewers from most negative to most positive: Ed Gonzalez, Marija Djurovic, Matt Donato.",
+        "answer": [
+            "Ed Gonzalez",
+            "Matt Donato",
+            "Marija Djurovic"
+        ]
+    },
+    {
+        "question": "For movie with id m/attack-of-the-killer-tomatoes, rank reviewers from most negative to most positive: Rich Cline, Michael Drakulich, Scott Weinberg.",
+        "answer": [
+            "Michael Drakulich",
+            "Scott Weinberg",
+            "Rich Cline"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_short_history_of_the_long_road, among reviewers Pamela Powell, Kate Erbland, Mark Jackson, who had the most positive sentiment?",
+        "answer": "Pamela Powell"
+    },
+    {
+        "question": "For movie with id m/smokin_aces_2_assassins_ball, list the reviewers who gave a negative review.",
+        "answer": [
+            "Brian Orndorf",
+            "Brian Orndorf",
+            "Mike Barnard",
+            "Mike Barnard",
+            "Kevin Carr",
+            "Kevin Carr",
+            "R.L. Shaffer",
+            "David Michael Wharton",
+            "R.L. Shaffer",
+            "David Michael Wharton"
+        ]
+    },
+    {
+        "question": "For movie with id m/wu_xia, rank reviewers from most positive to most negative: Paul Chambers, Joe Neumaier, Andrew Schenker.",
+        "answer": [
+            "Paul Chambers",
+            "Andrew Schenker",
+            "Joe Neumaier"
+        ]
+    },
+    {
+        "question": "For movie with id m/hit_so_hard_2012, rank reviewers from most negative to most positive: Ron Wilkinson, Nick Schager, Cole Smithey.",
+        "answer": [
+            "Nick Schager",
+            "Cole Smithey",
+            "Ron Wilkinson"
+        ]
+    },
+    {
+        "question": "For movie with id m/don_quixote_1992, rank reviewers from most negative to most positive: Phil Hall, Scott Renshaw.",
+        "answer": [
+            "Phil Hall",
+            "Scott Renshaw"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_land_2016, among reviewers Joanna Connors, Jordan Hoffman, Keith Watson, who had the most neutral sentiment?",
+        "answer": "Keith Watson"
+    },
+    {
+        "question": "For movie with id m/our_children_2012, list the reviewers who gave a negative review.",
+        "answer": [
+            "Stan Hall",
+            "Mike D'Angelo",
+            "Drew Taylor"
+        ]
+    },
+    {
+        "question": "For movie with id m/out_for_justice, among reviewers Chuck O'Leary, Chris Hicks, Dragan Antulov, who had the most negative sentiment?",
+        "answer": "Chris Hicks"
+    },
+    {
+        "question": "For movie with id m/man_with_two_brains, rank reviewers from most negative to most positive: Nell Minow, Karina Montgomery, Jeffrey Westhoff.",
+        "answer": [
+            "Karina Montgomery",
+            "Jeffrey Westhoff",
+            "Nell Minow"
+        ]
+    },
+    {
+        "question": "For movie with id m/coming_to_my_senses, list the reviewers who gave a negative review.",
+        "answer": [
+            "Phil Guie"
+        ]
+    },
+    {
+        "question": "For movie with id m/bandolero_1968, list the reviewers who gave a negative review.",
+        "answer": [
+            "Dennis Schwartz",
+            "Walter Chaw",
+            "Roger Ebert",
+            "Emanuel Levy"
+        ]
+    },
+    {
+        "question": "For movie with id m/dry_land, rank reviewers from most positive to most negative: Steve Ramos, Nathan Rabin, Andrew Schenker.",
+        "answer": [
+            "Steve Ramos",
+            "Andrew Schenker",
+            "Nathan Rabin"
+        ]
+    },
+    {
+        "question": "For movie with id m/when_i_walk_2013, rank reviewers from most negative to most positive: Jeannette Catsoulis, Silvija Ozols, Dan Schindel.",
+        "answer": [
+            "Dan Schindel",
+            "Silvija Ozols",
+            "Jeannette Catsoulis"
+        ]
+    },
+    {
+        "question": "For movie with id m/dantes_peak, rank reviewers from most negative to most positive: David Keyes, Jeanne Aufmuth, Rob Blackwelder.",
+        "answer": [
+            "Jeanne Aufmuth",
+            "Rob Blackwelder",
+            "David Keyes"
+        ]
+    },
+    {
+        "question": "For movie with id m/1071414-moll_flanders, among reviewers Steve Rhodes, Dan Lybarger, Madeleine Williams, who had the most neutral sentiment?",
+        "answer": "Madeleine Williams"
+    },
+    {
+        "question": "For movie with id m/making-the-boys, rank reviewers from most negative to most positive: Susan Granger, Chris Barsanti, Bill Weber.",
+        "answer": [
+            "Chris Barsanti",
+            "Bill Weber",
+            "Susan Granger"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_boys_and_girl_from_county_clare_2004, rank reviewers from most negative to most positive: Sid Smith, Frank Swietek, Ed Gonzalez.",
+        "answer": [
+            "Frank Swietek",
+            "Ed Gonzalez",
+            "Sid Smith"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_young_unknown, among reviewers Jay Antani, E! Staff, Steve Rhodes, who had the most negative sentiment?",
+        "answer": "E! Staff"
+    },
+    {
+        "question": "For movie with id m/california_solo, among reviewers Jeannette Catsoulis, Mark Olsen, Miles Fielder, who had the most negative sentiment?",
+        "answer": "Mark Olsen"
+    },
+    {
+        "question": "For movie with id m/american_crime, among reviewers Felix Vasquez Jr., Matt Noller, Kim Voynar, who had the most negative sentiment?",
+        "answer": "Matt Noller"
+    },
+    {
+        "question": "For movie with id m/the_earrings_of_madame_de, list the reviewers who gave a negative review.",
+        "answer": [
+            "David Nusair"
+        ]
+    },
+    {
+        "question": "For movie with id m/grand_hotel, among reviewers TV Guide Staff, Mike Massie, Philip Martin, who had the most negative sentiment?",
+        "answer": "Mike Massie"
+    },
+    {
+        "question": "For movie with id m/born_to_fly, rank reviewers from most negative to most positive: Katie Walsh, Radheyan Simonpillai, Daniel Walber.",
+        "answer": [
+            "Radheyan Simonpillai",
+            "Daniel Walber",
+            "Katie Walsh"
+        ]
+    },
+    {
+        "question": "For movie with id m/misconception, among reviewers Frederic and Mary Ann Brussat, Christopher Campbell, Kenji Fujishima, who had the most positive sentiment?",
+        "answer": "Frederic and Mary Ann Brussat"
+    },
+    {
+        "question": "For movie with id m/forget_me_not_2010, among reviewers Kevin Thomas, Joseph Walsh, Jamie Russell, who had the most negative sentiment?",
+        "answer": "Joseph Walsh"
+    },
+    {
+        "question": "For movie with id m/the_nightingale_2015, list the reviewers who gave a negative review.",
+        "answer": [
+            "Jake Wilson"
+        ]
+    },
+    {
+        "question": "For movie with id m/1002306-big_brawl, rank reviewers from most positive to most negative: David Poland, Emanuel Levy, Scott Weinberg.",
+        "answer": [
+            "David Poland",
+            "Scott Weinberg",
+            "Emanuel Levy"
+        ]
+    },
+    {
+        "question": "For movie with id m/premature_2014, among reviewers Isaac Feldberg, Elizabeth Weitzman, Kyle Turner, who had the most positive sentiment?",
+        "answer": "Isaac Feldberg"
+    },
+    {
+        "question": "For movie with id m/tarzan_escapes, rank reviewers from most negative to most positive: Ken Hanke, Bob Bloom, Brandon Judell.",
+        "answer": [
+            "Bob Bloom",
+            "Brandon Judell",
+            "Ken Hanke"
+        ]
+    },
+    {
+        "question": "For movie with id m/joshua_tree_1951_a_portrait_of_james_dean_2012, among reviewers Terrence Butcher, Jessica Baxter, who had the most neutral sentiment?",
+        "answer": "Terrence Butcher"
+    },
+    {
+        "question": "For movie with id m/cop, list the reviewers who gave a negative review.",
+        "answer": [
+            "Tony Toscano",
+            "David Nusair",
+            "Frederic and Mary Ann Brussat"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_apostate_2016, among reviewers Luis Gamboa, Clayton Dillard, who had the most neutral sentiment?",
+        "answer": "Clayton Dillard"
+    },
+    {
+        "question": "For movie with id m/mystery_road_2013, rank reviewers from most negative to most positive: Lisa Giles-Keddie, David McGinty, Jay Boller.",
+        "answer": [
+            "David McGinty",
+            "Jay Boller",
+            "Lisa Giles-Keddie"
+        ]
+    },
+    {
+        "question": "For movie with id m/non-ma-fille-tu-niras-pas-danser-2009, among reviewers Ed Gonzalez, Mick LaSalle, David Fear, who had the most positive sentiment?",
+        "answer": "Ed Gonzalez"
+    },
+    {
+        "question": "For movie with id m/ghost_of_frankenstein, rank reviewers from most negative to most positive: Ken Hanke, Paul Chambers, Jaime N. Christley.",
+        "answer": [
+            "Paul Chambers",
+            "Jaime N. Christley",
+            "Ken Hanke"
+        ]
+    },
+    {
+        "question": "For movie with id m/ride_the_high_country, list the reviewers who gave a negative review.",
+        "answer": [
+            "Chuck O'Leary",
+            "Chuck O'Leary"
+        ]
+    },
+    {
+        "question": "For movie with id m/fred_armisen_standup_for_drummers, among reviewers Garrett Martin, Audra Schroeder, who had the most neutral sentiment?",
+        "answer": "Audra Schroeder"
+    },
+    {
+        "question": "For movie with id m/all_fall_down, among reviewers Chuck O'Leary, Dennis Schwartz, Emanuel Levy, who had the most positive sentiment?",
+        "answer": "Chuck O'Leary"
+    },
+    {
+        "question": "For movie with id m/my_father_the_hero, among reviewers Pamela Bruce, Lisa Schwarzbaum, Scott Renshaw, who had the most negative sentiment?",
+        "answer": "Lisa Schwarzbaum"
+    },
+    {
+        "question": "For movie with id m/the_heir_apparent_largo_winch, rank reviewers from most negative to most positive: Avi Offer, Mick LaSalle, Amber Wilkinson.",
+        "answer": [
+            "Mick LaSalle",
+            "Amber Wilkinson",
+            "Avi Offer"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_price_2017, rank reviewers from most negative to most positive: Glenn Kenny, David Ehrlich, Amber Wilkinson.",
+        "answer": [
+            "Amber Wilkinson",
+            "David Ehrlich",
+            "Glenn Kenny"
+        ]
+    },
+    {
+        "question": "For movie with id m/nightcomers, rank reviewers from most positive to most negative: Carol Cling, Sarah Boslaugh, Douglas Pratt.",
+        "answer": [
+            "Carol Cling",
+            "Douglas Pratt",
+            "Sarah Boslaugh"
+        ]
+    },
+    {
+        "question": "For movie with id m/1214788-meerkats, rank reviewers from most negative to most positive: Anthony Quinn, Derek Adams, Daniel Etherington.",
+        "answer": [
+            "Derek Adams",
+            "Daniel Etherington",
+            "Anthony Quinn"
+        ]
+    },
+    {
+        "question": "For movie with id m/architect, rank reviewers from most positive to most negative: Kam Williams, Walter Chaw, Richard Mowe.",
+        "answer": [
+            "Kam Williams",
+            "Richard Mowe",
+            "Walter Chaw"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_banshee_chapter, rank reviewers from most negative to most positive: Scott McKellar, David Nusair, Wes Greene.",
+        "answer": [
+            "David Nusair",
+            "Wes Greene",
+            "Scott McKellar"
+        ]
+    },
+    {
+        "question": "For movie with id m/orhim_le_rega, rank reviewers from most negative to most positive: Jeannette Catsoulis, Calum Marsh, David Fear.",
+        "answer": [
+            "Calum Marsh",
+            "David Fear",
+            "Jeannette Catsoulis"
+        ]
+    },
+    {
+        "question": "For movie with id m/carrington, among reviewers Roger Ebert, Jules Brenner, Mike Clark, who had the most negative sentiment?",
+        "answer": "Jules Brenner"
+    },
+    {
+        "question": "For movie with id m/who_is_dayani_cristal_2013, list the reviewers who gave a negative review.",
+        "answer": [
+            "Fred Topel",
+            "Brian Tallerico",
+            "Kenji Fujishima",
+            "Alan Laidlaw",
+            "Nicholas Bell"
+        ]
+    },
+    {
+        "question": "For movie with id m/ceremony_2010, among reviewers Edward Douglas, Brian Orndorf, David Nusair, who had the most negative sentiment?",
+        "answer": "Brian Orndorf"
+    },
+    {
+        "question": "For movie with id m/and_now_a_word_from_our_sponsor_2012, rank reviewers from most negative to most positive: Gary Goldstein, Joe Neumaier, Mike McGranaghan.",
+        "answer": [
+            "Joe Neumaier",
+            "Mike McGranaghan",
+            "Gary Goldstein"
+        ]
+    },
+    {
+        "question": "For movie with id m/what_you_gonna_do_when_the_worlds_on_fire, among reviewers John Bleasdale, Ethan Vestby, Daniel de Partearroyo, who had the most neutral sentiment?",
+        "answer": "Daniel de Partearroyo"
+    },
+    {
+        "question": "For movie with id m/happy_campers, list the reviewers who gave a negative review.",
+        "answer": [
+            "David Poland",
+            "Ryan Cracknell",
+            "Caffeinated Clint"
+        ]
+    },
+    {
+        "question": "For movie with id m/pet_sematary_ii, among reviewers Andy Klein, Philip Martin, Marc Savlov, who had the most positive sentiment?",
+        "answer": "Andy Klein"
+    },
+    {
+        "question": "For movie with id m/excision_2012, rank reviewers from most negative to most positive: Kim Newman, Antonia Quirke, Rosie Fletcher.",
+        "answer": [
+            "Antonia Quirke",
+            "Rosie Fletcher",
+            "Kim Newman"
+        ]
+    },
+    {
+        "question": "For movie with id m/antarctica_a_year_on_ice, among reviewers Paul Chambers, Matthew Lickona, Harvey S. Karten, who had the most positive sentiment?",
+        "answer": "Paul Chambers"
+    },
+    {
+        "question": "For movie with id m/1153319-land_of_plenty, rank reviewers from most positive to most negative: Kevin Thomas, Jason Gorber, Erik Childress.",
+        "answer": [
+            "Kevin Thomas",
+            "Erik Childress",
+            "Jason Gorber"
+        ]
+    },
+    {
+        "question": "For movie with id m/wild_horse_wild_ride_2011, rank reviewers from most negative to most positive: Shannon M. Houston, Calum Marsh, Daniel M. Gold.",
+        "answer": [
+            "Calum Marsh",
+            "Daniel M. Gold",
+            "Shannon M. Houston"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_little_mermaid_2_return_to_the_sea, list the reviewers who gave a negative review.",
+        "answer": [
+            "Nell Minow",
+            "Michael Szymanski",
+            "Nell Minow",
+            "Tim Brayton",
+            "David Nusair"
+        ]
+    },
+    {
+        "question": "For movie with id m/southlander-diary-of-a-desperate-musician, among reviewers V.A. Musetto, Randy Cordova, Phil Hall, who had the most negative sentiment?",
+        "answer": "Randy Cordova"
+    },
+    {
+        "question": "For movie with id m/mummys_tomb, rank reviewers from most negative to most positive: Ken Hanke, Paul Chambers, Dan Jardine.",
+        "answer": [
+            "Paul Chambers",
+            "Dan Jardine",
+            "Ken Hanke"
+        ]
+    },
+    {
+        "question": "For movie with id m/what_keeps_you_alive, rank reviewers from most negative to most positive: Kat Hughes, Avi Offer, Chuck Bowen.",
+        "answer": [
+            "Avi Offer",
+            "Chuck Bowen",
+            "Kat Hughes"
+        ]
+    },
+    {
+        "question": "For movie with id m/after_words, among reviewers Harvey S. Karten, Joe Neumaier, Steve Davis, who had the most negative sentiment?",
+        "answer": "Joe Neumaier"
+    },
+    {
+        "question": "For movie with id m/sharkys_machine, rank reviewers from most negative to most positive: Carol Cling, John Esther, Scott Weinberg.",
+        "answer": [
+            "John Esther",
+            "Scott Weinberg",
+            "Carol Cling"
+        ]
+    },
+    {
+        "question": "For movie with id m/humoresque, list the reviewers who gave a negative review.",
+        "answer": [
+            "Dennis Schwartz",
+            "Bob Bloom"
+        ]
+    },
+    {
+        "question": "For movie with id m/tell_me_that_you_love_me_junie_moon, among reviewers Roger Ebert, Peter Canavese, Dennis Schwartz, who had the most neutral sentiment?",
+        "answer": "Dennis Schwartz"
+    },
+    {
+        "question": "For movie with id m/whaledreamers, among reviewers Margaret Pomeranz, Jim Schembri, Maitland McDonagh, who had the most positive sentiment?",
+        "answer": "Margaret Pomeranz"
+    },
+    {
+        "question": "For movie with id m/the_last_survivors, rank reviewers from most positive to most negative: James Rocchi, J.R. Southall, Christopher Runyon.",
+        "answer": [
+            "James Rocchi",
+            "Christopher Runyon",
+            "J.R. Southall"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_other_f_word_2011, rank reviewers from most negative to most positive: Norm Schrager, Jesse Cataldo, Robert Roten.",
+        "answer": [
+            "Jesse Cataldo",
+            "Robert Roten",
+            "Norm Schrager"
+        ]
+    },
+    {
+        "question": "For movie with id m/legacy_of_lies_2020, among reviewers Linda Cook, Ellen E Jones, Brian Costello, who had the most negative sentiment?",
+        "answer": "Ellen E Jones"
+    },
+    {
+        "question": "For movie with id m/z_2019, among reviewers Michelle Swope, Andrew Wyatt, Brian Tallerico, who had the most neutral sentiment?",
+        "answer": "Brian Tallerico"
+    },
+    {
+        "question": "For movie with id m/isolation_2006, rank reviewers from most negative to most positive: Anton Bitel, Daniel Kasman, David Nusair.",
+        "answer": [
+            "Daniel Kasman",
+            "David Nusair",
+            "Anton Bitel"
+        ]
+    },
+    {
+        "question": "For movie with id m/pepi-luci-bom-y-otras-chicas-del-monton-pepi-luci-bom-and-other-girls-like-mom, rank reviewers from most negative to most positive: Marjorie Baumgarten, Janet Maslin, Nick Schager.",
+        "answer": [
+            "Janet Maslin",
+            "Nick Schager",
+            "Marjorie Baumgarten"
+        ]
+    },
+    {
+        "question": "For movie with id m/operation_dumbo_drop, among reviewers Linda Cook, Joey O'Bryan, Madeleine Williams, who had the most positive sentiment?",
+        "answer": "Linda Cook"
+    },
+    {
+        "question": "For movie with id m/the_spirit_of_the_marathon, rank reviewers from most negative to most positive: Chad Greene, Jake Wilson, Margaret Pomeranz.",
+        "answer": [
+            "Jake Wilson",
+            "Margaret Pomeranz",
+            "Chad Greene"
+        ]
+    },
+    {
+        "question": "For movie with id m/captain_january, list the reviewers who gave a negative review.",
+        "answer": [
+            "Emanuel Levy"
+        ]
+    },
+    {
+        "question": "For movie with id m/mirror_has_two_faces, rank reviewers from most negative to most positive: Bruce Bennett, Michael Dequina, Scott Renshaw.",
+        "answer": [
+            "Michael Dequina",
+            "Scott Renshaw",
+            "Bruce Bennett"
+        ]
+    },
+    {
+        "question": "For movie with id m/halloween_4_the_return_of_michael_myers, rank reviewers from most negative to most positive: Dustin Putman, Jake Euker, James Berardinelli.",
+        "answer": [
+            "Jake Euker",
+            "James Berardinelli",
+            "Dustin Putman"
+        ]
+    },
+    {
+        "question": "For movie with id m/short_eyes, list the reviewers who gave a negative review.",
+        "answer": [
+            "Phil Hall",
+            "Phil Hall"
+        ]
+    },
+    {
+        "question": "For movie with id m/baby_its_you, rank reviewers from most negative to most positive: Janet Maslin, Steve Rhodes, Jeffrey Westhoff.",
+        "answer": [
+            "Steve Rhodes",
+            "Jeffrey Westhoff",
+            "Janet Maslin"
+        ]
+    },
+    {
+        "question": "For movie with id m/double_dare, among reviewers Eric Campos, Chris Barsanti, Mark R. Leeper, who had the most negative sentiment?",
+        "answer": "Chris Barsanti"
+    },
+    {
+        "question": "For movie with id m/dtf, among reviewers Kat Hughes, Nathaniel Muir, who had the most neutral sentiment?",
+        "answer": "Nathaniel Muir"
+    },
+    {
+        "question": "For movie with id m/targets, list the reviewers who gave a negative review.",
+        "answer": [
+            "Roger Ebert",
+            "Craig Phillips"
+        ]
+    },
+    {
+        "question": "For movie with id m/slingshot_1994, among reviewers James Berardinelli, Michael Szymanski, Marjorie Baumgarten, who had the most positive sentiment?",
+        "answer": "James Berardinelli"
+    },
+    {
+        "question": "For movie with id m/guys_and_dolls, among reviewers Angie Errigo, Thomas Delapa, John J. Puccio, who had the most positive sentiment?",
+        "answer": "Angie Errigo"
+    },
+    {
+        "question": "For movie with id m/the_honeymoon_phase, list the reviewers who gave a negative review.",
+        "answer": [
+            "Shaun Munro"
+        ]
+    },
+    {
+        "question": "For movie with id m/masters_of_the_universe, rank reviewers from most negative to most positive: Johanna Steinmetz, James O'Ehley, Stefan Birgir Stefansson.",
+        "answer": [
+            "James O'Ehley",
+            "Stefan Birgir Stefansson",
+            "Johanna Steinmetz"
+        ]
+    },
+    {
+        "question": "For movie with id m/blood_brothers_2011, rank reviewers from most negative to most positive: David DeWitt, Sam Adams, Christopher Null.",
+        "answer": [
+            "Sam Adams",
+            "Christopher Null",
+            "David DeWitt"
+        ]
+    },
+    {
+        "question": "For movie with id m/stay_hungry, among reviewers Tom Hutchinson, Vincent Canby, Film4 Staff, who had the most positive sentiment?",
+        "answer": "Tom Hutchinson"
+    },
+    {
+        "question": "For movie with id m/fire_in_the_sky, rank reviewers from most positive to most negative: Scott Weinberg, Steve Davis, Roger Ebert.",
+        "answer": [
+            "Scott Weinberg",
+            "Roger Ebert",
+            "Steve Davis"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_snowman_1982, among reviewers Steve Daly, Emanuel Levy, who had the most positive sentiment?",
+        "answer": "Steve Daly"
+    },
+    {
+        "question": "For movie with id m/delirious, rank reviewers from most positive to most negative: Fred Topel, Derek Smith, Louis Black.",
+        "answer": [
+            "Fred Topel",
+            "Louis Black",
+            "Derek Smith"
+        ]
+    },
+    {
+        "question": "For movie with id m/vampires_los_muertos, among reviewers David Nusair, Scott Weinberg, Emanuel Levy, who had the most negative sentiment?",
+        "answer": "Scott Weinberg"
+    },
+    {
+        "question": "For movie with id m/the_warring_states, among reviewers Avi Offer, Brent Simon, Robert Abele, who had the most neutral sentiment?",
+        "answer": "Robert Abele"
+    },
+    {
+        "question": "For movie with id m/under_the_roofs_of_paris, list the reviewers who gave a negative review.",
+        "answer": [
+            "Christopher Null",
+            "Mark Robison"
+        ]
+    },
+    {
+        "question": "For movie with id m/making_babies, rank reviewers from most positive to most negative: Jeffrey Lyles, Brian Orndorf, Roger Moore.",
+        "answer": [
+            "Jeffrey Lyles",
+            "Roger Moore",
+            "Brian Orndorf"
+        ]
+    },
+    {
+        "question": "For movie with id m/mean_dreams, among reviewers Chris Knight, Nick Allen, David Nusair, who had the most negative sentiment?",
+        "answer": "Nick Allen"
+    },
+    {
+        "question": "For movie with id m/test_2014, rank reviewers from most negative to most positive: Ryan Lattanzio, Nicholas Bell, Dan Schindel.",
+        "answer": [
+            "Nicholas Bell",
+            "Dan Schindel",
+            "Ryan Lattanzio"
+        ]
+    },
+    {
+        "question": "For movie with id m/greenwich_village_music_that_defined_a_generation, list the reviewers who gave a negative review.",
+        "answer": [
+            "Chuck Bowen",
+            "Tom Keogh"
+        ]
+    },
+    {
+        "question": "For movie with id m/1095360-witness_protection, list the reviewers who gave a negative review.",
+        "answer": [
+            "David Nusair",
+            "Emanuel Levy"
+        ]
+    },
+    {
+        "question": "For movie with id m/friday, among reviewers Phil Villarreal, David Keyes, Philip Martin, who had the most neutral sentiment?",
+        "answer": "Philip Martin"
+    },
+    {
+        "question": "For movie with id m/1024191-wrong_man, among reviewers David Poland, Christopher Null, Philip Martin, who had the most negative sentiment?",
+        "answer": "Christopher Null"
+    },
+    {
+        "question": "For movie with id m/electroma, rank reviewers from most positive to most negative: Tom Horgen, Marty Mapes.",
+        "answer": [
+            "Tom Horgen",
+            "Marty Mapes"
+        ]
+    },
+    {
+        "question": "For movie with id m/love_serenade, rank reviewers from most positive to most negative: Bryant Frazer, Susan Stark, Marc Savlov.",
+        "answer": [
+            "Bryant Frazer",
+            "Marc Savlov",
+            "Susan Stark"
+        ]
+    },
+    {
+        "question": "For movie with id m/wolf_totem, rank reviewers from most negative to most positive: Kirk Honeycutt, John Semley, Phil Hoad.",
+        "answer": [
+            "John Semley",
+            "Phil Hoad",
+            "Kirk Honeycutt"
+        ]
+    },
+    {
+        "question": "For movie with id m/victim_2012, among reviewers Paul M. Bradshaw, Dave Calhoun, Jennifer Tate, who had the most positive sentiment?",
+        "answer": "Paul M. Bradshaw"
+    },
+    {
+        "question": "For movie with id m/field_of_lost_shoes, among reviewers Mark R. Leeper, Renee Schonfeld, Roger Moore, who had the most positive sentiment?",
+        "answer": "Mark R. Leeper"
+    },
+    {
+        "question": "For movie with id m/strange_invaders, rank reviewers from most positive to most negative: Linda Cook, Andy Klein, Scott Weinberg.",
+        "answer": [
+            "Linda Cook",
+            "Scott Weinberg",
+            "Andy Klein"
+        ]
+    },
+    {
+        "question": "For movie with id m/little_pink_house, among reviewers Christian Toto, Laura Clifford, Derek Smith, who had the most negative sentiment?",
+        "answer": "Laura Clifford"
+    },
+    {
+        "question": "For movie with id m/three_men_and_a_baby, among reviewers Caffeinated Clint, Jeffrey Westhoff, Scott Weinberg, who had the most neutral sentiment?",
+        "answer": "Scott Weinberg"
+    },
+    {
+        "question": "For movie with id m/son_of_batman, among reviewers Brian Costello, Blake Howard, Jeffrey Lyles, who had the most neutral sentiment?",
+        "answer": "Jeffrey Lyles"
+    },
+    {
+        "question": "For movie with id m/sin_alas, among reviewers Jennie Kermode, Terence Johnson, Clayton Dillard, who had the most negative sentiment?",
+        "answer": "Terence Johnson"
+    },
+    {
+        "question": "For movie with id m/alis_wedding, list the reviewers who gave a negative review.",
+        "answer": [
+            "Luke Buckmaster",
+            "Jim Schembri"
+        ]
+    },
+    {
+        "question": "For movie with id m/nothing_in_common, rank reviewers from most negative to most positive: David Poland, Michael Szymanski, Roger Ebert.",
+        "answer": [
+            "Michael Szymanski",
+            "Roger Ebert",
+            "David Poland"
+        ]
+    },
+    {
+        "question": "For movie with id m/city_slickers_ii_the_legend_of_curlys_gold, among reviewers Scott Renshaw, Alex Sandell, James Berardinelli, who had the most positive sentiment?",
+        "answer": "Scott Renshaw"
+    },
+    {
+        "question": "For movie with id m/1010672-invaders_from_mars, rank reviewers from most negative to most positive: Scott Weinberg, Dennis Schwartz, Frank Swietek.",
+        "answer": [
+            "Dennis Schwartz",
+            "Frank Swietek",
+            "Scott Weinberg"
+        ]
+    },
+    {
+        "question": "For movie with id m/failsafe, among reviewers John Urbancich, Walter Chaw, Dan Jardine, who had the most neutral sentiment?",
+        "answer": "Dan Jardine"
+    },
+    {
+        "question": "For movie with id m/im_in_love_with_a_church_girl, rank reviewers from most negative to most positive: Richard Propes, Kimberley Jones, Steven Boone.",
+        "answer": [
+            "Kimberley Jones",
+            "Steven Boone",
+            "Richard Propes"
+        ]
+    },
+    {
+        "question": "For movie with id m/ilya_and_emilia_kabakov_enter_here, among reviewers Sheila O'Malley, Steve Macfarlane, Jenna Scherer, who had the most neutral sentiment?",
+        "answer": "Jenna Scherer"
+    },
+    {
+        "question": "For movie with id m/carter_and_june, rank reviewers from most positive to most negative: Matthew Pejkovic, Kam Williams, Alan Ng.",
+        "answer": [
+            "Matthew Pejkovic",
+            "Alan Ng",
+            "Kam Williams"
+        ]
+    },
+    {
+        "question": "For movie with id m/doc_hollywood, among reviewers Brian Mckay, Ken Hanke, Kathleen Maher, who had the most positive sentiment?",
+        "answer": "Brian Mckay"
+    },
+    {
+        "question": "For movie with id m/double_team, rank reviewers from most negative to most positive: Luke Y. Thompson, Carlo Cavagna, Jack Garner.",
+        "answer": [
+            "Carlo Cavagna",
+            "Jack Garner",
+            "Luke Y. Thompson"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_adventurer_the_curse_of_the_midas_box, rank reviewers from most negative to most positive: Avi Offer, Dann Gire, R. Kurt Osenlund.",
+        "answer": [
+            "Dann Gire",
+            "R. Kurt Osenlund",
+            "Avi Offer"
+        ]
+    },
+    {
+        "question": "For movie with id m/daffodils, rank reviewers from most positive to most negative: James Croot, Tony Stamp.",
+        "answer": [
+            "James Croot",
+            "Tony Stamp"
+        ]
+    },
+    {
+        "question": "For movie with id m/1187621-itty_bitty_titty_committee, among reviewers Rich Cline, Jay Antani, Maitland McDonagh, who had the most positive sentiment?",
+        "answer": "Rich Cline"
+    },
+    {
+        "question": "For movie with id m/titanica, list the reviewers who gave a negative review.",
+        "answer": [
+            "Jeffrey Westhoff",
+            "Rich Cline"
+        ]
+    },
+    {
+        "question": "For movie with id m/vegas_vacation, among reviewers Mike McGranaghan, Madeleine Williams, Susan Stark, who had the most neutral sentiment?",
+        "answer": "Susan Stark"
+    },
+    {
+        "question": "For movie with id m/the_trials_of_muhammad_ali_2013, among reviewers Kevin Jagernauth, Chris Hewitt, Michael Atkinson, who had the most neutral sentiment?",
+        "answer": "Michael Atkinson"
+    },
+    {
+        "question": "For movie with id m/couch_trip, among reviewers Rebecca Murray, Brian J. Arthurs, Roger Ebert, who had the most negative sentiment?",
+        "answer": "Brian J. Arthurs"
+    },
+    {
+        "question": "For movie with id m/plastic-planet, among reviewers Cole Smithey, Christopher Campbell, Mark Keizer, who had the most negative sentiment?",
+        "answer": "Christopher Campbell"
+    },
+    {
+        "question": "For movie with id m/incident_in_a_ghost_land_2018, among reviewers Ben Robins, David Nusair, James Marsh, who had the most positive sentiment?",
+        "answer": "Ben Robins"
+    },
+    {
+        "question": "For movie with id m/better_start_running, rank reviewers from most negative to most positive: Chris Salce, Brian Orndorf, Roger Moore.",
+        "answer": [
+            "Brian Orndorf",
+            "Roger Moore",
+            "Chris Salce"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_cotton_club_encore, rank reviewers from most positive to most negative: Jordan Hoffman, Mark Feeney, Odie Henderson.",
+        "answer": [
+            "Jordan Hoffman",
+            "Odie Henderson",
+            "Mark Feeney"
+        ]
+    },
+    {
+        "question": "For movie with id m/dr_goldfoot_and_the_bikini_machine, among reviewers Emanuel Levy, John Esther, Christopher Null, who had the most negative sentiment?",
+        "answer": "John Esther"
+    },
+    {
+        "question": "For movie with id m/unforgivable_2012, among reviewers Chris Barsanti, Cole Smithey, Harvey S. Karten, who had the most negative sentiment?",
+        "answer": "Cole Smithey"
+    },
+    {
+        "question": "For movie with id m/longest_day, list the reviewers who gave a negative review.",
+        "answer": [
+            "Bob Bloom"
+        ]
+    },
+    {
+        "question": "For movie with id m/1016338-pink_panther, among reviewers Scott Weinberg, Bill Chambers, Ken Hanke, who had the most negative sentiment?",
+        "answer": "Bill Chambers"
+    },
+    {
+        "question": "For movie with id m/measure_for_measure_2020, rank reviewers from most negative to most positive: Pamela Powell, Robert Kojder, Josh Bell.",
+        "answer": [
+            "Robert Kojder",
+            "Josh Bell",
+            "Pamela Powell"
+        ]
+    },
+    {
+        "question": "For movie with id m/turner_and_hooch, rank reviewers from most negative to most positive: Rebecca Murray, Philip Martin, Scott Weinberg.",
+        "answer": [
+            "Philip Martin",
+            "Scott Weinberg",
+            "Rebecca Murray"
+        ]
+    },
+    {
+        "question": "For movie with id m/urban_hymn, among reviewers Cassam Looch, Tom Huddleston, Rachel Bowles, who had the most negative sentiment?",
+        "answer": "Tom Huddleston"
+    },
+    {
+        "question": "For movie with id m/wrong_2011, rank reviewers from most negative to most positive: Chris Bumbray, Rob Hunter, Noel Murray.",
+        "answer": [
+            "Rob Hunter",
+            "Noel Murray",
+            "Chris Bumbray"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_stray_2017, list the reviewers who gave a negative review.",
+        "answer": [
+            "Mike McGranaghan",
+            "Josh Terry",
+            "Sandie Angulo Chen",
+            "Roger Moore"
+        ]
+    },
+    {
+        "question": "For movie with id m/beauty_and_the_beast_2014, list the reviewers who gave a negative review.",
+        "answer": [
+            "Anna Tatarska",
+            "Stefan Pape",
+            "Jessica Kiang",
+            "Clint Worthington",
+            "Chuck Bowen",
+            "David Crow",
+            "Brian Orndorf",
+            "Ignatiy Vishnevetsky",
+            "Steve Davis",
+            "Kate Erbland",
+            "Hugo Hern\u00e1ndez Valdivia",
+            "Frank Ochieng",
+            "Rachel Wagner"
+        ]
+    },
+    {
+        "question": "For movie with id m/englishman_who_went_up_a_hill_but_came_down_a_mountain, rank reviewers from most negative to most positive: Josh Gilchrist, John Esther, Madeleine Williams.",
+        "answer": [
+            "John Esther",
+            "Madeleine Williams",
+            "Josh Gilchrist"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_zen_of_bennett, list the reviewers who gave a negative review.",
+        "answer": [
+            "David Fear"
+        ]
+    },
+    {
+        "question": "For movie with id m/grass, among reviewers James Kendrick, Roger Ebert, Marjorie Baumgarten, who had the most negative sentiment?",
+        "answer": "Roger Ebert"
+    },
+    {
+        "question": "For movie with id m/amos_and_andrew, among reviewers Jeffrey Westhoff, Owen Gleiberman, Marjorie Baumgarten, who had the most positive sentiment?",
+        "answer": "Jeffrey Westhoff"
+    },
+    {
+        "question": "For movie with id m/1011329-julius_caesar, rank reviewers from most negative to most positive: Steve Crum, Roger Ebert, Ted Prigge.",
+        "answer": [
+            "Roger Ebert",
+            "Steve Crum",
+            "Ted Prigge"
+        ]
+    },
+    {
+        "question": "For movie with id m/1080265-requiem_for_a_heavyweight, among reviewers Philip Martin, Pablo Villa\u00e7a, Emanuel Levy, who had the most negative sentiment?",
+        "answer": "Pablo Villa\u00e7a"
+    },
+    {
+        "question": "For movie with id m/herbie_hancock_possibilities, among reviewers Laura Kern, V.A. Musetto, Nick Schager, who had the most positive sentiment?",
+        "answer": "Laura Kern"
+    },
+    {
+        "question": "For movie with id m/men_at_work_1990, among reviewers Roger Moore, Scott Weinberg, Bob Grimm, who had the most negative sentiment?",
+        "answer": "Scott Weinberg"
+    },
+    {
+        "question": "For movie with id m/1205681-paper_man, rank reviewers from most negative to most positive: Kam Williams, Frank Swietek, Janos Gereben.",
+        "answer": [
+            "Frank Swietek",
+            "Janos Gereben",
+            "Kam Williams"
+        ]
+    },
+    {
+        "question": "For movie with id m/dead_of_winter, among reviewers Scott Weinberg, Jake Euker, Roger Ebert, who had the most neutral sentiment?",
+        "answer": "Roger Ebert"
+    },
+    {
+        "question": "For movie with id m/beautiful_kate, list the reviewers who gave a negative review.",
+        "answer": [
+            "Nick Dent",
+            "Alistair Harkness",
+            "David Edwards",
+            "Sophie Ivan",
+            "Matthew Pejkovic"
+        ]
+    },
+    {
+        "question": "For movie with id m/1028564-guardian, rank reviewers from most positive to most negative: Mike Massie, Ken Hanke, Emanuel Levy.",
+        "answer": [
+            "Mike Massie",
+            "Emanuel Levy",
+            "Ken Hanke"
+        ]
+    },
+    {
+        "question": "For movie with id m/ladyhawke, list the reviewers who gave a negative review.",
+        "answer": [
+            "Philip Martin",
+            "Alex Sandell",
+            "Dan Fazio",
+            "Gabriel Shanks",
+            "Jake Euker",
+            "David Kaplan",
+            "Barbara Shulgasser"
+        ]
+    },
+    {
+        "question": "For movie with id m/queen_of_outer_space, among reviewers Christopher Smith, Bob Bloom, Ken Hanke, who had the most positive sentiment?",
+        "answer": "Christopher Smith"
+    },
+    {
+        "question": "For movie with id m/3_ninjas, rank reviewers from most negative to most positive: TV Guide Staff, Michael Dequina, David Poland.",
+        "answer": [
+            "Michael Dequina",
+            "David Poland",
+            "TV Guide Staff"
+        ]
+    },
+    {
+        "question": "For movie with id m/wicked_little_things, rank reviewers from most positive to most negative: Johnny Butane, Scott Weinberg.",
+        "answer": [
+            "Johnny Butane",
+            "Scott Weinberg"
+        ]
+    },
+    {
+        "question": "For movie with id m/i_married_a_monster_from_outer_space, rank reviewers from most positive to most negative: Gerry Shamray, Nell Minow, Bob Bloom.",
+        "answer": [
+            "Gerry Shamray",
+            "Bob Bloom",
+            "Nell Minow"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_titan, list the reviewers who gave a negative review.",
+        "answer": [
+            "Sol Harris",
+            "Matt Fowler",
+            "Jake Nevins",
+            "David Ehrlich",
+            "Brian Orndorf",
+            "Dan Jolin",
+            "Joanne Soh",
+            "Geoffrey Macnab",
+            "James Luxford",
+            "Larushka Ivan-Zadeh",
+            "Peter Bradshaw",
+            "Robbie Collin",
+            "Linda Marric",
+            "Kevin Maher",
+            "Barbara Shulgasser",
+            "MaryAnn Johanson",
+            "Valerie Kalfrin",
+            "Jeffrey Lyles",
+            "Carlos Frigo"
+        ]
+    },
+    {
+        "question": "For movie with id m/being_17, among reviewers Alexander Ryll, Scott Marks, Marcos Gand\u00eda, who had the most negative sentiment?",
+        "answer": "Scott Marks"
+    },
+    {
+        "question": "For movie with id m/anzio, rank reviewers from most negative to most positive: Carol Cling, Robin Clifford, Emanuel Levy.",
+        "answer": [
+            "Robin Clifford",
+            "Emanuel Levy",
+            "Carol Cling"
+        ]
+    },
+    {
+        "question": "For movie with id m/10011079-country_teacher, rank reviewers from most positive to most negative: Michael Upchurch, Keith Uhlich, Harvey S. Karten.",
+        "answer": [
+            "Michael Upchurch",
+            "Harvey S. Karten",
+            "Keith Uhlich"
+        ]
+    },
+    {
+        "question": "For movie with id m/daleks_invasion_earth_2150_ad, rank reviewers from most negative to most positive: Paul Mount, Mike Massie, Dennis Schwartz.",
+        "answer": [
+            "Mike Massie",
+            "Dennis Schwartz",
+            "Paul Mount"
+        ]
+    },
+    {
+        "question": "For movie with id m/house_2_the_second_story, among reviewers Ryan Pollard, Nicholas Bell, David Perini, who had the most positive sentiment?",
+        "answer": "Ryan Pollard"
+    },
+    {
+        "question": "For movie with id m/or, rank reviewers from most negative to most positive: David Sterritt, Daniel Kasman, Joshua Tanzer.",
+        "answer": [
+            "Daniel Kasman",
+            "Joshua Tanzer",
+            "David Sterritt"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_dead, rank reviewers from most positive to most negative: Vincent Canby, Chuck O'Leary, Thomas Delapa.",
+        "answer": [
+            "Vincent Canby",
+            "Thomas Delapa",
+            "Chuck O'Leary"
+        ]
+    },
+    {
+        "question": "For movie with id m/10008613-burrowers, among reviewers Scott Weinberg, Brian Orndorf, David Nusair, who had the most negative sentiment?",
+        "answer": "Brian Orndorf"
+    },
+    {
+        "question": "For movie with id m/ayurveda_the_art_of_being, among reviewers Jeffrey M. Anderson, Catharine Tunnacliffe, Maitland McDonagh, who had the most negative sentiment?",
+        "answer": "Catharine Tunnacliffe"
+    },
+    {
+        "question": "For movie with id m/the_witch_who_came_from_the_sea_1976, among reviewers Ian White, Christopher Null, Walter Chaw, who had the most negative sentiment?",
+        "answer": "Christopher Null"
+    },
+    {
+        "question": "For movie with id m/see_no_evil_2, rank reviewers from most positive to most negative: William Bibbiani, David Nusair, Noel Murray.",
+        "answer": [
+            "William Bibbiani",
+            "Noel Murray",
+            "David Nusair"
+        ]
+    },
+    {
+        "question": "For movie with id m/10010944-missing_person, among reviewers James Rocchi, Tom Long, Andrew Schenker, who had the most positive sentiment?",
+        "answer": "James Rocchi"
+    },
+    {
+        "question": "For movie with id m/jimmy_hollywood, among reviewers John Urbancich, Brian J. Arthurs, Roger Ebert, who had the most negative sentiment?",
+        "answer": "Brian J. Arthurs"
+    },
+    {
+        "question": "For movie with id m/monster_road, rank reviewers from most positive to most negative: Steve Schneider, Jay Boyar, Walter Chaw.",
+        "answer": [
+            "Steve Schneider",
+            "Walter Chaw",
+            "Jay Boyar"
+        ]
+    },
+    {
+        "question": "For movie with id m/afterglow, rank reviewers from most negative to most positive: Ted Prigge, Nick Davis, Marjorie Baumgarten.",
+        "answer": [
+            "Nick Davis",
+            "Marjorie Baumgarten",
+            "Ted Prigge"
+        ]
+    },
+    {
+        "question": "For movie with id m/devils_chair, among reviewers Steve \"Uncle Creepy\" Barton, David Nusair, who had the most neutral sentiment?",
+        "answer": "Steve \"Uncle Creepy\" Barton"
+    },
+    {
+        "question": "For movie with id m/1016760-prisoner, among reviewers Pablo Villa\u00e7a, David Nusair, Emanuel Levy, who had the most neutral sentiment?",
+        "answer": "Emanuel Levy"
+    },
+    {
+        "question": "For movie with id m/one_of_us_2017, rank reviewers from most positive to most negative: Jude Dry, Glenn Dunks, Harvey S. Karten.",
+        "answer": [
+            "Jude Dry",
+            "Harvey S. Karten",
+            "Glenn Dunks"
+        ]
+    },
+    {
+        "question": "For movie with id m/digging_up_the_marrow, rank reviewers from most positive to most negative: Abbie Bernstein, Simon Abrams, Dustin Putman.",
+        "answer": [
+            "Abbie Bernstein",
+            "Dustin Putman",
+            "Simon Abrams"
+        ]
+    },
+    {
+        "question": "For movie with id m/ma_vie_en_rose, among reviewers James Rocchi, Frank Swietek, Christopher Null, who had the most positive sentiment?",
+        "answer": "James Rocchi"
+    },
+    {
+        "question": "For movie with id m/stillborn_2018, among reviewers Jennie Kermode, Alejandro Sosa, John Higgins, who had the most negative sentiment?",
+        "answer": "Alejandro Sosa"
+    },
+    {
+        "question": "For movie with id m/1068326-sabrina, rank reviewers from most negative to most positive: Michael Dequina, Mike McGranaghan, Marjorie Baumgarten.",
+        "answer": [
+            "Mike McGranaghan",
+            "Marjorie Baumgarten",
+            "Michael Dequina"
+        ]
+    },
+    {
+        "question": "For movie with id m/1000640-all_of_me, among reviewers Fred Topel, Rebecca Murray, Larry Carroll, who had the most neutral sentiment?",
+        "answer": "Larry Carroll"
+    },
+    {
+        "question": "For movie with id m/1211138-baby_on_board, rank reviewers from most positive to most negative: Pete Hammond, David Nusair, Kevin Carr.",
+        "answer": [
+            "Pete Hammond",
+            "Kevin Carr",
+            "David Nusair"
+        ]
+    },
+    {
+        "question": "For movie with id m/firelight, among reviewers Harvey S. Karten, Susan Granger, Rob Blackwelder, who had the most neutral sentiment?",
+        "answer": "Rob Blackwelder"
+    },
+    {
+        "question": "For movie with id m/the_harmonists, list the reviewers who gave a negative review.",
+        "answer": [
+            "Marc Savlov",
+            "Dennis Schwartz",
+            "Liam Lacey",
+            "Jurgen Fauth"
+        ]
+    },
+    {
+        "question": "For movie with id m/distorted, among reviewers Avi Offer, Frank Swietek, Michael Ordo\u00f1a, who had the most neutral sentiment?",
+        "answer": "Avi Offer"
+    },
+    {
+        "question": "For movie with id m/bai_she_chuan_shuo_2013, rank reviewers from most negative to most positive: Mike McGranaghan, Simon Weaving, David Stratton.",
+        "answer": [
+            "Simon Weaving",
+            "David Stratton",
+            "Mike McGranaghan"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_field_guide_to_evil, among reviewers Sez\u00edn Koehler, Federico Furzan, Katie Driscoll, who had the most negative sentiment?",
+        "answer": "Federico Furzan"
+    },
+    {
+        "question": "For movie with id m/1900, among reviewers Cole Smithey, Michael Szymanski, Vincent Canby, who had the most negative sentiment?",
+        "answer": "Michael Szymanski"
+    },
+    {
+        "question": "For movie with id m/1003747-cat_and_the_canary, rank reviewers from most negative to most positive: Ken Hanke, Emanuel Levy, Carol Cling.",
+        "answer": [
+            "Emanuel Levy",
+            "Carol Cling",
+            "Ken Hanke"
+        ]
+    },
+    {
+        "question": "For movie with id m/tales_from_the_darkside_the_movie, rank reviewers from most positive to most negative: Mike Massie, James Sanford, James Kendrick.",
+        "answer": [
+            "Mike Massie",
+            "James Kendrick",
+            "James Sanford"
+        ]
+    },
+    {
+        "question": "For movie with id m/working_girl, rank reviewers from most positive to most negative: Roger Ebert, Rob Blackwelder, Bob Grimm.",
+        "answer": [
+            "Roger Ebert",
+            "Bob Grimm",
+            "Rob Blackwelder"
+        ]
+    },
+    {
+        "question": "For movie with id m/heaven_help_us, among reviewers Chuck O'Leary, Scott Weinberg, Frederic and Mary Ann Brussat, who had the most positive sentiment?",
+        "answer": "Chuck O'Leary"
+    },
+    {
+        "question": "For movie with id m/jexi, rank reviewers from most positive to most negative: Louisa Moore, Rendy Jones, David Ehrlich.",
+        "answer": [
+            "Louisa Moore",
+            "David Ehrlich",
+            "Rendy Jones"
+        ]
+    },
+    {
+        "question": "For movie with id m/forbidden_world, rank reviewers from most positive to most negative: Emanuel Levy, Scott Weinberg.",
+        "answer": [
+            "Emanuel Levy",
+            "Scott Weinberg"
+        ]
+    },
+    {
+        "question": "For movie with id m/sheena, among reviewers Douglas Pratt, Rob Vaux, Philip Martin, who had the most neutral sentiment?",
+        "answer": "Philip Martin"
+    },
+    {
+        "question": "For movie with id m/targets, among reviewers David Poland, Craig Phillips, Robin Clifford, who had the most neutral sentiment?",
+        "answer": "Robin Clifford"
+    },
+    {
+        "question": "For movie with id m/letters_from_baghdad, list the reviewers who gave a negative review.",
+        "answer": [
+            "Eve Watling",
+            "Vikram Murthi",
+            "Adam Graham",
+            "Matthew Anderson"
+        ]
+    },
+    {
+        "question": "For movie with id m/behold_a_pale_horse, among reviewers David Nusair, Bosley Crowther, Emanuel Levy, who had the most negative sentiment?",
+        "answer": "Bosley Crowther"
+    },
+    {
+        "question": "For movie with id m/mishima_a_life_in_four_chapters, among reviewers Roger Ebert, Jeffrey Westhoff, Ken Hanke, who had the most neutral sentiment?",
+        "answer": "Ken Hanke"
+    },
+    {
+        "question": "For movie with id m/custer_of_the_west, among reviewers Emanuel Levy, Dennis Schwartz, Chuck O'Leary, who had the most neutral sentiment?",
+        "answer": "Emanuel Levy"
+    },
+    {
+        "question": "For movie with id m/daguerrotype, rank reviewers from most positive to most negative: Emilie Black, Rodrigo Perez, Ignatiy Vishnevetsky.",
+        "answer": [
+            "Emilie Black",
+            "Ignatiy Vishnevetsky",
+            "Rodrigo Perez"
+        ]
+    },
+    {
+        "question": "For movie with id m/paulie, rank reviewers from most positive to most negative: MaryAnn Johanson, Marc Savlov, Scott Renshaw.",
+        "answer": [
+            "MaryAnn Johanson",
+            "Scott Renshaw",
+            "Marc Savlov"
+        ]
+    },
+    {
+        "question": "For movie with id m/south_pacific, rank reviewers from most positive to most negative: Steve Crum, Walter Chaw, Philip Martin.",
+        "answer": [
+            "Steve Crum",
+            "Philip Martin",
+            "Walter Chaw"
+        ]
+    },
+    {
+        "question": "For movie with id m/shirin_in_love_2014, list the reviewers who gave a negative review.",
+        "answer": [
+            "Noah Berlatsky",
+            "Noah Berlatsky",
+            "Brian Orndorf",
+            "Brian Orndorf",
+            "Mike McGranaghan",
+            "Mike McGranaghan",
+            "Josh Bell",
+            "Josh Bell",
+            "Soren Andersen",
+            "Mark Jenkins",
+            "Soren Andersen",
+            "Mark Jenkins",
+            "Mary Houlihan",
+            "Mary Houlihan",
+            "Roxana Hadadi",
+            "Roxana Hadadi"
+        ]
+    },
+    {
+        "question": "For movie with id m/condorman, among reviewers Spence D., Michael Szymanski, Caffeinated Clint, who had the most positive sentiment?",
+        "answer": "Spence D."
+    },
+    {
+        "question": "For movie with id m/1_night, among reviewers Brigid Presecky, Brian Orndorf, who had the most negative sentiment?",
+        "answer": "Brian Orndorf"
+    },
+    {
+        "question": "For movie with id m/1017321-red_dawn, among reviewers Widgett Walls, Jake Euker, Nicolas Lacroix, who had the most neutral sentiment?",
+        "answer": "Nicolas Lacroix"
+    },
+    {
+        "question": "For movie with id m/hellraiser_deader, among reviewers Kevin Carr, David Nusair, Scott Weinberg, who had the most negative sentiment?",
+        "answer": "David Nusair"
+    },
+    {
+        "question": "For movie with id m/for_love_or_money_1993, list the reviewers who gave a negative review.",
+        "answer": [
+            "Roger Ebert",
+            "Louis Black",
+            "Scott Renshaw",
+            "James Berardinelli",
+            "Philip Martin",
+            "Josh Gilchrist",
+            "Carol Cling",
+            "Emanuel Levy",
+            "Chuck O'Leary",
+            "Rebecca Murray",
+            "Owen Gleiberman"
+        ]
+    },
+    {
+        "question": "For movie with id m/a_murder_in_the_park, among reviewers Godfrey Cheshire, Austin Trunick, Clayton Dillard, who had the most negative sentiment?",
+        "answer": "Austin Trunick"
+    },
+    {
+        "question": "For movie with id m/blood_brothers_2011, among reviewers David DeWitt, Sam Adams, Christopher Null, who had the most positive sentiment?",
+        "answer": "David DeWitt"
+    },
+    {
+        "question": "For movie with id m/girly-1969, among reviewers Josh Bell, Emanuel Levy, who had the most neutral sentiment?",
+        "answer": "Josh Bell"
+    },
+    {
+        "question": "For movie with id m/time_lapse_2015, rank reviewers from most negative to most positive: Mark R. Leeper, Roger Moore, John Beifuss.",
+        "answer": [
+            "Roger Moore",
+            "John Beifuss",
+            "Mark R. Leeper"
+        ]
+    },
+    {
+        "question": "For movie with id m/journey-to-italy-viaggio-in-italia, rank reviewers from most negative to most positive: Thomas Delapa, John Esther, Ronald Bergan.",
+        "answer": [
+            "John Esther",
+            "Ronald Bergan",
+            "Thomas Delapa"
+        ]
+    },
+    {
+        "question": "For movie with id m/one_bright_shining_moment, rank reviewers from most negative to most positive: David Sterritt, Elizabeth Weitzman, Kim Williamson.",
+        "answer": [
+            "Kim Williamson",
+            "Elizabeth Weitzman",
+            "David Sterritt"
+        ]
+    },
+    {
+        "question": "For movie with id m/deceiver, among reviewers Peter Stack, Madeleine Williams, Susan Stark, who had the most neutral sentiment?",
+        "answer": "Susan Stark"
+    },
+    {
+        "question": "For movie with id m/number_17, among reviewers Emanuel Levy, Michael W. Phillips, Jr., Dennis Schwartz, who had the most positive sentiment?",
+        "answer": "Emanuel Levy"
+    },
+    {
+        "question": "For movie with id m/samurai_marathon, among reviewers Steven Neish, Nathanael Hood, Adam Patterson, who had the most negative sentiment?",
+        "answer": "Nathanael Hood"
+    },
+    {
+        "question": "For movie with id m/hilife, rank reviewers from most positive to most negative: David Nusair, Christopher Null, Carol Cling.",
+        "answer": [
+            "David Nusair",
+            "Carol Cling",
+            "Christopher Null"
+        ]
+    },
+    {
+        "question": "For movie with id m/gaga_five_foot_two, rank reviewers from most negative to most positive: Orlando Maldonado, Bryan Armen Graham, Gregory Ellwood.",
+        "answer": [
+            "Bryan Armen Graham",
+            "Gregory Ellwood",
+            "Orlando Maldonado"
+        ]
+    },
+    {
+        "question": "For movie with id m/being_at_home_with_claude, among reviewers Marc Savlov, Roger Ebert, Nicolas Lacroix, who had the most negative sentiment?",
+        "answer": "Roger Ebert"
+    },
+    {
+        "question": "For movie with id m/leprechaun_4_in_space, among reviewers Matthew Rozsa, Ken Hanke, Emanuel Levy, who had the most neutral sentiment?",
+        "answer": "Emanuel Levy"
+    },
+    {
+        "question": "For movie with id m/six_sex_scenes_and_a_murder, among reviewers Peter Travers, Mick LaSalle, Brian Chen, who had the most neutral sentiment?",
+        "answer": "Brian Chen"
+    },
+    {
+        "question": "For movie with id m/10012058-prodigal_sons, among reviewers David Wiegand, Kevin B. Lee, Fr. Chris Carpenter, who had the most positive sentiment?",
+        "answer": "David Wiegand"
+    },
+    {
+        "question": "For movie with id m/black_caesar, among reviewers Josh Larsen, Philip Martin, Emanuel Levy, who had the most negative sentiment?",
+        "answer": "Philip Martin"
+    },
+    {
+        "question": "For movie with id m/a_nightmare_on_elm_street_3_dream_warriors, among reviewers Stefan Birgir Stefansson, Roger Ebert, David Keyes, who had the most neutral sentiment?",
+        "answer": "David Keyes"
+    },
+    {
+        "question": "For movie with id m/hammer_of_the_gods_2013, among reviewers Owen Williams, Dave White, Tom Huddleston, who had the most positive sentiment?",
+        "answer": "Owen Williams"
+    },
+    {
+        "question": "For movie with id m/philip_roth_unmasked, among reviewers Stephen Whitty, Kyle Smith, Keith Uhlich, who had the most negative sentiment?",
+        "answer": "Kyle Smith"
+    },
+    {
+        "question": "For movie with id m/14_cameras, among reviewers C.H. Newell, Frank Swietek, Jennie Kermode, who had the most positive sentiment?",
+        "answer": "C.H. Newell"
+    },
+    {
+        "question": "For movie with id m/fluke, list the reviewers who gave a negative review.",
+        "answer": [
+            "Mike Clark",
+            "Hollis Chacona",
+            "Fred Topel",
+            "Rebecca Murray",
+            "Emanuel Levy",
+            "Lisa Schwarzbaum",
+            "Renee Schonfeld"
+        ]
+    },
+    {
+        "question": "For movie with id m/problem_child_2, among reviewers Fred Topel, Steve Davis, Caffeinated Clint, who had the most negative sentiment?",
+        "answer": "Steve Davis"
+    },
+    {
+        "question": "For movie with id m/lion_king_1_12, among reviewers Kevin Carr, Bill Chambers, John J. Puccio, who had the most positive sentiment?",
+        "answer": "Kevin Carr"
+    },
+    {
+        "question": "For movie with id m/period_of_adjustment, among reviewers Dennis Schwartz, Susan Granger, Emanuel Levy, who had the most positive sentiment?",
+        "answer": "Dennis Schwartz"
+    },
+    {
+        "question": "For movie with id m/careful_what_you_wish_for, among reviewers Steve Rubenstein, Matt Fagerholm, Noel Murray, who had the most positive sentiment?",
+        "answer": "Steve Rubenstein"
+    },
+    {
+        "question": "For movie with id m/1200797-closing_the_ring, among reviewers Christian Toto, David Stratton, Derek Malcolm, who had the most neutral sentiment?",
+        "answer": "Derek Malcolm"
+    },
+    {
+        "question": "For movie with id m/hans_christian_andersen, rank reviewers from most positive to most negative: Carol Cling, Ken Hanke, Bob Grimm.",
+        "answer": [
+            "Carol Cling",
+            "Bob Grimm",
+            "Ken Hanke"
+        ]
+    },
+    {
+        "question": "For movie with id m/line_of_duty_2019, list the reviewers who gave a negative review.",
+        "answer": [
+            "Mark Dujsik",
+            "Danny Brogan",
+            "Sophie Willard",
+            "Peter Bradshaw",
+            "Simran Hans",
+            "Dennis Schwartz"
+        ]
+    },
+    {
+        "question": "For movie with id m/relentless, rank reviewers from most positive to most negative: Caffeinated Clint, Andy Klein, Philip Martin.",
+        "answer": [
+            "Caffeinated Clint",
+            "Philip Martin",
+            "Andy Klein"
+        ]
+    },
+    {
+        "question": "For movie with id m/my_piece_of_the_pie, among reviewers Frederic and Mary Ann Brussat, Andrew Schenker, Keith Uhlich, who had the most positive sentiment?",
+        "answer": "Frederic and Mary Ann Brussat"
+    },
+    {
+        "question": "For movie with id m/the_competition_2018, among reviewers Avi Offer, Derek Smith, Jeff Simon, who had the most negative sentiment?",
+        "answer": "Derek Smith"
+    },
+    {
+        "question": "For movie with id m/this_property_is_condemned, among reviewers Michael Szymanski, Christopher Null, Carol Cling, who had the most negative sentiment?",
+        "answer": "Christopher Null"
+    },
+    {
+        "question": "For movie with id m/vice_squad, list the reviewers who gave a negative review.",
+        "answer": [
+            "Dennis Schwartz",
+            "Matt Brunson"
+        ]
+    },
+    {
+        "question": "For movie with id m/saint-misbehavin-the-wavy-gravy-movie, among reviewers Frederic and Mary Ann Brussat, V.A. Musetto, Ray Greene, who had the most positive sentiment?",
+        "answer": "Frederic and Mary Ann Brussat"
+    },
+    {
+        "question": "For movie with id m/frankensteins_monsters_monster_frankenstein, among reviewers Vinnie Mancuso, Barbara Shulgasser, Randall Colburn, who had the most negative sentiment?",
+        "answer": "Barbara Shulgasser"
+    },
+    {
+        "question": "For movie with id m/i_hate_valentines_day, rank reviewers from most positive to most negative: Dave White, Frank Swietek, Stephen Whitty.",
+        "answer": [
+            "Dave White",
+            "Stephen Whitty",
+            "Frank Swietek"
+        ]
+    },
+    {
+        "question": "For movie with id m/children_of_invention, list the reviewers who gave a negative review.",
+        "answer": [
+            "Kevin B. Lee",
+            "Ron Wilkinson",
+            "Mike Scott"
+        ]
+    },
+    {
+        "question": "For movie with id m/1038770-high_heels, among reviewers Philip Martin, Nick Schager, Marc Savlov, who had the most positive sentiment?",
+        "answer": "Philip Martin"
+    },
+    {
+        "question": "For movie with id m/1061401-village_of_the_damned, among reviewers Jeffrey M. Anderson, James Sanford, Scott Renshaw, who had the most negative sentiment?",
+        "answer": "James Sanford"
+    },
+    {
+        "question": "For movie with id m/secret_of_santa_vittoria, among reviewers Steve Crum, Vincent Canby, who had the most neutral sentiment?",
+        "answer": "Steve Crum"
+    },
+    {
+        "question": "For movie with id m/hotel_2003, among reviewers Jamie Russell, Manohla Dargis, Elvis Mitchell, who had the most neutral sentiment?",
+        "answer": "Elvis Mitchell"
+    },
+    {
+        "question": "For movie with id m/playing_mona_lisa, rank reviewers from most positive to most negative: Rob Blackwelder, Brian Mckay, Steve Rhodes.",
+        "answer": [
+            "Rob Blackwelder",
+            "Steve Rhodes",
+            "Brian Mckay"
+        ]
+    },
+    {
+        "question": "For movie with id m/little_vampire, among reviewers Lawrence Van Gelder, Owen Gleiberman, Jack Garner, who had the most negative sentiment?",
+        "answer": "Owen Gleiberman"
+    },
+    {
+        "question": "For movie with id m/mine_vaganti, rank reviewers from most positive to most negative: Katina Vangopoulos, Owen Gleiberman, David Parkinson.",
+        "answer": [
+            "Katina Vangopoulos",
+            "David Parkinson",
+            "Owen Gleiberman"
+        ]
+    },
+    {
+        "question": "For movie with id m/silent_tongue, among reviewers John Petrakis, Emanuel Levy, Alvaro Rodriguez, who had the most neutral sentiment?",
+        "answer": "Alvaro Rodriguez"
+    },
+    {
+        "question": "For movie with id m/summer_04, rank reviewers from most negative to most positive: Kam Williams, Matt Zoller Seitz, Joseph Proimakis.",
+        "answer": [
+            "Matt Zoller Seitz",
+            "Joseph Proimakis",
+            "Kam Williams"
+        ]
+    },
+    {
+        "question": "For movie with id m/another_gay_sequel, among reviewers Dustin Putman, Fr. Chris Carpenter, Tirdad Derakhshani, who had the most negative sentiment?",
+        "answer": "Fr. Chris Carpenter"
+    },
+    {
+        "question": "For movie with id m/mars, rank reviewers from most negative to most positive: Avi Offer, Mark R. Leeper, Jeannette Catsoulis.",
+        "answer": [
+            "Mark R. Leeper",
+            "Jeannette Catsoulis",
+            "Avi Offer"
+        ]
+    },
+    {
+        "question": "For movie with id m/hell_comes_to_frogtown, rank reviewers from most positive to most negative: Luke Y. Thompson, Bill Chambers, Emanuel Levy.",
+        "answer": [
+            "Luke Y. Thompson",
+            "Emanuel Levy",
+            "Bill Chambers"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_silence_2013, rank reviewers from most negative to most positive: Chris Hewitt, Cristina \u00c1lvarez L\u00f3pez, Andrew Schenker.",
+        "answer": [
+            "Cristina \u00c1lvarez L\u00f3pez",
+            "Andrew Schenker",
+            "Chris Hewitt"
+        ]
+    },
+    {
+        "question": "For movie with id m/fletch_lives, among reviewers Boyd Farrow, KJB, Roger Ebert, who had the most neutral sentiment?",
+        "answer": "Roger Ebert"
+    },
+    {
+        "question": "For movie with id m/straight_to_hell, among reviewers John Esther, Laura Clifford, Roger Ebert, who had the most positive sentiment?",
+        "answer": "John Esther"
+    },
+    {
+        "question": "For movie with id m/no_one_killed_jessica, rank reviewers from most positive to most negative: Nikhat Kazmi, Michael Dequina, Mayank Shekhar.",
+        "answer": [
+            "Nikhat Kazmi",
+            "Michael Dequina",
+            "Mayank Shekhar"
+        ]
+    },
+    {
+        "question": "For movie with id m/napping_princess, rank reviewers from most positive to most negative: Allan Hunter, Ed Potton, Michael Leader.",
+        "answer": [
+            "Allan Hunter",
+            "Michael Leader",
+            "Ed Potton"
+        ]
+    },
+    {
+        "question": "For movie with id m/the_levelling, among reviewers Oliver Lyttelton, Jon Lyus, Kenji Fujishima, who had the most neutral sentiment?",
+        "answer": "Kenji Fujishima"
+    },
+    {
+        "question": "For movie with id m/even_money, among reviewers Kevin Carr, Dave White, Harvey S. Karten, who had the most negative sentiment?",
+        "answer": "Dave White"
+    }
+]

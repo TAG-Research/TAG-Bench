@@ -1,0 +1,415 @@
+superhero,Please list all the superpowers of 3-D Man.,3-D Man refers to superhero_name = '3-D Man'; superpowers refers to power_name,SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = '3-D Man',simple,"WITH temp AS (
+SELECT {{
+ LLMQA (
+    'Provide a list of super powers seperated by comma.',
+    (SELECT superhero_name FROM superhero WHERE superhero.superhero_name = '3-D Man'),
+    options=(superpower::power_name)
+    )
+}} AS powers
+),
+WITH Splitter AS (
+    SELECT 
+        TRIM(SUBSTR(powers, 1, INSTR(powers || ',', ',') - 1)) AS superpower,
+        TRIM(SUBSTR(powers, INSTR(powers || ',', ',') + 1)) AS remaining
+    FROM temp
+  
+    UNION ALL
+    
+    SELECT 
+        TRIM(SUBSTR(remaining, 1, INSTR(remaining || ',', ',') - 1)) AS superpower,
+        TRIM(SUBSTR(remaining, INSTR(remaining || ',', ',') + 1)) AS remaining
+    FROM Splitter
+    WHERE remaining != ''
+)
+SELECT superpower FROM Splitter;
+"
+superhero,"How many superheroes have the super power of ""Super Strength""?","super power of ""Super Strength"" refers to power_name = 'Super Strength'","SELECT COUNT(DISTINCT T1.hero_id) 
+    FROM hero_power AS T1 INNER JOIN superpower AS T2 ON T1.power_id = T2.id
+    JOIN superhero AS T3 ON T3.id = T1.hero_id
+    WHERE T2.power_name = 'Super Strength'",simple,"SELECT COUNT(T1.superhero_name) 
+    FROM superhero AS T1 
+    WHERE {{
+        LLMMap(
+            'Does the hero has Super Strength?'
+            'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,"Among the superheroes with the super power of ""Super Strength"", how many of them have a height of over 200cm?","super power of ""Super Strength"" refers to power_name = 'Super Strength'; a height of over 200cm refers to height_cm > 200",SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Super Strength' AND T1.height_cm > 200,moderate,"SELECT COUNT(T1.id) 
+    FROM superhero AS T1 
+    WHERE T1.height_cm > 200 AND {{
+        LLMMap(
+            'Does the hero has Super Strength?'
+            'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,How many superheroes have blue eyes?,blue eyes refers to colour = 'Blue' and eye_colour_id = colour.id;,SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T2.colour = 'Blue',simple,"SELECT COUNT(T1.id) 
+    FROM superhero AS T1 
+    WHERE {{
+        LLMMap(
+            'Does the hero has blue eye?'
+            'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,Please list the full names of all the superheroes with over 15 super powers.,15 super powers refers to COUNT(full_name) > 15,SELECT DISTINCT T1.full_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id GROUP BY T1.full_name HAVING COUNT(T2.power_id) > 15,simple,"SELECT DISTINCT T1.full_name 
+FROM superhero AS T1
+WHERE {{
+        LLMMap(
+            'Does the hero has more than 15 different powers?'
+            'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,What is the colour of Apocalypse's skin?,Apocalypse refers to superhero_name = 'Apocalypse'; colour of skin refers to colour where skin_colour_id = colour.id,SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.skin_colour_id = T2.id WHERE T1.superhero_name = 'Apocalypse',simple,"SELECT {{
+    LLMQA(
+        'What is the colour of Apocalypses skin?',
+        (SELECT 'Apocalypses' AS superhero_name UNION SELECT superhero_name FROM superhero AS T1 WHERE T1.superhero_name = 'Apocalypse'),
+        options='colour::colour'
+    )
+}}
+"
+superhero,How many superheroes are published by Marvel Comics?,published by Marvel Comics refers to publisher_name = 'Marvel Comics',SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T2.publisher_name = 'Marvel Comics',simple,"
+SELECT COUNT(T1.id) 
+    FROM superhero AS T1
+    WHERE {{
+        LLMMap(
+        'Is the publisher Marvel Comics?',
+        'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,"Among the superheroes with blue eyes, how many of them have the super power of ""Agility""?","blue eyes refers to colour = 'Blue' and eye_colour_id = colour.id; super power of ""Agility"" refers to power_name = 'Agility'",SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id INNER JOIN colour AS T4 ON T1.eye_colour_id = T4.id WHERE T3.power_name = 'Agility' AND T4.colour = 'Blue',moderate,"
+SELECT COUNT(T1.id) 
+    FROM superhero AS T1
+    WHERE {{
+        LLMMap(
+        'Does the hero has blue eye?',
+        'T1::superhero_name'
+        )
+    }} = TRUE AND {{
+        LLMMap(
+        'Does the hero has Agility power?',
+        'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,Please list the superhero names of all the superheroes that have blue eyes and blond hair.,"blue eyes refers to colour = 'Blue' and eye_colour_id = colour.id; blond hair refers to colour = 'Blond' and hair_colour_id = colour.id; super power of ""Agility"" refers to power_name = 'Agility'",SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id INNER JOIN colour AS T3 ON T1.hair_colour_id = T3.id WHERE T2.colour = 'Blue' AND T3.colour = 'Blond',challenging,"
+SELECT T1.superhero_name 
+    FROM superhero AS T1
+    WHERE {{
+        LLMMap(
+        'Does the hero has blue eye?',
+        'T1::superhero_name'
+        )
+    }} = TRUE AND {{
+        LLMMap(
+        'Does the hero has blond hair?',
+        'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,What is the publisher's name of Blue Beetle II?,Blue Beetle II refers to superhero_name = 'Blue Beetle II',SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Blue Beetle II',simple,"
+SELECT {{
+    LLMMap(
+        'Provide the publisher.',
+        'superhero::superhero_name',
+        options='publisher::publisher_name'
+    )
+}}
+    FROM superhero
+    WHERE superhero.superhero_name = 'Blue Beetle II'
+"
+superhero,Please give the full name of the tallest hero published by Marvel Comics.,the tallest hero refers to MAX(height_cm); published by Marvel Comics refers to publisher_name = 'Marvel Comics',SELECT T1.full_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T2.publisher_name = 'Marvel Comics' ORDER BY T1.height_cm DESC LIMIT 1,moderate,"SELECT T1.full_name
+    FROM superhero AS T1 
+    WHERE {{
+        LLMMap(
+            'Is the publisher Marvel Comics?'
+            'T1::superhero_name'
+        )
+    }} = TRUE
+ORDER BY T1.height_cm DESC LIMIT 1
+"
+superhero,Who is the publisher of Sauron?,the publisher refers to publisher_name; Sauron refers to superhero_name = 'Sauron',SELECT T2.publisher_name FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T1.superhero_name = 'Sauron',simple,"
+SELECT {{
+    LLMMap(
+        'Provide the publisher.',
+        'superhero::superhero_name',
+        options='publisher::publisher_name'
+    )
+}}
+    FROM superhero
+    WHERE superhero.superhero_name = 'Sauron'
+"
+superhero,"Among the superheroes from Marvel Comics, how many of them have blue eyes?",the superheroes from Marvel Comics refers to publisher_name = 'Marvel Comics'; blue eyes refers to colour = 'Blue' and eye_colour_id = colour.id,SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id INNER JOIN colour AS T3 ON T1.eye_colour_id = T3.id WHERE T2.publisher_name = 'Marvel Comics' AND T3.colour = 'Blue',moderate,"SELECT COUNT(T1.id)
+    FROM superhero AS T1 
+    WHERE {{
+        LLMMap(
+            'Is the publisher Marvel Comics?'
+            'T1::superhero_name'
+        )
+    }} = TRUE AND {{
+        LLMMap(
+            'Does the hero has blue eye?'
+            'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,What is the average height of the superheroes from Marvel Comics?,superheroes from Marvel Comics refers to publisher_name = 'Marvel Comics'; average height of the superheroes refers to AVG(height_cm),SELECT AVG(T1.height_cm) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T2.publisher_name = 'Marvel Comics',simple,"SELECT AVG(T1.height_cm) 
+    FROM superhero AS T1 
+    WHERE {{
+        LLMMap(
+            'Is the publisher Marvel Comics?'
+            'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,"Among the superheroes from Marvel Comics, what is the percentage of those who have the super power of ""Super Strength""?","the superheroes from Marvel Comics refers to publisher_name = 'Marvel Comics'; super power of ""Super Strength"" refers to power_name = 'Super Strength'; Calculation = MULTIPLY(DIVIDE(SUM(power_name = 'Super Strength'), COUNT(id)), 100)",SELECT CAST(COUNT(CASE WHEN T3.power_name = 'Super Strength' THEN T1.id ELSE NULL END) AS REAL) * 100 / COUNT(T1.id) FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id INNER JOIN publisher AS T4 ON T1.publisher_id = T4.id WHERE T4.publisher_name = 'Marvel Comics',challenging,"WITH marvel AS (
+SELECT superhero_name, COUNT(*) AS count FROM superhero AS T1 
+WHERE {{ LLMMap(
+            'Is the publisher Marvel Comics?'
+            'T1::superhero_name'
+        ) }} = TRUE
+),
+superstrength AS (
+SELECT COUNT(*) AS count FROM marvel
+WHERE {{ LLMMap(
+            'Does the hero has Super Strength?'
+            'marvel::superhero_name'
+        ) }} = TRUE
+)
+SELECT CAST(superstrength.count AS REAL) * 100 / marvel.count FROM superstrength, marvel
+"
+superhero,How many superheroes did DC Comics publish?,superheroes that DC Comics published refers to publisher_name = 'DC Comics',SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id WHERE T2.publisher_name = 'DC Comics',simple,"SELECT COUNT(T1.id) 
+FROM superhero AS T1
+WHERE {{
+    LLMMap(
+        'Is the publisher DC Comics?',
+        'T1::superhero_name'
+    )
+}} = TRUE
+"
+superhero,How many gold-eyed superheroes did Marvel Comics publish?,gold-eyed refers to colour = 'Gold' where eye_colour_id = colour.id; superheroes that Marvel Comics published refers to publisher_name = 'Marvel Comics',SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id INNER JOIN colour AS T3 ON T1.eye_colour_id = T3.id WHERE T2.publisher_name = 'Marvel Comics' AND T3.colour = 'Gold',moderate,"SELECT COUNT(T1.id) 
+FROM superhero AS T1
+WHERE {{
+    LLMMap(
+        'Is the publisher Marvel Comics?',
+        'T1::superhero_name'
+    )
+}} = TRUE AND {{
+    LLMMap(
+        'Does the hero has gold eye?',
+        'T1::superhero_name'
+    )
+}} = TRUE
+"
+superhero,What is Copycat's race?,Copycat is the superhero_name;,SELECT T2.race FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T1.superhero_name = 'Copycat',simple,"SELECT {{
+    LLMMap(
+        'What is the race of the hero?',
+        'superhero::superhero_name',
+        options='race::race'
+    )
+}}
+FROM superhero 
+WHERE superhero.superhero_name = 'Copycat'
+"
+superhero,What are the names of the superheroes with the power of death touch?,name of superheroes refers to refers to superhero_name; the power of death touch refers to power_name = 'Death Touch',SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T3.power_name = 'Death Touch',moderate,"SELECT T1.superhero_name 
+    FROM superhero AS T1
+    WHERE {{
+        LLMMap(
+            'Does the hero has Death Touch power?'
+            'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,What is the name of the superhero that has the most powers?,name of the superhero refers to superhero_name; superhero that has the most powers refers to MAX(COUNT(superhero_name)),SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id GROUP BY T1.superhero_name ORDER BY COUNT(T2.hero_id) DESC LIMIT 1,simple,"WITH temp AS (
+SELECT superhero.superhero_name, {{
+ LLMMap(
+    'Provide a list of super powers seperated by comma.',
+    (superhero::superhero_name),
+    options=(superpower::power_name)
+    )
+}} AS powers FROM superhero
+),
+Splitter AS (
+  SELECT 
+    superhero_name,
+    TRIM(SUBSTR(powers, 0, INSTR(powers || ',', ','))) AS power,
+    TRIM(SUBSTR(powers, INSTR(powers || ',', ',') + 1)) AS remaining_powers
+  FROM temp
+  WHERE LENGTH(powers) > 0
+  
+  UNION ALL
+  
+  SELECT
+    superhero_name,
+    TRIM(SUBSTR(remaining_powers, 0, INSTR(remaining_powers || ',', ','))) AS power,
+    TRIM(SUBSTR(remaining_powers, INSTR(remaining_powers || ',', ',') + 1)) AS remaining_powers
+  FROM Splitter
+  WHERE LENGTH(remaining_powers) > 0
+)
+SELECT superhero_name FROM Splitter
+GROUP BY superhero_name
+ORDER BY COUNT(*) DESC LIMIT 1
+"
+superhero,How many vampire superheroes are there?,vampire superheroes refers to race = 'Vampire',SELECT COUNT(T1.superhero_name) FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'Vampire',simple,"SELECT COUNT(T1.superhero_name) 
+    FROM superhero AS T1 
+    WHERE {{
+        LLMMap(
+            'Provide the race.'
+            'T1::superhero_name',
+            options='race::race'
+        )
+    }} = 'Vampire'
+"
+superhero,What is the percentage of superheroes who act in their own self-interest or make decisions based on their own moral code? Indicate how many of the said superheroes were published by Marvel Comics.,"published by Marvel Comics refers to publisher_name = 'Marvel Comics'; superheroes who act in their own self-interest or make decisions based on their own moral code refers to alignment = 'Bad'; calculation = MULTIPLY(DIVIDE(SUM(alignment = 'Bad); count(id)), 100)","SELECT (CAST(COUNT(*) AS REAL) * 100 / (SELECT COUNT(*) FROM superhero)), CAST(SUM(CASE WHEN T2.publisher_name = 'Marvel Comics' THEN 1 ELSE 0 END) AS REAL) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id INNER JOIN alignment AS T3 ON T3.id = T1.alignment_id WHERE T3.alignment = 'Bad'",challenging,"WITH temp AS (
+SELECT *, {{
+    LLMMap(
+        'Provide the publisher.',
+        'superhero::superhero_name',
+        options='publisher::publisher_name'
+    )
+}} AS publisher_name
+FROM superhero
+)
+SELECT (CAST(COUNT(*) AS REAL) * 100 / (SELECT COUNT(*) FROM superhero)), CAST(SUM(CASE WHEN temp.publisher_name = 'Marvel Comics' THEN 1 ELSE 0 END) AS REAL) 
+    FROM temp
+    WHERE {{
+        LLMMap(
+            'Does the hero act in their own self-interest or make decisions based on their own moral code?',
+            'temp::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,"Between DC and Marvel Comics, which publisher has published more superheroes? Find the difference in the number of superheroes they have published.","DC refers to publisher_name = 'DC Comics'; Marvel Comics refers to publisher_name = 'Marvel Comics'; calculation = SUBTRACT(SUM(publisher_name = 'Marvel Comics'), SUM(publisher_name = 'DC Comics'))",SELECT SUM(CASE WHEN T2.publisher_name = 'Marvel Comics' THEN 1 ELSE 0 END) - SUM(CASE WHEN T2.publisher_name = 'DC Comics' THEN 1 ELSE 0 END) FROM superhero AS T1 INNER JOIN publisher AS T2 ON T1.publisher_id = T2.id,challenging,"WITH temp AS (
+SELECT *, {{
+    LLMMap(
+        'Provide the publisher.',
+        'superhero::superhero_name',
+        options='publisher::publisher_name'
+    )
+}} AS publisher_name
+FROM superhero
+)
+SELECT SUM(CASE WHEN temp.publisher_name = 'Marvel Comics' THEN 1 ELSE 0 END) - SUM(CASE WHEN temp.publisher_name = 'DC Comics' THEN 1 ELSE 0 END) 
+    FROM temp
+"
+superhero,What is the eye colour of superhero with superhero ID 75?,eye colour refers to colour where eye_colour_id = colour.id;,SELECT T2.colour FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.id = 75,simple,"SELECT {{
+    LLMMap(
+        'Provide the eye color.',
+        'superhero::superhero_name',
+        options='colour::colour'
+    )
+
+}}
+FROM superhero
+WHERE id = 75
+"
+superhero,Provide the superpowers of the superhero called Deathlok.,superpowers refers to power_name; Deathlok refers to superhero_name = 'Deathlok',SELECT T3.power_name FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id INNER JOIN superpower AS T3 ON T2.power_id = T3.id WHERE T1.superhero_name = 'Deathlok',simple,"WITH temp AS (
+SELECT superhero.superhero_name, {{
+ LLMMap(
+    'Provide a list of super powers seperated by comma.',
+    (superhero::superhero_name),
+    options=(superpower::power_name)
+    )
+}} AS powers FROM superhero WHERE superhero_name = 'Deathlok'
+),
+Splitter AS (
+  SELECT 
+    superhero_name,
+    TRIM(SUBSTR(powers, 0, INSTR(powers || ',', ','))) AS power,
+    TRIM(SUBSTR(powers, INSTR(powers || ',', ',') + 1)) AS remaining_powers
+  FROM temp
+  WHERE LENGTH(powers) > 0
+  
+  UNION ALL
+  
+  SELECT
+    superhero_name,
+    TRIM(SUBSTR(remaining_powers, 0, INSTR(remaining_powers || ',', ','))) AS power,
+    TRIM(SUBSTR(remaining_powers, INSTR(remaining_powers || ',', ',') + 1)) AS remaining_powers
+  FROM Splitter
+  WHERE LENGTH(remaining_powers) > 0
+)
+SELECT power FROM Splitter
+"
+superhero,What is the average weight of all female superheroes?,female refers to gender_id = 2; average weight refers to AVG(weight_kg),SELECT AVG(T1.weight_kg) FROM superhero AS T1 INNER JOIN gender AS T2 ON T1.gender_id = T2.id WHERE T2.gender = 'Female',simple,"SELECT AVG(T1.weight_kg) 
+    FROM superhero AS T1
+    WHERE {{
+        LLMMap(
+            'Is the hero female?',
+            'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,List down at top five superpowers of male superheroes. order by occurances,male refers to gender = 'Male'; superpowers refers to power_name;,"SELECT T3.power_name 
+    FROM superhero AS T1 INNER JOIN hero_power AS T2 ON T1.id = T2.hero_id 
+    INNER JOIN superpower AS T3 ON T3.id = T2.power_id 
+    INNER JOIN gender AS T4 ON T4.id = T1.gender_id 
+    WHERE T4.gender = 'Male'
+    GROUP BY T3.power_name 
+    ORDER BY COUNT(*)
+    DESC LIMIT 5",moderate,"WITH temp AS (
+SELECT *, {{
+ LLMMap(
+    'Provide a list of super powers (seperated by comma) for each hero.',
+    (superhero::superhero_name),
+    options=(superpower::power_name)
+    )
+}} AS powers FROM superhero WHERE {{
+    LLMMap(
+        'Is the hero male?',
+        'superhero::superhero_name'
+    )
+}} = TRUE
+),
+Splitter AS (
+  SELECT 
+    superhero_name,
+    TRIM(SUBSTR(powers, 0, INSTR(powers || ',', ','))) AS power,
+    TRIM(SUBSTR(powers, INSTR(powers || ',', ',') + 1)) AS remaining_powers
+  FROM temp
+  WHERE LENGTH(powers) > 0
+  
+  UNION ALL
+  
+  SELECT
+    superhero_name,
+    TRIM(SUBSTR(remaining_powers, 0, INSTR(remaining_powers || ',', ','))) AS power,
+    TRIM(SUBSTR(remaining_powers, INSTR(remaining_powers || ',', ',') + 1)) AS remaining_powers
+  FROM Splitter
+  WHERE LENGTH(remaining_powers) > 0
+)
+SELECT power FROM Splitter
+GROUP BY power
+ORDER BY COUNT(*)
+DESC LIMIT 5
+"
+superhero,Give the name of the alien superheroes.,alien superheroes refers to race = 'Alien'; name of superhero refers to superhero_name;,SELECT T1.superhero_name FROM superhero AS T1 INNER JOIN race AS T2 ON T1.race_id = T2.id WHERE T2.race = 'Alien',simple,"SELECT T1.superhero_name 
+    FROM superhero AS T1
+    WHERE {{
+        LLMMap(
+            'Is the race of the hero Alien?',
+            'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,"Among the superheroes with height from 170 to 190, list the names of the superheroes with no eye color.",height from 170 to 190 refers to height_cm BETWEEN 170 AND 190; no eye color refers to eye_colour_id = 1,SELECT DISTINCT T1.superhero_name FROM superhero AS T1 INNER JOIN colour AS T2 ON T1.eye_colour_id = T2.id WHERE T1.height_cm BETWEEN 170 AND 190 AND T2.colour LIKE 'No Colour',moderate,"SELECT DISTINCT T1.superhero_name 
+    FROM superhero AS T1
+    WHERE T1.height_cm BETWEEN 170 AND 190 AND {{
+        LLMMap(
+            'Doees the hero has no eye colour?',
+            'T1::superhero_name'
+        )
+    }} = TRUE
+"
+superhero,How many bad superheroes are there?,bad superheroes refers to alignment_id = Bad,SELECT COUNT(T1.id) FROM superhero AS T1 INNER JOIN alignment AS T2 ON T1.alignment_id = T2.id WHERE T2.alignment = 'Bad',simple,"SELECT COUNT(T1.id) 
+    FROM superhero AS T1
+    WHERE {{
+        LLMMap(
+            'Is the hero bad?',
+            'T1::superhero_name'
+        )
+    }} = TRUE
+"
