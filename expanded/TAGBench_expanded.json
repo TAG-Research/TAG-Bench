@@ -283,12 +283,9 @@
   },
   {
     "db": "law_episode",
-    "question": "What is the full place of birth of the creator of the TV series 'Law & Order: Criminal Intent'?",
+    "question": "What is the city of birth of the creator of the TV series 'Law & Order: Criminal Intent'?",
     "question_type": "Knowledge",
-    "answer": [
-      "Montreal",
-      "Quebec"
-    ]
+    "answer": "Montreal"
   },
   {
     "db": "law_episode",
