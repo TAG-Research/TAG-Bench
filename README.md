@@ -21,7 +21,7 @@ Here are the steps to reproduce the results in the paper.
 
 1. Create a conda environment and download dependencies
 ```bash
-conda create -n tag python=3.9 -y
+conda create -n tag python=3.10 -y
 conda activate tag
 pip install -r requirements.txt
 pip install -e .
