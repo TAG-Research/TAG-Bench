@@ -6,31 +6,41 @@ import time
 
 import lotus
 import pandas as pd
-from lotus.models import OpenAIModel
+from lotus.models import LM
+from openai import OpenAI
 
 ############################################################################################################
 ###################################### Match based queries #################################################
 ############################################################################################################
 
+client = OpenAI()
 
 def pipeline_0():
-    query = "Among the schools with the average score in Math over 560 in the SAT test, how many schools are in the bay area?"
+    query = "Among the schools with the average score in Math over 560 in the SAT test, how many schools are in counties in the bay area?"
     answer = 71
     scores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
     scores_df = scores_df[scores_df["AvgScrMath"] > 560]
-    scores_df = scores_df.sem_filter("{cname} is a county in the Bay Area")
-    prediction = len(scores_df)
+    unique_counties_df = scores_df[["cname"]].drop_duplicates()
+    bay_area_counties_df = unique_counties_df.sem_filter("{cname} is in the bay area")
+    bay_area_counties = bay_area_counties_df["cname"].tolist()
+
+    bay_area_schools_df = scores_df[scores_df["cname"].isin(bay_area_counties)]
+    prediction = len(bay_area_schools_df)
     return prediction, answer
 
 
 def pipeline_1():
     query = (
-        "What is the telephone number for the school with the lowest average score in reading in Southern California?"
+        "What is the telephone number for the school with the lowest average score in reading in a county in Southern California?"
     )
     answer = "(562) 944-0033"
     scores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
-    scores_df = scores_df.sem_filter("{cname} is a county name in Southern California")
+    unique_counties_df = scores_df[["cname"]].drop_duplicates()
+    bay_area_counties_df = unique_counties_df.sem_filter("{cname} is in Southern California")
+    bay_area_counties = bay_area_counties_df["cname"].tolist()
+
+    scores_df = scores_df[scores_df["cname"].isin(bay_area_counties)]
     scores_df = scores_df.loc[[scores_df["AvgScrRead"].idxmin()]]
 
     merged_df = pd.merge(scores_df, schools_df, left_on="cds", right_on="CDSCode")
@@ -62,14 +72,16 @@ def pipeline_3():
 
 
 def pipeline_4():
-    query = "What is the grade span offered in the school with the highest longitude in cities in that are part of the 'Silicon Valley' region?"
+    query = "What is the grade span offered in the school with the highest longitude in counties that are part of the 'Silicon Valley' region?"
     answer = "K-5"
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
-    unique_cities = pd.DataFrame(schools_df["City"].unique(), columns=["City"])
-    unique_cities = unique_cities.sem_filter("{City} is a city in the Silicon Valley region")
-    schools_df = schools_df[schools_df["City"].isin(unique_cities["City"])]
-    schools_df = schools_df.sort_values(by=["Longitude"], key=abs, ascending=False).head(1)
-    prediction = schools_df["GSoffered"].tolist()[0]
+    silicon_valley_cities_df = schools_df[["County"]].drop_duplicates().dropna()
+    silicon_valley_cities_df = silicon_valley_cities_df.sem_filter("{County} is in the Silicon Valley region")
+    silicon_valley_cities = silicon_valley_cities_df["County"].tolist()
+
+    silicon_valley_schools_df = schools_df[schools_df["County"].isin(silicon_valley_cities)]
+    highest_longitude_school_df = silicon_valley_schools_df.nlargest(1, "Longitude")
+    prediction = highest_longitude_school_df["GSoffered"].values[0]
     return prediction, answer
 
 
@@ -123,22 +135,16 @@ def pipeline_10():
 
 
 def pipeline_11():
-    query = "Please give the names of the races held on the circuits in the middle east."
-    answer = [
-        "Bahrain Grand Prix",
-        "Turkish Grand Prix",
-        "Abu Dhabi Grand Prix",
-        "Azerbaijan Grand Prix",
-        "European Grand Prix",
-    ]
+    query = "Please give the name of the race held on the circuits in the smallest country in the Middle East by land size."
+    answer = "Bahrain Grand Prix"
     circuits_df = pd.read_csv("../pandas_dfs/formula_1/circuits.csv")
     races_df = pd.read_csv("../pandas_dfs/formula_1/races.csv")
-    circuits_df = circuits_df.sem_filter("{country} is in the Middle East")
+    circuits_df = circuits_df.sem_filter("{country} is the smallest country in the Middle East by land size")
 
     merged_df = pd.merge(circuits_df, races_df, on="circuitId", suffixes=["_circuit", "_race"]).drop_duplicates(
         subset="name_race"
     )
-    prediction = merged_df["name_race"].tolist()
+    prediction = merged_df["name_race"].tolist()[0]
 
     return prediction, answer
 
@@ -150,7 +156,11 @@ def pipeline_13():
     drivers_df = pd.read_csv("../pandas_dfs/formula_1/drivers.csv")
     races_df = pd.read_csv("../pandas_dfs/formula_1/races.csv")
     results_df = pd.read_csv("../pandas_dfs/formula_1/results.csv")
-    drivers_df = drivers_df.sem_filter("{nationality} is Asian")
+    nationalities_df = drivers_df[["nationality"]].drop_duplicates()
+    asian_nationalities_df = nationalities_df.sem_filter("{nationality} is Asian")
+    asian_nationalities = asian_nationalities_df["nationality"].tolist()
+
+    drivers_df = drivers_df[drivers_df["nationality"].isin(asian_nationalities)]
     races_df = races_df[(races_df["name"] == "Australian Grand Prix") & (races_df["year"] == 2008)]
     merged_df = pd.merge(pd.merge(races_df, results_df, on="raceId"), drivers_df, on="driverId")
     prediction = len(merged_df)
@@ -163,14 +173,7 @@ def pipeline_16():
     answer = "left"
     players_df = pd.read_csv("../pandas_dfs/european_football_2/Player.csv")
     attributes_df = pd.read_csv("../pandas_dfs/european_football_2/Player_Attributes.csv")
-    key_player = lm(
-        [
-            {
-                "role": "user",
-                "content": "What is the first and last name of the player who has won the most Ballon d'Or awards of all time? Respond with only the name and no other words.",
-            }
-        ]
-    )[0]
+    key_player = client.chat.completions.create(model="gpt-4o-mini", messages=[{"role": "user", "content": "What is the first and last name of the player who has won the most Ballon d'Or awards of all time? Respond with only the name and no other words."}]).choices[0].message.content
     players_df = players_df[players_df["player_name"] == key_player]
     merged_df = pd.merge(players_df, attributes_df, on="player_api_id")
     merged_df = merged_df[["player_name", "preferred_foot"]]
@@ -315,18 +318,13 @@ def pipeline_25():
     transactions_df = pd.read_csv("../pandas_dfs/debit_card_specializing/transactions_1k.csv")
     gasstations_df = pd.read_csv("../pandas_dfs/debit_card_specializing/gasstations.csv")
 
-    countries = lm(
-        [
-            {
-                "role": "user",
-                "content": "What are abbreviations for the country historically known as Bohemia? If there are multiple possible abbreivations list them as a python list with quotes around each abbreviation.",
-            }
-        ]
-    )[0]
+    countries = client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": "What are abbreviations for the country historically known as Bohemia? If there are multiple possible abbreivations list them as a python list with quotes around each abbreviation. Answer with ONLY the list in brackets."}]).choices[0].message.content
+
     try:
         countries = eval(countries)
     except:
         countries = [countries]
+    
 
     gasstations_df = gasstations_df[gasstations_df["Country"].isin(countries)]
 
@@ -346,14 +344,7 @@ def pipeline_27():
     merged_df = pd.merge(users_df, badges_df, left_on="Id", right_on="UserId")
     merged_df = merged_df[merged_df["Name"] == "Supporter"]
 
-    location = lm(
-        [
-            {
-                "role": "user",
-                "content": "What is the capital city of Austria? Respond with only the city name and no other words.",
-            }
-        ]
-    )[0]
+    location = client.chat.completions.create(model="gpt-4o-mini", messages=[{"role": "user", "content": "What is the capital city of Austria? Respond with only the city name and no other words."}]).choices[0].message.content
     location = f"{location}, Austria"
     merged_df = merged_df[merged_df["Location"] == location]
     prediction = merged_df.sort_values(by=["Age"], ascending=False).DisplayName.values.tolist()[0]
@@ -394,14 +385,7 @@ def pipeline_30():
 
     first_df = customers_df[customers_df["Currency"] == "CZK"]
 
-    currency = lm(
-        [
-            {
-                "role": "user",
-                "content": "What is the 3 letter code for the second-largest reserved currency in the world? Respond with only the 3 letter code and no other words.",
-            }
-        ]
-    )[0]
+    currency = client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": "What is the 3 letter code for the second-largest reserved currency in the world? Respond with only the 3 letter code and no other words."}]).choices[0].message.content
     second_df = customers_df[customers_df["Currency"] == currency]
 
     if len(first_df) > len(second_df):
@@ -417,15 +401,7 @@ def pipeline_33():
     answer = 2
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
     scores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
-
-    city = lm(
-        [
-            {
-                "role": "user",
-                "content": "What is the name of the city that is the county seat of Lake County, California? Respond with only the city name and no other words.",
-            }
-        ]
-    )[0]
+    city = client.chat.completions.create(model="gpt-4o-mini", messages=[{"role": "user", "content": "What is the name of the city that is the county seat of Lake County, California? Respond with only the city name and no other words."}]).choices[0].message.content
     schools_df = schools_df[schools_df["City"] == city]
     scores_df["total"] = scores_df["AvgScrRead"] + scores_df["AvgScrMath"] + scores_df["AvgScrWrite"]
     scores_df = scores_df[scores_df["total"] >= 1500]
@@ -439,13 +415,14 @@ def pipeline_35():
     query = "How many drivers born after the end of the Vietnam War have been ranked 2?"
     answer = 27
     drivers_df = pd.read_csv("../pandas_dfs/formula_1/drivers.csv")
-    year_df = drivers_df.head(1).sem_map(
-        "Given {driverId}, return the year of the end of the Vietnam War. Answer with the year ONLY.", suffix="year"
-    )
-    vietnamyear = int(year_df["year"].values.tolist()[0])
+    results_df = pd.read_csv("../pandas_dfs/formula_1/results.csv")
+    results_df = results_df[results_df["rank"] == 2]
+    vietnamyear = int(client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": "What is the year of the end of the Vietnam war? Respond with only the year and no other words."}]).choices[0].message.content)
+
     drivers_df["birthyear"] = drivers_df.dropna(subset=["dob"])["dob"].str[:4].astype(int)
     drivers_df = drivers_df[drivers_df["birthyear"] > vietnamyear]
-    prediction = len(drivers_df)
+    merged_df = pd.merge(drivers_df, results_df, on="driverId")
+    prediction = merged_df["driverId"].nunique()
 
     return prediction, answer
 
@@ -516,10 +493,8 @@ def pipeline_39():
     query = "How many players were born after the year of the 14th FIFA World Cup?"
     answer = 3028
     players_df = pd.read_csv("../pandas_dfs/european_football_2/Player.csv")
-    year_df = players_df.head(1).sem_map(
-        "Given {id}, return the year of the 14th FIFA World Cup. Answer with the year ONLY.", suffix="year"
-    )
-    wcyear = int(year_df["year"].values.tolist()[0])
+    wcyear = int(client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": "Return the year of the 14th FIFA World Cup. Answer with the year ONLY."}]).choices[0].message.content)
+
     players_df["birthyear"] = players_df["birthday"].str[:4].astype(int)
     players_df = players_df[players_df["birthyear"] > wcyear]
     prediction = len(players_df)
@@ -528,7 +503,7 @@ def pipeline_39():
 
 
 def pipeline_40():
-    query = "Among the players whose height is over 180, how many of them have a volley score of over 70 and are taller than Stephen Curry?"
+    query = "Among the players whose height is over 180, how many of them have a volley score of over 70 and are taller than Bill Clinton?"
     answer = 88
     players_df = pd.read_csv("../pandas_dfs/european_football_2/Player.csv")
     attributes_df = pd.read_csv("../pandas_dfs/european_football_2/Player_Attributes.csv")
@@ -536,17 +511,11 @@ def pipeline_40():
     attributes_df = attributes_df[attributes_df["volleys"] > 70]
     merged_df = pd.merge(players_df, attributes_df, on="player_api_id").drop_duplicates(subset="player_api_id")
 
-    steph_height = lm(
-        [
-            {
-                "role": "user",
-                "content": "How tall is Stephen Curry in centimeters? Box your final answer with \\boxed{just a number}.",
-            }
-        ]
-    )[0]
+    steph_height = client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": "How tall is Bill Clinton in centimeters? Box your final answer with \\boxed{just a number}."}]).choices[0].message.content
     steph_height = float(re.search(r"\\boxed\{(\d+(\.\d+)?)\}", steph_height).group(1))
+
     merged_df = merged_df[merged_df["height"] > int(steph_height)]
-    prediction = len(merged_df)
+    prediction = merged_df["player_api_id"].nunique()
 
     return prediction, answer
 
@@ -557,14 +526,7 @@ def pipeline_41():
     scores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
     frpm_df = pd.read_csv("../pandas_dfs/california_schools/frpm.csv")
     frpm_df = frpm_df[(frpm_df["Free Meal Count (K-12)"] / frpm_df["Enrollment (K-12)"]) > 0.1]
-    max_score = lm(
-        [
-            {
-                "role": "user",
-                "content": "What is the maximum SAT score?. Box your final answer with \\boxed{just a number}.",
-            }
-        ]
-    )[0]
+    max_score = client.chat.completions.create(model="gpt-4o-mini", messages=[{"role": "user", "content": "What is the maximum SAT score?. Box your final answer with \\boxed{just a number}."}]).choices[0].message.content
     max_score = float(re.search(r"\\boxed\{(\d+(\.\d+)?)\}", max_score).group(1))
     scores_df = scores_df[scores_df["AvgScrRead"] + scores_df["AvgScrMath"] >= max_score - 300]
     merged_df = pd.merge(scores_df, frpm_df, left_on="cds", right_on="CDSCode").drop_duplicates(subset="cds")
@@ -574,22 +536,16 @@ def pipeline_41():
 
 
 def pipeline_42():
-    query = "How many schools have the difference in enrollements between K-12 and ages 5-17 as more than average high school class size?"
+    query = "How many schools have the difference in enrollements between K-12 and ages 5-17 as more than the number of days in April?"
     answer = 1236
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
     frpm_df = pd.read_csv("../pandas_dfs/california_schools/frpm.csv")
-    avg_class_size = lm(
-        [
-            {
-                "role": "user",
-                "content": "What is the average high school class size? Box your final answer with \\boxed{just a number}.",
-            }
-        ]
-    )[0]
+    avg_class_size = client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": "What is the number of days in April? Box your final answer with \\boxed{just a number}."}]).choices[0].message.content
     avg_class_size = float(re.search(r"\\boxed\{(\d+(\.\d+)?)\}", avg_class_size).group(1))
+
     frpm_df = frpm_df[frpm_df["Enrollment (K-12)"] - frpm_df["Enrollment (Ages 5-17)"] > avg_class_size]
     merged_df = pd.merge(schools_df, frpm_df, on="CDSCode").drop_duplicates(subset="CDSCode")
-    prediction = len(merged_df)
+    prediction = merged_df["CDSCode"].nunique()
 
     return prediction, answer
 
@@ -599,14 +555,7 @@ def pipeline_43():
     answer = 32
     users_df = pd.read_csv("../pandas_dfs/codebase_community/users.csv")
     users_df = users_df[users_df["UpVotes"] > 100]
-    median_age = lm(
-        [
-            {
-                "role": "user",
-                "content": "What is the median age in America? Box your final answer with \\boxed{just a number}.",
-            }
-        ]
-    )[0]
+    median_age = client.chat.completions.create(model="gpt-4o-mini", messages=[{"role": "user", "content": "What is the median age in America? Box your final answer with \\boxed{just a number}."}]).choices[0].message.content
     median_age = float(re.search(r"\\boxed\{(\d+(\.\d+)?)\}", median_age).group(1))
     users_df = users_df[users_df["Age"] > median_age]
     prediction = len(users_df)
@@ -618,14 +567,7 @@ def pipeline_44():
     query = "Please list the player names taller than 6 foot 8?"
     answer = ["Kristof van Hout"]
     players_df = pd.read_csv("../pandas_dfs/european_football_2/Player.csv")
-    height = lm(
-        [
-            {
-                "role": "user",
-                "content": "What is 6 foot 8 in centimeters? Box your final answer with \\boxed{just a number}.",
-            }
-        ]
-    )[0]
+    height = client.chat.completions.create(model="gpt-4o-mini", messages=[{"role": "user", "content": "What is 6 foot 8 in centimeters? Box your final answer with \\boxed{just a number}."}]).choices[0].message.content
     height = float(re.search(r"\\boxed\{(\d+(\.\d+)?)\}", height).group(1))
     players_df = players_df[players_df["height"] > height]
     prediction = players_df["player_name"].values.tolist()
@@ -637,9 +579,7 @@ def pipeline_45():
     answer = 24
     players_df = pd.read_csv("../pandas_dfs/european_football_2/Player.csv")
     players_df = players_df[players_df["player_name"].str.startswith("Adam")]
-    pounds = lm(
-        [{"role": "user", "content": "What is 77.1kg in pounds? Box your final answer with \\boxed{just a number}."}]
-    )[0]
+    pounds = client.chat.completions.create(model="gpt-4o-mini", messages=[{"role": "user", "content": "What is 77.1kg in pounds? Box your final answer with \\boxed{just a number}."}]).choices[0].message.content
     pounds = float(re.search(r"\\boxed\{(\d+(\.\d+)?)\}", pounds).group(1))
     players_df = players_df[players_df["weight"] > pounds]
     prediction = len(players_df)
@@ -651,14 +591,7 @@ def pipeline_46():
     query = "Please provide the names of top three football players who are over 5 foot 11 tall in alphabetical order."
     answer = ["Aaron Appindangoye", "Aaron Galindo", "Aaron Hughes"]
     players_df = pd.read_csv("../pandas_dfs/european_football_2/Player.csv")
-    height = lm(
-        [
-            {
-                "role": "user",
-                "content": "What is 5 foot 11 in centimeters? Box your final answer with \\boxed{just a number}.",
-            }
-        ]
-    )[0]
+    height = client.chat.completions.create(model="gpt-4o-mini", messages=[{"role": "user", "content": "What is 5 foot 11 in centimeters? Box your final answer with \\boxed{just a number}."}]).choices[0].message.content
     height = float(re.search(r"\\boxed\{(\d+(\.\d+)?)\}", height).group(1))
     players_df = players_df[players_df["height"] > height]
     players_df = players_df.sort_values("player_name")
@@ -668,17 +601,15 @@ def pipeline_46():
 
 
 def pipeline_47():
-    query = "How many transactions taken place in the gas station in the Czech Republic are with a price of over 42.74 US dollars?"
+    query = "How many transactions taken place in the gas station in the Czech Republic are with a price of over 45 US dollars?"
     answer = 56
     transactions_df = pd.read_csv("../pandas_dfs/debit_card_specializing/transactions_1k.csv")
     gasstations_df = pd.read_csv("../pandas_dfs/debit_card_specializing/gasstations.csv")
     gasstations_df = gasstations_df[gasstations_df["Country"] == "CZE"]
     merged_df = pd.merge(transactions_df, gasstations_df, on="GasStationID")
-
-    price = lm(
-        [{"role": "user", "content": "What is 42.74 USD in CZK? Box your final answer with \\boxed{just a number}."}]
-    )[0]
+    price = client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": "What is 45 USD in CZK? Box your final answer with \\boxed{just a number}."}]).choices[0].message.content
     price = float(re.search(r"\\boxed\{(\d+(\.\d+)?)\}", price).group(1))
+
     merged_df = merged_df[merged_df["Price"] > price]
     prediction = len(merged_df)
 
@@ -699,17 +630,15 @@ def pipeline_48():
 
 
 def pipeline_49():
-    query = "Which race was Alex Yoong in when he was in the top half of finishers?"
+    query = "Which race was Alex Yoong in when he was earlier than top half of typical number of starting positions in a race?"
     answer = "Australian Grand Prix"
     drivers_df = pd.read_csv("../pandas_dfs/formula_1/drivers.csv")
     drivers_df = drivers_df[(drivers_df["forename"] == "Alex") & (drivers_df["surname"] == "Yoong")]
-    driverStandings_df = pd.read_csv("../pandas_dfs/formula_1/driverStandings.csv")
+    results_df = pd.read_csv("../pandas_dfs/formula_1/results.csv")
     races_df = pd.read_csv("../pandas_dfs/formula_1/races.csv")
-    merged_df = pd.merge(drivers_df, driverStandings_df, on="driverId").merge(races_df, on="raceId")
-
-    prediction = merged_df.sem_filter(
-        "The {position} is in the top half of number racers in a formula 1 race."
-    ).name.values[0]
+    merged_df = pd.merge(drivers_df, results_df, on="driverId").merge(races_df, on="raceId")
+    half_point = int(client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": "What is the half point of typical number of starting positions in a F1 race? Answer with only the number."}]).choices[0].message.content)
+    prediction = merged_df[merged_df["position"] < half_point].name.values[0]
 
     return prediction, answer
 
@@ -822,13 +751,13 @@ def pipeline_56():
 
 
 def pipeline_57():
-    query = "Among the badges obtained by csgillespie in 2011, which is the most creatively named?"
+    query = "Among the badges obtained by csgillespie in 2011, which sounds most similar to an English grammar guide?"
     answer = "Strunk & White"
     users_df = pd.read_csv("../pandas_dfs/codebase_community/users.csv")
     badges_df = pd.read_csv("../pandas_dfs/codebase_community/badges.csv")
     users_df = users_df[users_df["DisplayName"] == "csgillespie"]
     merged_df = pd.merge(users_df, badges_df, left_on="Id", right_on="UserId").drop_duplicates("Name")
-    prediction = merged_df.sem_topk("What {Name} is most creative?", 1).Name.values[0]
+    prediction = merged_df.sem_topk("What {Name} is most similar to an English grammar guide?", 1).Name.values[0]
 
     return prediction, answer
 
@@ -908,7 +837,7 @@ def pipeline_63():
 
 def pipeline_64():
     query = "Of the schools with the top 3 SAT excellence rate, order their counties by academic reputation from strongest to weakest."
-    answer = "Santa Clara County"
+    answer = "Santa Clara"
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
     satscores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
     satscores_df["excellence_rate"] = satscores_df["NumGE1500"] / satscores_df["NumTstTakr"]
@@ -954,7 +883,7 @@ def pipeline_107():
 
 
 def pipeline_952():
-    query = "Of the constructors that have been ranked 1 in 2014, which has the most prestige"
+    query = "Of the constructors that have been ranked 1 in 2014, whose logo looks most like Secretariat?"
     answer = "Ferrari"
     constructors_df = pd.read_csv("../pandas_dfs/formula_1/constructors.csv")
     results_df = pd.read_csv("../pandas_dfs/formula_1/results.csv")
@@ -965,7 +894,7 @@ def pipeline_952():
         subset="constructorId"
     )
     merged_df = merged_df.rename(columns={"name_merged": "name"})
-    prediction = merged_df.sem_topk("What {name} is most prestigious?", 1).name.values[0]
+    prediction = merged_df.sem_topk("What {name} logo is most like Secretariat?", 1).name.values[0]
     return prediction, answer
 
 
@@ -1212,13 +1141,17 @@ def parse_args():
 
 
 if __name__ == "__main__":
-    lm = OpenAIModel(
-        model="meta-llama/Meta-Llama-3.1-70B-Instruct",
-        api_base="http://localhost:8000/v1",
-        provider="vllm",
-        max_tokens=1024,
-        max_batch_size=512,
-    )
+    # lm = OpenAIModel(
+    #     model="meta-llama/Meta-Llama-3.1-70B-Instruct",
+    #     api_base="http://localhost:8000/v1",
+    #     provider="vllm",
+    #     max_tokens=1024,
+    #     max_batch_size=512,
+    # )
+    api_key = os.environ['OPENAI_API_KEY']
+    # api_key = os.environ['TOGETHER_API_KEY']
+    lm = lotus.models.LM(model="gpt-4o", api_key=api_key)
+    # lm = LM(model="together/deepseek-ai/DeepSeek-R1", api_key=api_key)
     lotus.settings.configure(lm=lm)
 
     args = parse_args()
@@ -1229,13 +1162,18 @@ if __name__ == "__main__":
     if args.output_dir:
         os.makedirs(args.output_dir, exist_ok=True)
 
-    for pipeline in pipelines:
-        print(f"Running pipeline {pipeline}")
+    for pipeline in pipelines:   
         tic = time.time()
-        prediction, answer = eval(f"pipeline_{pipeline}")()
-        latency = time.time() - tic
-        output = {"prediction": prediction, "answer": answer, "latency": latency, "query_id": pipeline}
-        print(output)
+        try:
+            print(f"Running pipeline {pipeline}")
+            prediction, answer = eval(f"pipeline_{pipeline}")()
+            latency = time.time() - tic
+            output = {"prediction": prediction, "answer": answer, "latency": latency, "query_id": pipeline}
+            print(output)
+        except Exception as e:
+            print(e)
+            latency = time.time() - tic
+            output = {"prediction": "error", "answer": "", "latency": latency, "query_id": pipeline}
 
         if args.output_dir:
             with open(os.path.join(args.output_dir, f"query_{pipeline}.json"), "w+") as fp:
