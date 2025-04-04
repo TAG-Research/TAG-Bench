@@ -1,0 +1,788 @@
+[
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie about a Roman who wins Jesus' robe and finds faith through visions, which was nominated for or won the Academy Award for Best Costume Design?",
+    "answer": "20th Century Fox"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How is the sci-fi movie often called the 'American Godzilla', which takes place in New York City, received by critics?",
+    "answer": "A sort of Blair Witch Project crossed with Godzilla, Cloverfield is economically paced, stylistically clever, and filled with scares."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie receive where a man is preparing for marriage while dealing with the antics and confessions of his groomsmen?",
+    "answer": "PG"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie set in a city where a couple's life is disrupted by a surgeon's unforeseen complications and investigation?",
+    "answer": "LA Roma Films"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the murder mystery movie featuring twins, directed by Robert Siodmak and set in New York City?",
+    "answer": "NR"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews are there for the movie, based on a French novel about aristocrats engaged in dangerous, erotic games of deceit, that was nominated for an Academy Award?",
+    "answer": 11
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie set in Darjeeling, India, featuring a love triangle involving a deaf woman, a mute man, and an autistic woman, and inspired by Charlie Chaplin?",
+    "answer": 5
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie about a love triangle that complicates loyalty for King Arthur, which was nominated for or won the Academy Award for Best Art Direction?",
+    "answer": 8354
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews are there for the movie set in Louisiana about a paralyzed actress?",
+    "answer": 4
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critics' consensus for the Disney movie about a family vacation gone wrong that is set in a spooky house?",
+    "answer": "Neither scary nor funny, The Haunted Mansion is as lifeless as the ghosts in the movie."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie about unjust laws against children that was nominated for the Academy Award for Best Art Direction?",
+    "answer": 3
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Who produced the movie set in Seattle, Washington, about a man's life unraveling after a clock prank goes awry?",
+    "answer": "Warner Bros. Pictures"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie set in a city where Buck babysits Tia, Miles, and Macy?",
+    "answer": "PG-13"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the atmospheric movie set in Mexico about a traumatized son who grotesquely bonds with his armless mother?",
+    "answer": "Republic Pictures Home Video"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the audience review count for the movie set in Tennessee, USA, where students collect paper clips to represent Holocaust victims?",
+    "answer": 2705
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the comedic movie set in New York City where a therapist discovers her client's boyfriend is actually her own son?",
+    "answer": 91803
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie set in the 1940s Bahamas, based on a book, about an artist whose life changes with visits from family receive?",
+    "answer": "PG"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie receive that is set in ancient Rome and associated with 'queer', telling the story of a saint who becomes a martyr under the anti-Christian rule of a Roman emperor?",
+    "answer": "NR"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie about a saint who becomes a martyr during the Roman emperor's anti-Christian rule?",
+    "answer": "NR"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie set in New York City where a receptionist impersonates her boss to close a major business deal and includes scenes of topless nudity?",
+    "answer": 33603
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the audience review count for the movie set in Celtic lands about Hector living five lives and learning humanity through his mistakes, associated with the theme 'special'?",
+    "answer": 3226
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie about ex-con Tommy who struggles to stay out of trouble?",
+    "answer": "PG"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie featuring Anne Hathaway, set in Tonga, that follows missionary John Groberg as he faces challenges in the harsh environment?",
+    "answer": "Excel Entertainmen"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critics' consensus for the movie that was nominated for Best Cinematography at the 1996 Independent Spirit Awards?",
+    "answer": "Humor, interesting characters, and attention to details make the stylish Devil in a Blue Dress an above average noir."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How is the movie about an aristocrat who stays young while his portrait ages, reflecting his soul, received by critics?",
+    "answer": "Despite a lavish and polished production, Dorian Gray is tame and uninspired with a lifeless performance by Ben Barnes in the title role."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critics' consensus for the movie set in London, based on a book, about an aristocrat whose portrait ages while he remains young, reflecting his soul?",
+    "answer": "Despite a lavish and polished production, Dorian Gray is tame and uninspired with a lifeless performance by Ben Barnes in the title role."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the crime movie set in London, England, where a gangster's past resurfaces with the return of his mentor, Freddie Mays?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How do critics perceive the movie featuring an immortal feud in modern-day New York City, which includes scenes of topless nudity?",
+    "answer": "People hate Highlander because it's cheesy, bombastic, and absurd. And people love it for the same reasons."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the drama movie set in Los Angeles, California, where Sam discovers a sister and reevaluates his life choices?",
+    "answer": "38"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critic review count for the movie about teens encountering chaos and doom with a drifter, which won or was nominated for an unspecified award?",
+    "answer": "15"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How did critics receive the comedy movie set in medieval Europe about a peasant who becomes a knight to win jousting and love?",
+    "answer": "Once you get past the anachronism, A Knight's Tale becomes a predictable, if spirited, Rocky on horseback."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the thriller movie receive that involves an agent investigating a kidnapping amid a government cover-up and deception in the United States?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie set in America, with fewer than 300 ratings, about friends turning against each other after their bootlegging business fails?",
+    "answer": 5085
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the audience review count for the movie featuring a gay lead character, set in the United States, about four gay teens planning to lose their virginity before college?",
+    "answer": 33355
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie set in the Philippines about an innocent man imprisoned while the real killer remains free and unpunished, and is associated with melancholy?",
+    "answer": "NR"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie featuring a main character who is a graduate student recalling their parents' execution for atomic secrets?",
+    "answer": 162
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critic review count for the movie associated with 'betamax,' set in the United States, where a graduate student recalls their parents being executed for atomic secrets?",
+    "answer": "1"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the comedy movie set in Transylvania, where Dr. Frankenstein inherits an estate, recreates experiments, and chaos ensues?",
+    "answer": 209324
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie set in Texas and Louisiana, where a Texas Ranger and a gambler team up against an outlaw band and has fewer than 300 ratings?",
+    "answer": "20th Century Fox"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie about a couple facing chaos while building their dream house in Connecticut, which won or was nominated for 'n/a'?",
+    "answer": 7677
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie set in the location where brothers' lives unravel after their uncle's deadly favor request?",
+    "answer": "15"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie set in Russia, which is a surreal meditation on war, memory, and time, using dreams and flashbacks?",
+    "answer": 9127
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews are there for the movie set in the Australian high country about Jim Craig proving his worth and winning Jessica's heart, which is associated with 'bd-video'?",
+    "answer": "2"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the audience review count for the movie set in Chicago, involving magic, that follows carny Stanton Carlisle as he ascends, deceives, and reinvents himself?",
+    "answer": 1673
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie where Jesus reconsiders Armageddon and Satan tempts souls in a bar?",
+    "answer": 51
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the sci-fi movie set on Earth about Dodge and Penny seeking love before the planet's destruction?",
+    "answer": "Focus Features"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the drama set in a remote commune where an investigative team uncovers dark secrets?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie about Disney's quest to adapt Mary Poppins, which won or was nominated for an Academy Award for Best Original Score?",
+    "answer": 111547
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie set in Johannesburg, South Africa, about a man who becomes a target after discovering a woman in a car trunk and is linked to the police?",
+    "answer": "11"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critic review count for the movie set in a Florida resort where teenagers pursue girls and encounter a jewel thief, and which is associated with nudity (topless)?",
+    "answer": "0"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the animated movie about three kids battling a haunted house in a suburban neighborhood before Halloween night?",
+    "answer": "41"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie set in a small town about a parolee whose plan fails, becoming a pawn in a majorette's murder plot?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critic review count for the movie set in the Texas countryside, where teens are partying and Mandy's friends are murdered, which is associated with nudity (topless)?",
+    "answer": "19"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews are there for the movie about a plot against a boss that turns into a murder mystery, which was either nominated for or won an award listed as 'n/a'?",
+    "answer": "0"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie set in London, England, where Scrooge learns kindness through ghostly Christmas visitations and is associated with a Christmas theme?",
+    "answer": 56572
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the animated movie set in Berk?",
+    "answer": "20th Century Fox"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Who produced the movie set in New York City about Joe befriending cockroaches in his apartment, which is associated with 'bugs'?",
+    "answer": "Warner Home Video"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie set in Florence, Italy, associated with Henry Koster, about Philip falling for Rachel while suspecting her of murder?",
+    "answer": "PG-13"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie featuring Wayne and Garth as they fight to save their show, which was either nominated for or won the MTV Movie Award for Best On-Screen Duo?",
+    "answer": "PG-13"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie receive that was about a soldier seeking memories of the Sabra and Shatila massacre and was either nominated for or won the Golden Globe for Best Foreign Language Film?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie set in Beirut, Lebanon, about a soldier seeking memories of the Sabra and Shatila massacre, which has a surreal theme?",
+    "answer": "48"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie about an alcoholic involved in a kidnapping plot targeting a wealthy grandfather's grandson receive, which won or was nominated for 'n/a'?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Who produced the movie featuring an alcoholic involved in a kidnapping plot targeting a wealthy grandfather's grandson?",
+    "answer": "Magnolia Pictures"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie set in the United States about an alcoholic involved in a kidnapping plan targeting a wealthy grandfather's grandson, which has less than 300 ratings?",
+    "answer": 17308
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie based on a true story about a housewife managing a horse farm and winning the Triple Crown in 1973, set on a thoroughbred farm and horse racing tracks?",
+    "answer": "PG"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews are recorded for the movie set in California about former beach stars joining a new California beach scene for fun, associated with 'betamax'?",
+    "answer": "1"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the audience review count for the sci-fi movie set in Seattle, Washington, where children discover toys that enhance intelligence and reveal secrets?",
+    "answer": 258657
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie receive that features a main character involved in grace liberating enslaved people on an Alabama plantation?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the claymation movie set in a Sydney apartment complex, where residents seek life's meaning?",
+    "answer": "24"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critics' consensus for the movie set in a French insane asylum, involving the Marquis de Sade challenging authority and featuring topless nudity?",
+    "answer": "Though hard to watch, this film's disturbing exploration of freedom of expression is both seductive and thought-provoking."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie based on a book, set in a seemingly idyllic, controlled community, where Jonas uncovers community secrets and seeks freedom through knowledge?",
+    "answer": "PG-13"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critic review count for the movie set in the small town of Wheelsy, where an alien organism threatens the town and a sheriff fights to survive, associated with 'bd-r'?",
+    "answer": "38"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie about families enduring historical events in Britain from 1900 to the 1930s, which was nominated for or won the Academy Award for Best Picture?",
+    "answer": "20th Century Fox Film Corporation"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critic review count for the movie set in London, England, associated with the Oscar for Best Picture, that depicts families enduring historical events in Britain from 1900 to the 1930s?",
+    "answer": "10"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie, summarized as 'grieving parents encounter supernatural events in Venice, Italy,' that won or was nominated for the BAFTA Award for Best Cinematography?",
+    "answer": 18808
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie set in Denmark about a family's struggles with bullying and international aid work, which is associated with the theme of revenge?",
+    "answer": "39"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How did critics receive the movie about a con artist hunted by a racist executive for a survival game, which was either nominated for or won an award, with the result being 'n/a'?",
+    "answer": "The Pest aims for zany comedy with social commentary, misses, and lands squarely at offensive misfire thanks to John Leguizamo's over-caffeinated performance and a script laden with stereotypes."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie receive, which involves a detective investigating a murder linked to a mysterious food corporation and was either nominated for or won a Hugo Award?",
+    "answer": "PG"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie set in city streets, themed around clich\u00e9s, about two people finding self-worth through each other's support?",
+    "answer": "Tribeca Films"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the audience review count for the movie set in Los Angeles, California, about opposites attracting and changing each other's lives forever, associated with friendship?",
+    "answer": 5223
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie receive in which a convict bonds with a kidnapped boy while being pursued by a Texas Ranger, and it won or was nominated for 'n/a'?",
+    "answer": "PG-13"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the comedy movie set between Portland, Oregon, and Canada, where Nick drives kids and encounters comedic road trip challenges?",
+    "answer": 402083
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie receive that's set in a childhood home and follows siblings who reunite after their father's death to explore relationships and history with a bittersweet tone?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie where Paul falls for his best friend's sister and tries to prove his worth?",
+    "answer": "49"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie receive that's set in a small town about Paul falling for his best friend's sister and proving his worth, and is described as 'boring'?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie about young Tess, whose life is marred by seduction and tragedy, and was either nominated for or won the Academy Award for Best Cinematography?",
+    "answer": "Criterion Collection"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie receive that's set in the Czech Republic and England, about Czech pilots joining the RAF to fight against the Nazis during World War II?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie set in a fantasy world featuring a unicorn and friends on a journey to save their kind?",
+    "answer": "4"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How was the movie about a unicorn and friends on a journey to save their kind, which won or was nominated for a Saturn Award, received by critics?",
+    "answer": "The Last Unicorn lacks the fluid animation to truly sparkle as an animated epic, but offbeat characters and an affecting story make it one of a kind for the true believers."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Who produced the movie known for its story about sled dogs surviving alone during Antarctica's harsh winter, which is recommended as a must-see?",
+    "answer": "Buena Vista Pictures"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews are recorded for the movie where two boys steal a car and embark on an adventure to Louisiana?",
+    "answer": "13"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie set in the location where a talent agent escorts his mistress, mistaken for his lover, and faces a gangster?",
+    "answer": 3424
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How was the movie about a talent agent escorting his mistress, who is mistaken for his lover and faces a gangster, received by critics, given that it was nominated for an Academy Award for Best Director?",
+    "answer": "Woody Allen's hard-working, uphill-climbing Broadway talent agent is rendered memorably with equal parts absurdity and affection."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How is the movie set in a psychiatric hospital, featuring a patient who believes their fianc\u00e9 is Bryan Adams and falls in love with a Chechen soldier, received by critics?",
+    "answer": "House of Fools has a potentially intriguing fact-based story to tell, but an insensitive approach to depicting mental illness undermines its effectiveness."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critic review count for the movie set in New York City about a bisexual man and a neurotic woman who meet in therapy sessions, and is noted for 'nudity (topless)'?",
+    "answer": "3"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie featuring young Shirley, who faces tragedy and a custody battle for her future, and was either nominated for or won the Academy Juvenile Award?",
+    "answer": "0"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie about a pilot whose aggression affects his family, causing conflict and tension, which led to Robert Duvall being nominated for an Academy Award for Best Actor?",
+    "answer": "1"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critic review count for the movie set in the United States, associated with 'betamax', about a pilot whose aggression causes conflict and tension within his family?",
+    "answer": "1"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie set in a suburban neighborhood about an unemployed dad who starts a daycare, faces challenges, and competes with a rival?",
+    "answer": 472605
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie about a college student who uncovers a dark mystery in town and received an Academy Award nomination for Best Director?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie set in the Old West, where Tonto recounts his comedic adventures with the Lone Ranger against outlaws?",
+    "answer": "PG-13"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Who produced the movie in which Tonto recounts adventures with the Lone Ranger against Old West outlaws, a film that was nominated for 2 Academy Awards?",
+    "answer": "Walt Disney Pictures"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How do critics perceive the movie where a family is terrorized by two men in their vacation home?",
+    "answer": "It doesn't measure up to Pegg and Frost's best work, but Paul is an amiably entertaining -- albeit uneven -- road trip comedy with an intergalactic twist."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the comedy movie set in Cincinnati, Ohio, where a teen uses rollerblading skills to win over bullies?",
+    "answer": "PG"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critic review count for the movie set in Southern California's Salton Sea, associated with 'bd-r', where monsters awaken to threaten humanity, and scientists and a commander fight back?",
+    "answer": "0"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie receive that features Greg Kinnear, set in the United States, about a married couple facing fertility issues that strain their relationship?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What rating did the movie receive where Reacher investigates a sniper case with an elusive truth?",
+    "answer": "PG-13"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Who produced the movie about Reacher investigating a sniper case where the truth is elusive, which won or was nominated for an award listed as 'n/a'?",
+    "answer": "Paramount Pictures"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie set in the United States, available on Redbox, about a social worker uncovering dark secrets to protect a young girl?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the audience review count for the psychological movie set in New England about a family uncovering past murders in their new home?",
+    "answer": 29717
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie set in the Usher family mansion, based on a book, where Roderick Usher opposes his sister's marriage to prevent a family curse?",
+    "answer": "G"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie set in a rehabilitation center, associated with 'betamax,' where Daryl confronts addiction and finds redemption?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie set in a location where a teenager exposes nuclear dangers at a science fair and faces consequences?",
+    "answer": "Yash Raj Films"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the audience review count for the movie set in New York during World War II about a teenager who exposes nuclear dangers at a science fair and faces the consequences?",
+    "answer": 5189
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Who produced the movie that was either nominated for or won the Palme d'Or at the 2010 Cannes Film Festival?",
+    "answer": "Strand Releasing"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critics' consensus for the movie where Sarah journeys through a surreal maze to save her brother?",
+    "answer": "While it's arguably more interesting on a visual level, Labyrinth provides further proof of director Jim Henson's boundless imagination."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Who produced the movie about Sarah's journey through a maze to save her brother, which was either nominated for or won the Saturn Award for Best Fantasy Film?",
+    "answer": "Sony Pictures Home Entertainment"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews are recorded for the comedy movie set in the wilderness where animals band together to protect their forest from hunters?",
+    "answer": "30"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critic review count for the movie set in a location where animals band together to protect the forest from hunters?",
+    "answer": "0"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie set in Wyoming, based on a book, about Cheyenne's journey home facing opposition from the US Army amid rising tensions?",
+    "answer": "Warner Home Video"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie set in Los Angeles, considered one of the funniest, where a businessman teams up with a thief for a robbery-revenge scheme?",
+    "answer": "Touchstone Pictures"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie set in a location where Detective Tibbs solves a murder involving family and friend tensions?",
+    "answer": "NR"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie that depicts a family's life changing due to societal pressures?",
+    "answer": "USA Films"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews are there for the movie set in San Francisco, summarized as 'researchers face chaos with thieves and secrets'?",
+    "answer": 1337
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How is the movie directed by Majid Majidi, which is set in Iran, received by critics?",
+    "answer": "The lyrical Baran is a moving film, both for its love story and political underpinnings."
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie set in Dublin, Ireland, about white musicians forming an R&B band and facing challenges with fame, which is based on a book?",
+    "answer": "11"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the content rating of the movie about white musicians forming an R&B band and facing the challenges of fame, which was either nominated for or won the BAFTA Award for Best Film?",
+    "answer": "R"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "Which production company was behind the movie where Jim seeks redemption by helping villagers fight against bandits?",
+    "answer": "MGM Pictures"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "What is the critic review count for the movie set in Mecca and a remote village, based on a book, where Jim seeks redemption by helping villagers against bandits?",
+    "answer": "4"
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many audience reviews does the movie set in the United States and Mexico, about a father going undercover to save his son from prison, and associated with the 'undercover cop' theme, have?",
+    "answer": 63502
+  },
+  {
+    "db": "rotten_tomatoes",
+    "question_type": "Reasoning",
+    "question": "How many top critic reviews were recorded for the movie about a father who goes undercover to save his son from prison, which received a nomination or award listed as 'n/a'?",
+    "answer": "35"
+  }
+]
