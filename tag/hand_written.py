@@ -17,8 +17,9 @@ client = OpenAI()
 
 def pipeline_0():
     query = "Among the schools with the average score in Math over 560 in the SAT test, how many schools are in counties in the bay area?"
-    answer = 71
+    answer = 54
     scores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
+    scores_df = scores_df[scores_df["rtype"] == "S"]
     scores_df = scores_df[scores_df["AvgScrMath"] > 560]
     unique_counties_df = scores_df[["cname"]].drop_duplicates()
     bay_area_counties_df = unique_counties_df.sem_filter("{cname} is in the bay area")
@@ -35,6 +36,7 @@ def pipeline_1():
     )
     answer = "(562) 944-0033"
     scores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
+    scores_df = scores_df[scores_df["rtype"] == "S"]
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
     unique_counties_df = scores_df[["cname"]].drop_duplicates()
     bay_area_counties_df = unique_counties_df.sem_filter("{cname} is in Southern California")
@@ -50,8 +52,9 @@ def pipeline_1():
 
 def pipeline_3():
     query = "How many test takers are there at the school/s in a county with population over 2 million?"
-    answer = 244742
+    answer = 122343
     scores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
+    scores_df = scores_df[scores_df["rtype"] == "S"]
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
     unique_counties = pd.DataFrame(schools_df["County"].unique(), columns=["County"])
     unique_counties = unique_counties.sem_map(
@@ -398,9 +401,10 @@ def pipeline_30():
 
 def pipeline_33():
     query = "What is the total number of schools whose total SAT scores are greater or equal to 1500 whose mailing city is the county seat of Lake County, California?"
-    answer = 2
+    answer = 1
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
     scores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
+    scores_df = scores_df[scores_df["rtype"] == "S"]
     city = client.chat.completions.create(model="gpt-4o-mini", messages=[{"role": "user", "content": "What is the name of the city that is the county seat of Lake County, California? Respond with only the city name and no other words."}]).choices[0].message.content
     schools_df = schools_df[schools_df["City"] == city]
     scores_df["total"] = scores_df["AvgScrRead"] + scores_df["AvgScrMath"] + scores_df["AvgScrWrite"]
@@ -524,6 +528,7 @@ def pipeline_41():
     query = "Give the number of schools with the percent eligible for free meals in K-12 is more than 0.1 and test takers whose test score is greater than or equal to the score one hundred points less than the maximum."
     answer = 1
     scores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
+    scores_df = scores_df[scores_df["rtype"] == "S"]
     frpm_df = pd.read_csv("../pandas_dfs/california_schools/frpm.csv")
     frpm_df = frpm_df[(frpm_df["Free Meal Count (K-12)"] / frpm_df["Enrollment (K-12)"]) > 0.1]
     max_score = client.chat.completions.create(model="gpt-4o-mini", messages=[{"role": "user", "content": "What is the maximum SAT score?. Box your final answer with \\boxed{just a number}."}]).choices[0].message.content
@@ -655,6 +660,7 @@ def pipeline_50():
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
     schools_df = schools_df[schools_df["Magnet"] == 1]
     satscores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
+    satscores_df = satscores_df[satscores_df["rtype"] == "S"]
     satscores_df = satscores_df[satscores_df["NumTstTakr"] > 500]
     merged_df = pd.merge(schools_df, satscores_df, left_on="CDSCode", right_on="cds")
     prediction = merged_df.sem_topk("What {School} sounds most futuristic?", 1).School.values[0]
@@ -840,6 +846,7 @@ def pipeline_64():
     answer = "Santa Clara"
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
     satscores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
+    satscores_df = satscores_df[satscores_df["rtype"] == "S"]
     satscores_df["excellence_rate"] = satscores_df["NumGE1500"] / satscores_df["NumTstTakr"]
     satscores_df = satscores_df.sort_values("excellence_rate", ascending=False).head(3)
     merged_df = pd.merge(schools_df, satscores_df, left_on="CDSCode", right_on="cds")
@@ -918,6 +925,7 @@ def pipeline_81():
     query = "Summarize the qualities of the schools with an average score in Math under 600 in the SAT test and are exclusively virtual."
     answer = ""
     scores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
+    scores_df = scores_df[scores_df["rtype"] == "S"]
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
     scores_df = scores_df[scores_df["AvgScrMath"] < 600]
     schools_df = schools_df[schools_df["Virtual"] == "F"]
@@ -932,6 +940,7 @@ def pipeline_82():
     )
     answer = ""
     scores_df = pd.read_csv("../pandas_dfs/california_schools/satscores.csv")
+    scores_df = scores_df[scores_df["rtype"] == "S"]
     schools_df = pd.read_csv("../pandas_dfs/california_schools/schools.csv")
     scores_df = scores_df[scores_df["AvgScrMath"] > 400]
     schools_df = schools_df[schools_df["City"] == "Riverside"]
