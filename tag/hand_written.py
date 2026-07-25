@@ -581,9 +581,9 @@ def pipeline_44():
 
 def pipeline_45():
     query = "How many players whose first names are Adam and weigh more than 77.1kg?"
-    answer = 24
+    answer = 22
     players_df = pd.read_csv("../pandas_dfs/european_football_2/Player.csv")
-    players_df = players_df[players_df["player_name"].str.startswith("Adam")]
+    players_df = players_df[players_df["player_name"].str.split().str[0] == "Adam"]
     pounds = client.chat.completions.create(model="gpt-4o-mini", messages=[{"role": "user", "content": "What is 77.1kg in pounds? Box your final answer with \\boxed{just a number}."}]).choices[0].message.content
     pounds = float(re.search(r"\\boxed\{(\d+(\.\d+)?)\}", pounds).group(1))
     players_df = players_df[players_df["weight"] > pounds]
